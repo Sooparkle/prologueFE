@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경기일정 및 결과</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    /* hearder area*/
+    header{
+  position: relative;
+  z-index: 3;
+}
+
+.top_menu{
+  position: relative;
+  min-width: 1200px;
+  height:40px;
+  background:#28292D;
+}
+
+.top_menu{
+  display: flex;
+}
+
+.top_menu ul a{
+  padding:0 45px 0 25px;
+  color:#898989;
+  font-size:12px;
+  font-weight: 600;
+  font-family: "Nanum Gothic Bold";
+  background: url(https://www.kgcsports.com/images/common/ico_arr_g.png) no-repeat 80% 50%;
+}
+
+.top_menu .top_logo{
+  display: block;
+  background: url(https://www.kgcsports.com/images/logo/global_logo.gif) no-repeat;
+  width:131px;
+  height: 40px;
+  padding: 0;
+  text-indent: -9999px;
+}
+
+.top_menu ul{
+  display: flex;
+  align-items: center;
+}
+
+.top_menu li{
+border-left: 1px solid #4F5053;
+line-height: 40px;
+vertical-align: top;
+}
+
+.top_menu li:nth-last-of-type(1){
+  border-right: 1px solid #4F5053;
+
+}
+
+.top_menu li:nth-of-type(3){
+  border-left: none;
+
+}
+.top_menu .actived{
+  padding:0 45px 0 25px;
+  color:#E51937;
+  font-size:12px;
+  font-weight: bold;
+  background: url(https://www.kgcsports.com/images/common/ico_arr_r.png) no-repeat 80% 50%;
+}
+
+.top_menu .current{
+  line-height: 40px;
+  background: #fff;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  vertical-align: top;
+}
+
+
+/* gnb area */
+
+.gnb_wrap{
+  height: 77px;
+  border-bottom: 5px solid #D11732;
+
+}
+.gnb{ 
+  min-width: 1200px;
+  width:1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnb h1{
+  display: block;
+  width:247px;
+  height:59px;
+  background: url(https://www.kgcsports.com/images/logo/logo_volleyball.png?ver=2.0) no-repeat;
+  text-indent: -9999px;
+}
+
+.gnb .nav ul{
+  display: flex;
+  gap: 50px;
+}
+
+.gnb .nav li a {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+
+/* utility area */
+.utility{
+  position:absolute;
+  top:0;
+  right:0;
+
+}
+
+.utility ul{
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+}
+
+.utility ul li{
+  border-left: 1px solid #4F5053;
+  line-height: 40px;
+  vertical-align: top;
+  font-size: 0.7rem;
+  color : #fff;
+  letter-spacing: -1px;
+
+}
+
+.utility ul li:nth-of-type(1), .utility ul li:nth-of-type(2) {
+  color : #c2c2c2;
+  background: #3E3F42;;
+}
+
+.utility ul a{
+  padding:0 15px;
+}
+
+
+main{
+  max-width: 1200px;
+  width:100%;
+  margin: 0 auto;
+}
+main .container{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+aside{
+  width: 200px;
+}
+
+aside h2{
+  height: 170px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 160px;
+  background-color: #D11732;
+}
+
+article .page_location .home{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/common/ico_home.gif) no-repeat;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+
+}
+
+article  h3{
+  font-size: 2rem;
+  padding : 15px 0 20px;
+}
+
+article >  p{
+  padding-bottom: 38px;
+}
+
+article .controller{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+article .controller p{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #da1833;;
+}
+
+article .controller a{
+  display: inline-block;
+  width : 2.2rem;
+  height: 2.2rem;
+  border: 1px solid #898989;
+  border-radius: 50%;
+
+}
+
+article .controller a:nth-of-type(1){
+  margin-right: 30px;
+}
+
+article .controller a:nth-of-type(1)::after{
+  content: "";
+  position: absolute;
+  width:0.8rem;
+  height: 0.8rem;
+  border-width :0;
+  border-style:solid;
+  border-color:#898989;
+  border-top-width:1px;
+  border-right-width: 1px;
+  transform: translate(85%, 70%) rotate(225deg);
+
+}
+
+article .controller a:nth-of-type(2){
+  margin-left: 30px;
+}
+
+article .controller a:nth-of-type(2)::after{
+  content: "";
+  position: absolute;
+  width:0.8rem;
+  height: 0.8rem;
+  border-width :0;
+  border-style:solid;
+  border-color:#898989;
+  border-top-width:1px;
+  border-right-width: 1px;
+  transform: translate(45%, 70%) rotate(45deg);
+}
+
+article .controller form{
+  position: absolute;
+  right: 0;
+}
+
+article .controller form select{
+  font-size: 1.1rem;
+  border: 1px solid #898989;
+}
+
+article .controller form select:nth-of-type(1){
+width:120px;
+}
+
+article .controller form select:nth-of-type(2){
+width: 90px;
+}
+
+aside ul{
+  margin-top: 10px;
+}
+
+aside li {
+    height: 46px;
+    border: 0.5px solid #d3d3d3;
+    margin-top:-1px;
+    padding:15px 0  0 10px;
+    box-sizing: border-box;
+
+}
+
+
+/* table area */
+.calender_shape{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 40px repeat(5, 129px);
+
+}
+
+
+.calender_shape .header{
+  text-align: center;
+  line-height: 40px;
+  border-top: 1px solid #D91833;
+  background-color:#F5F5F5;
+}
+
+.calender_shape .content{
+  padding: 10px 10px 0 0;
+  text-align: right;
+  background-color:#fff;
+  border: 1px solid #898989;
+
+  box-sizing: border-box;
+
+}
+
+
+
+.calender_shape .right{
+  border-right: #fff;
+}
+.calender_shape .left{
+  border-left: #fff;
+}
+
+
+aside .actived{
+  background: linear-gradient(294deg, rgba(115,14,170,1) 0%, rgba(250,58,58,1) 100%);
+  color : #fff;
+  font-weight: 600;
+}
+
+
+
+aside li a{
+  display: block;
+}
+
+
+
+article{
+  width: 960px;
+}
+
+article .page_location{
+  margin-top: 32px;
+    text-align: right;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top_menu">
+      <h2 class="screen_out">상단메뉴</h2>
+      <a href="" class="top_logo">정관장스포츠단</a>
+      <ul>
+        <li><a href="">BASKETBALL</a></li>
+        <li class="current"><a href="" class="actived">VOLLEYBALL</a></li>
+        <li><a href="">TABLE TENNIE</a></li>
+        <li><a href="">BADMINTON</a></li>
+      </ul>
+    </div>
+
+    <div class="gnb_wrap">
+      <div class="gnb">
+        <h1>정관장 레드스파크 프로배구단</h1>
+          <a href="" class="logo"></a>
+        </h1>
+        <div class="nav">
+          <h2 class="screen_out">주요메뉴</h2>
+          <ul>
+            <li><a href="">GAME</a></li>
+            <li><a href="">PLAYER</a></li>
+            <li><a href="">COMMUNITY</a></li>
+            <li><a href="">MEDIA</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="utility">
+      <h2 class="screen_out">유틸리티</h2>
+      <ul>
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <li><a href="">전체메뉴</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <aside class="aside">
+        <h2>GAME</h2>
+        <ul>
+          <li class="actived">
+            <a href="" >경기일정 및 결과</a>
+          </li>
+          <li>
+            <a href="">기록실</a>
+          </li>
+          <li>
+            <a href="">홈구장안내</a>
+          </li>
+          <li>
+            <a href="">티켓안내</a>
+          </li>
+        </ul>
+      </aside>
+
+      <article class="content">
+        <div class="page_location">
+          <span class="home">Home</span>
+          <span>GAME > 경기일정 및 결과</span>
+        </div>
+        <h3>경기일정 및 결과</h3>
+        <p>시즌일정 및 경기결과 안내입니다.</p>
+        <div class="controller">
+          <a aria-label="왼쪽" href="" [data-controller-left]></a>
+          <p>2023.11</p>
+          <a aria-label="오른쪽" href="" [data-controller-right]></a>
+          <form action="">
+            <div class="year_month">
+              <label for="years"></label>
+              <select name="" id="years">
+                <option value="">2023</option>
+                <option value="">2022</option>
+                <option value="">2021</option>
+              </select>
+              <label for="months"></label>
+              <select name="" id="months">
+                <option value="">12</option>
+                <option value="">11</option>
+                <option value="">10</option>
+                <option value="">9</option>
+                <option value="">8</option>
+                <option value="">7</option>
+                <option value="">6</option>
+                <option value="">5</option>
+                <option value="">4</option>
+                <option value="">3</option>
+                <option value="">2</option>
+                <option value="">1</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="calender_shape">
+          <div class="item_sun header left">SUN</div>
+          <div class="item_mon header">MON</div>
+          <div class="item_tue header">TUE</div>
+          <div class="item_wed header">WED</div>
+          <div class="item_thu header">THU</div>
+          <div class="item_fri header">FRI</div>
+          <div class="item_sat header right">SAT</div>
+          <div class="item_1 content left">1</div>
+          <div class="item_2 content">2</div>
+          <div class="item_3 content">3</div>
+          <div class="item_4 content">4</div>
+          <div class="item_5 content">5</div>
+          <div class="item_6 content ">6</div>
+          <div class="item_7 content right">7</div>
+          <div class="item_8 content left">8</div>
+          <div class="item_9 content">9</div>
+          <div class="item_10 content">10</div>
+          <div class="item_11 content">11</div>
+          <div class="item_12 content">12</div>
+          <div class="item_13 content ">13</div>
+          <div class="item_14 content right">14</div>
+          <div class="item_15 content left">15</div>
+          <div class="item_16 content">16</div>
+          <div class="item_17 content">17</div>
+          <div class="item_18 content">18</div>
+          <div class="item_19 content">19</div>
+          <div class="item_20 content ">20</div>
+          <div class="item_21 content right">21</div>
+          <div class="item_22 content left">22</div>
+          <div class="item_23 content">23</div>
+          <div class="item_24 content">24</div>
+          <div class="item_25 content">25</div>
+          <div class="item_26 content">26</div>
+          <div class="item_27 content ">27</div>
+          <div class="item_28 content right">28</div>
+          <div class="item_29 content left">29</div>
+          <div class="item_30 content">30</div>
+          <div class="item_31 content">31</div>
+          <div class="item content"></div>
+          <div class="item content"></div>
+          <div class="item content"></div>
+          <div class="item content right"></div>
+
+        </div>
+
+        <script>
+          const contro = document.querySelector(".content controller");
+          const buttons = contro.querySelectorAll('[data-controller]');
+
+
+          let prom = new Promise(function(suc, rej){
+            let req = new XMLHttpRequest();
+            req.onload = () =>{
+              if(req.status == 200){
+
+              }
+            }
+
+          })
+
+
+
+        </script>
+        <!-- <table>
+          <thead>
+            <tr>
+              <th>SUN</th>
+              <th>MON</th>
+              <th>TUE</th>
+              <th>WED</th>
+              <th>THU</th>
+              <th>FRI</th>
+              <th>SAT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>31</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table> -->
+        <div class="cal_info">
+          <span>
+            <img src="https://www.kgcsports.com/images/common/ico_home_color.gif" alt="홈경기컬러">
+          </span>
+          <span>
+            <img src="https://www.kgcsports.com/images/common/ico_away_color.gif" alt="원정컬러">
+          </span>
+          <span>
+            <img src="https://www.kgcsports.com/images/common/ico_air.png" alt="경기중계">
+          </span>
+          <span>
+            <img src="https://www.kgcsports.com/images/common/ico_review.png" alt="경기리뷰">
+          </span>
+          <ul>
+            <li>지난 경기 점수 클릭 시 해당 경기의 상세기록을 확인하실 수 있습니다.</li>
+            <li>TV 아이콘에 마우스 오버 시 중계방송사를 확인 하 실 수 있습니다.</li>
+          </ul>
+        </div>
+      </div>
+      
+
+      </div>
+
+      <div class="display_date"></div>
+    </article>
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer_top">
+      <h2 class="screen_out">법적고지</h2>
+      <ul>
+        <li><a href="" class="border1">개인정보처리방침</a></li>
+        <li><a href="" class="border2">이용약관</a></li>
+        <li><a href="">이메일무단수집거부</a></li>
+      </ul>
+    </div>
+    <address>
+      <p>정관장 스포츠단 | 경기도 안양시 동안구 평촌대로 389 안양체육관 1층</p>
+      <p>농구단 : 031-478-6614  |  배구단: 031-478-6618  |  FAX: 031-478-6655</p>
+      <p class="copyright">COPYRIGHT(C) 2023 정관장 스포츠단. ALL RIGHTS RESERVED.</p>
+    </address>
+  </footer>
+  
+</body>
+</html>

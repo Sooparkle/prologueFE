@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ticket</title>
+  <style>
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* {
+font-family: 'Nanum Gothic', sans-serif;
+}
+  html, body, p, h1, h2, h3, dl, dt, dd, ul, li{
+    margin:0;
+    padding:0;
+  }
+  .screen_out{
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+  }
+
+  ul, li{
+    list-style: none;
+  }
+
+  a{
+    color:inherit;
+    text-decoration: none;
+  }
+
+
+  header{
+    min-width: 1200px;
+    width:100%;
+    position: relative;
+    z-index: 3;
+  }
+
+  header .top_menu_wrap{
+    height:40px;
+    width:100%;
+    background: #28292d
+  }
+
+  header  .top_wrap ul{
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color :#898989;
+
+  }
+
+  header  .top_wrap ul li{
+  vertical-align: middle;
+
+  }
+
+  header li a > img{
+      vertical-align: middle;
+  }
+
+  header .top_wrap ul li:nth-of-type(2),
+  header .top_wrap ul li:nth-of-type(3),
+  header .top_wrap ul li:nth-of-type(4),
+  header .top_wrap ul li:nth-of-type(5)  {
+  padding : 10px 45px 12px 25px;
+  border-right: 1px solid #4F5053;
+  background: url(https://www.kgcsports.com/images/common/ico_arr_g.png) no-repeat 80% 50%;
+  }
+  header .top_wrap ul li:nth-of-type(1)
+  {
+  border-right: 1px solid #4F5053;
+  }
+
+
+  .gnb_wrap{
+  border-bottom: 5px solid #D11732;
+  position: relative;
+  }
+
+  .gnb{
+  max-width:1200px;
+  width:100%;
+  height: 76px;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  }
+
+  .gnb ul {
+  display: flex;
+  justify-content: space-between;
+  gap:50px;
+  font-size:1.2rem;
+  font-weight: 600;
+  position: relative;
+  }
+
+.gnb ul li dl{
+position: absolute;
+top:68px;
+font-weight: 300;
+font-size:0.9rem;
+z-index: 100;
+
+display: none;
+}
+
+  .gnb ul li dl dt{
+  font-weight: 600;
+  margin-bottom: 5px;
+  }
+
+  .gnb ul li dl dd{
+  font-size: 0.8rem;
+  height: 30px;
+  }
+
+  .gnb ul li:nth-of-type(1) dl{
+  left:-420px;
+  }
+
+  .gnb ul li:nth-of-type(2) dl{
+  left:-230px;
+  }
+
+  .gnb ul li:nth-of-type(3) dl{
+  left:-40px;
+  }
+
+  .gnb ul li:nth-of-type(4) dl{
+  left:150px;
+  }
+
+  .gnb button{
+  background: url(https://www.kgcsports.com/images/common/btn_dep2_close.gif) no-repeat;
+  position: absolute;
+  width:41px;
+  height: 39px;
+  bottom:-195px;
+  right:0;
+  z-index: 4;
+  border: none;
+  transition: all 0.42ms;
+  }
+
+  .gnb button[data-nav-cancel="false"]{
+  display: none;
+
+  }
+
+  .gnb_wrap .nav_bg{
+  position: absolute;
+  top:81px;
+  width:100%;
+  height: 190px;
+  background: teal;
+  border-bottom: 5px solid #D11732;
+  transition: all 0.45ms;
+
+  display: none;
+  }
+
+
+
+
+/* utilities area */
+header .utilities{
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+.utilities ul{
+  display: flex;
+  align-items: center;
+  color:#898989;
+
+}
+
+.utilities li a{
+  display: inline-block;
+  padding : 12px 15px 12px;
+  font-size:0.7rem;
+  color:#fff;
+  letter-spacing: -1px;
+  border-left: 1px solid #4F5053;
+}
+
+.utilities li:nth-of-type(1) a,
+.utilities li:nth-of-type(2) a
+{
+  color: #c2c2c2;
+  background: #3E3F42;;
+}
+
+main{
+  width:1200px;
+  min-width: 1200px;
+  margin :0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside{
+  width:200px;
+}
+
+aside h2{
+
+  height:170px;
+  line-height: 170px;
+  background: #D91833;
+  text-align: center;
+  margin-bottom:10px;
+  color:#fff;
+}
+
+aside ul a{
+  display: block;
+  width:100%;
+  height:44px;
+  line-height: 44px;;
+  padding-left: 15px;
+  border: 1px solid #c2c2c2;
+  margin-top: -1px;
+  box-sizing: border-box;
+}
+
+article{
+  width : 960px;
+}
+
+article .page_location{
+  text-align: right;
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color : #898989;
+}
+
+article .page_location .home{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/common/ico_home.gif) no-repeat;
+  vertical-align: -40%;
+  width: 24px;
+  height: 24px;
+}
+
+article .page_location .arrow::before{
+  content: ">";
+  padding:0 5px;
+}
+article .page_location .arrow::after{
+  content: ">";
+  padding:0 5px 0 7px;
+}
+
+article h2{
+  font-size: 1.8rem;
+  padding: 15px 0 20px;
+}
+
+article > p {
+  margin: 0;
+  padding-bottom: 53px;
+}
+
+
+/* tab area */
+article .tab{
+  margin-bottom: 50px;
+}
+
+article .tab ul{
+  display: flex;
+
+}
+
+article .tab li{
+  width: 318px;
+    height: 49px;
+    border: 1px solid #DA1833;
+    border-bottom: none;
+}
+
+article .tab a{
+  background: #DA1833;
+  color:#fff;
+  display: block;
+  text-align: center;
+  line-height: 49px;
+  font-size: 1.2rem;
+  font-weight: 600
+
+}
+
+article .tab .active{
+  background: #fff;
+  color:#000;
+  display: block;
+  text-align: center;
+  line-height: 49px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  
+}
+
+section{
+  padding-bottom: 120px ;
+}
+
+/* tab select area */
+section[data-section="true"]{
+  display: block;
+}
+
+section[data-section="false"]{
+  display: none;
+}
+
+/* contents common tags */
+
+
+.ticketing_info h3,
+.t_notification h3,
+.d-day h3,
+.ticket-price h3,
+.seat h3{
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.ticketing_info h3::before,
+.t_notification h3::before,
+.d-day h3::before,
+.ticket-price h3::before,
+.seat h3::before{
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  background: url(https://www.kgcsports.com/images/common/bg_h4Txt.gif) no-repeat;
+  width:30px;
+  height: 3px;
+
+}
+#t-info img,
+.ticketing_info table, 
+.ticket-price table
+{
+  margin-bottom: 53px;
+}
+
+
+table{
+  width:100%;
+}
+
+
+/* ticket reservation area */
+
+#t-info .table-wrap{
+  border-top: 1px solid #DA1E34;;
+}
+
+#t-info table{
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#t-info thead th{
+  border-bottom: 1px solid #898989;
+  line-height: 39px;
+  color: #303030;
+  background: #F5F5F5;
+}
+
+#t-info table tr{
+    border-bottom: 1px solid #E1E1E1;
+    padding: 8px 0 7px;
+  }
+
+  #t-info tbody{
+  line-height: 24px;
+}
+
+#t-info td{
+  padding: 8px 0 7px;
+}
+
+thead tr th:nth-last-of-type(1),
+tbody tr td:nth-last-of-type(1){
+  border-right: none;
+  border-left:1px solid #E1E1E1;
+}
+
+
+/* ticket reservation notification & d-day  guide line */
+#t-info .t_notification ul li,
+#t-info .d-day ul li{
+  padding-left: 10px;
+  line-height: 24px;
+  background: url(https://www.kgcsports.com/images/common/bu_squre.gif) 0 10px no-repeat;
+}
+
+#t-info .d-day{
+  margin-top: 58px ;
+}
+
+
+    #t-price .table-wrap{
+    border-top: 1px solid #DA1E34;;
+  }
+
+  #t-price table{
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: center;
+    box-sizing: border-box;
+    }
+
+  #t-price thead{
+    border-bottom: 1px solid #898989;
+    line-height: 39px;
+    color: #303030;
+    background: #F5F5F5;
+  }
+
+    #t-price .color{
+      background-color: #F5F5F5 ;
+    }
+
+  #t-price thead tr:nth-of-type(2){
+    border-top: 1px solid #E1E1E1;
+  }
+
+    #t-price tbody tr td:nth-of-type(1){
+      width:11.5%
+    }
+
+    #t-price tbody tr td:nth-of-type(2){
+      width:24.25%
+    }
+
+    #t-price tbody tr td:nth-of-type(3){
+      width:24.25%
+    }
+
+    #t-price tbody tr td:nth-of-type(4){
+      width:20%
+    }
+
+    #t-price tbody tr td:nth-of-type(5){
+      width:20%
+    }
+
+    #t-price tbody td{
+    border-bottom: 1px solid#E1E1E1;
+    border-right:  1px solid#E1E1E1;
+  }
+
+  #t-price tbody tr td{
+    border-bottom: 1px solid#E1E1E1;
+    border-right:  1px solid#E1E1E1;
+  }
+
+  #t-price tbody td:nth-last-of-type(1){
+    border-right: none;
+  }
+
+    #t-price td{
+      padding: 8px 0 7px;
+  }
+
+  #t-price tbody td{
+      line-height: 24px;
+  }
+
+  .seat .seat_map{
+  border: 1px solid #E1E1E1 ;
+}
+
+.seat .seat_map img{
+  display: block;
+  margin: 0 auto 30px;
+  padding: 40px 0;
+}
+
+
+
+
+
+/* footer area */
+.footer{
+  background: #555555;
+}
+.footer_top{ 
+  background: #4b4b4b;
+}
+
+.footer ul{
+  max-width: 1200px;
+  width:100%;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  color:#fff;
+}
+
+.footer ul li{
+  padding: 17px 28px;
+  position: relative;
+  color:#ccc;
+
+}
+
+.footer ul .border1{
+font-weight: 600;
+color: #fdd000;
+}
+
+.footer ul .border1::after,
+.footer ul .border2::after{
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 1px;
+  height: 9px;
+  background: #858585;
+  content: "";
+
+}
+
+.footer address{
+  max-width: 1200px;
+  width:100%;
+  margin: 0 auto;
+  text-align: center;
+  padding :34px 0 38px;
+  color : #e1e1e1;
+  font-style: normal;
+
+}
+
+.footer address p{
+  padding-bottom: 8px;
+}
+
+.footer address .copyright{
+  padding: 20px 0 0 0;
+  color : #aaa;
+  font-weight: 600;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top_menu_wrap">
+      <div class="top_wrap">
+        <h2 class="screen_out">탑메뉴</h2>
+        <ul>
+          <li>
+            <a href="">
+              <img src="https://www.kgcsports.com/images/logo/global_logo.gif" alt="정관장 스포츠단">
+            </a>
+          </li>
+          <li>
+            <a href="">BASKETBALL</a>
+          </li>
+          <li>
+            <a href="">VOLLEYBALL</a>
+          </li>
+          <li>
+            <a href="">TABLE TENNIE</a>
+          </li>
+          <li>
+            <a href="">BADMINTON</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gnb_wrap">
+      <div class="gnb">
+        <h1 class="screen_out">주요메뉴</h1>
+        <a href="">
+          <img src="https://www.kgcsports.com/images/logo/logo_volleyball.png?ver=2.0" alt="">
+        </a>
+        <ul>
+          <li>GAME
+            <dl>
+              <dt>GAME</dt>
+              <dd>경기일정및결과</dd>
+              <dd>기록실</dd>
+              <dd>홈구장안내</dd>
+              <dd>팈켓안내</dd>
+            </dl>
+          </li>
+
+          <li>PLAYER
+            <dl>
+              <dt>PLAYER</dt>
+              <dd>코칭스텝</dd>
+              <dd>선수</dd>
+            </dl>
+          </li>
+          
+          <li>COMMUNITY
+            <dl>
+              <dt>COMMUNITY</dt>
+              <dd>자유게시판</dd>
+              <dd>Q&A게시판</dd>
+              <dd>스폰서사이트</dd>
+              <dd>관련사이트</dd>
+            </dl>
+          </li>
+
+          <li>MEDIA
+            <dl>
+              <dt>MEDIA</dt>
+              <dd>구단뉴스</dd>
+              <dd>언론뉴스</dd>
+              <dd>동영상갤러리</dd>
+              <dd>포토갤러리</dd>
+            </dl>
+          </li>
+        </ul>
+        <button data-nav-cancel="false"></button>
+      </div>
+      <div class="nav_bg" data-nav-bg="false"></div>
+    </div>
+
+
+    <div class="utilities">
+      <ul>
+        <li><a href="" class="q1">로그인</a></li>
+        <li><a href="" id="q2">회원가입</a></li>
+        <li><a href="" class="q3">전체메뉴</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <h2>GAME</h2>
+      <ul>
+        <li><a href="">경기일정 및 결과</a></li>
+        <li><a href="">기록실</a></li>
+        <li><a href="">홈구장안내</a></li>
+        <li><a href="">티켓안내</a></li>
+      </ul>
+    </aside>
+
+
+    <article>
+      <div class="page_location">
+        <span class="home"></span>
+        <span class="arrow">GAME</span>
+        <span>티켓안내</span>
+      </div>
+      <h2>티켓안내</h2>
+      <p>홈경기 티켓안내입니다.</p>
+      
+      
+      <div class="tab">
+        <ul>
+          <li><a href="#" class="active">티켓예매안내</a></li>
+          <li><a href="#">티켓가격안내</a></li>
+        </ul>
+      </div>
+
+
+      <section id="t-info" data-section="true">
+        <a href="">
+          <img src="https://www.kgcsports.com/images/logo/ticket_btn.png" alt="예매하기">
+        </a>
+
+        <div class="ticketing_info">
+          <h3>티켓 구입 안내</h3>
+          <div class="table-wrap">
+            <table>
+              <caption class="screen_out">티켓 예매 방법 안내 표</caption>
+              <colgroup>
+                <col width="180px">
+                <col width="380px">
+                <col width="*">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th colspan="2">예매방법 안내</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>맴버십 선예매</td>
+                  <td colspan="2">예매방법 안내</td>
+                </tr>
+                <tr>
+                  <td>일반 예매</td>
+                  <td colspan="2"><strong>BLACK</strong> : 경기 8일전 오전 11시 OPEN / <strong>RED</strong> : 경기 7일전 오전 11시 OPEN</td>
+                </tr>
+                <tr>
+                  <td>방식</td>
+                  <td colspan="2"><strong>KOVO 통합 홈페이지</strong> &nbsp&nbsp<a href="#">(https://kovo.co.kr/KOVO)</a></td>
+                </tr>
+                <tr>
+                  <td>예매마감</td>
+                  <td colspan="2">경기시작 1시간 후 마감</td>
+                </tr>
+                <tr>
+                  <td>취소마감</td>
+                  <td colspan="2">경기시작 4시간 전까지</td>
+                </tr>
+                <tr>
+                  <td>현장매표소운영</td>
+                  <td colspan="2">경기 시작 2시간전 오픈</td>
+                </tr>
+                <tr>
+                  <td>문의전화</td>
+                  <td colspan="2">1544-1555 (통합구매대행사 인터파크)</td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+
+        <div class="t_notification">
+          <h3>티켓 예매 유의사항</h3>
+          <ul>
+            <li>홈경기 당일 잔여 좌석에 한하여 현장판매를 진행 합니다.(경기 시작 두시간전 오픈)</li>
+            <li>현장 할인이 적용되는 경로, 장애인 등은 증빙서류를 현장매표소에 제시하고, 구매자 정보를 작성하면 발권이 가능합니다.</li>
+            <li>예매 당일은 취소수수료가 없으며, 예매수수료도 환불됩니다.</li>
+            <li>경기일자 및 좌석변경은 불가합니다.</li>
+          </ul>
+        </div>
+
+        <div class="d-day">
+          <h3>경기 당일 안내</h3>
+          <ul>
+            <li>경기당일 매표소가 혼잡하오니, 모바일티켓을 활용하여 편안한 입장을 권장드립니다.</li>
+            <li>본인확인이 힘들 경우, 입장권 교환이 불가할 수 있습니다.</li>
+            <li>예매하신 티켓의 전매, 위조 등의 위법행위를 엄격히 금지합니다.</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section id="t-price" data-section="false">
+        <div class="ticket-price">
+          <h3>티켓 가격</h3>
+          <div class="table-wrap">
+            <table>
+              <caption class="screen_out">자리별 티켓 가격 표</caption>
+              <colgroup>
+                <col width="240px">
+                <col width="240px">
+                <col width="240px">
+                <col width="240px">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="2">구분</th>
+                  <th rowspan="2">좌석명</th>
+                  <th rowspan="2">위치</th>
+                  <th colspan="2">가격안내(단위:원)</th>
+                </tr>
+                <tr>
+                  <th>주중</th>
+                  <th>주말</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2" class="color"><strong>플로어석</strong></td>
+                  <td style="background-color:#FFD7D7;"><strong>스파크스석</strong></td>
+                  <td>어웨이 코트 앤드라인</td>
+                  <td>25,000</td>
+                  <td>30,000</td>
+                </tr>
+                <tr>
+                  <td style="background-color:#FFD6FE;"><strong>화애락석</strong></td>
+                  <td>홈 코트 앤드라인</td>
+                  <td>20,000</td>
+                  <td>25,000</td>
+                </tr>
+                <tr>
+                  <td rowspan="4" class="color"><strong>1층</strong></td>
+                  <td style="background-color:#B1E9F8"><strong>R석</strong></td>
+                  <td>R1, 2, 3, 4, 5	</td>
+                  <td>20,000</td>
+                  <td>25,000</td>
+                </tr>
+                <tr>
+                  <td style="background-color:#F9EFB2"><strong>에브리타임석</strong></td>
+                  <td>홈/어웨이 선수벤치 뒤</td>
+                  <td>25,000</td>
+                  <td>30,000</td>
+                </tr>
+                <tr>
+                  <td style="background-color:#F9B2D4;"><strong>정관장석</strong></td>
+                  <td>코트 중앙</td>
+                  <td>20,000</td>
+                  <td>25,000</td>
+                </tr>
+                <tr>
+                  <td style="background-color:#F9B2D4;"><strong>정관장석(시야방해석)</strong></td>
+                  <td>코트 중앙</td>
+                  <td>10,000</td>
+                  <td>13,000</td>
+                </tr>
+                <tr>
+                  <td rowspan="6" class="color"><strong>2층</strong></td>
+                  <td style="background-color:#CEDBFD"><strong>테이블석</strong></td>
+                  <td>2층(A, B, D구역)</td>
+                  <td>15,000</td>
+                  <td>20,000</td>
+                </tr>
+                <tr>
+                  <td style="background-color:#F3FFCF" ><strong>활기력석</strong></td>
+                  <td>2층(A, E구역 사이)</td>
+                  <td>13,000</td>
+                  <td>15,000</td>
+                </tr>
+                <tr>
+                  <td style="background-color:#FFBDBE"><strong>서포터즈석</strong></td>
+                  <td>2층(C구역)</td>
+                  <td>10,000</td>
+                  <td>13,000</td>
+                </tr>
+                <tr>
+                  <td style="background-color:#FFBDBE"><strong>열혈응원석<br>(스탠딩석)</strong></td>
+                  <td>2층(7, 8구역)</td>
+                  <td>10,000</td>
+                  <td>13,000</td>
+                </tr>
+                <tr>
+                  <td>성인 일반</td>
+                  <td>2층 전구역</td>
+                  <td>10,000</td>
+                  <td>13,000</td>
+                </tr>
+                <tr>
+                  <td>어린이, 청소년</td>
+                  <td>2층 전구역</td>
+                  <td>6,000</td>
+                  <td>8,000</td>
+                </tr>
+                <tr>
+                  <td rowspan="3" class="color"><strong>할인정책</strong></td>
+                  <td rowspan="3">2층 일반석</td>
+                  <td rowspan="3">2층 전구역</td>
+                  <td colspan="2">전좌석 지정석 운영,<br>
+                    36개월 미만 아동 무료(좌석 미점유시)</td>
+                </tr>
+                <tr>
+                  <td colspan="2">경로/장애(휠체어석 포함) 20인까지 무료<br>
+                    *현장구매만 가능</td>
+                </tr>
+                <tr>
+                  <td colspan="2">단체 30명 이상(2층 일반석 기준) 20% 할인</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="seat">
+          <h3>좌석배치도</h3>
+          <div class="seat_map">
+            <img src="https://www.kgcsports.com/images/logo/seat_2024.png" alt="좌석배치 약도 이미지">
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer_top">
+      <h2 class="screen_out">법적고지</h2>
+      <ul>
+        <li><a href="" class="border1">개인정보처리방침</a></li>
+        <li><a href="" class="border2">이용약관</a></li>
+        <li><a href="">이메일무단수집거부</a></li>
+      </ul>
+    </div>
+    <address>
+      <p>정관장 스포츠단 | 경기도 안양시 동안구 평촌대로 389 안양체육관 1층</p>
+      <p>농구단 : 031-478-6614  |  배구단: 031-478-6618  |  FAX: 031-478-6655</p>
+      <p class="copyright">COPYRIGHT(C) 2023 정관장 스포츠단. ALL RIGHTS RESERVED.</p>
+    </address>
+  </footer>
+  
+</body>
+<script>
+
+// window.onclick=function(e){
+//     e.preventDefault()
+//     let  선택자 = e.target.id || e.target.classList.value
+
+    
+//     let footer = document.querySelector('footer')
+//  console.log(선택자)
+//  switch (선택자) {
+//   case 'q1' :
+//     footer.style.border= '1px solid black'
+//     break;
+//     case 'q2' : 
+//     footer.style.border= '2px solid red'
+//     break;
+//    case 'q3':
+//      footer.style.border= '1px solid blue'
+// break;
+//  }
+// }
+
+
+  // const $navBg = document.querySelector("[data-nav-cancel]");
+
+  // $navBg.addEventListener("click", ()=>{
+  //   const  i = $navBg.getAttribute("data-nav-cancel");
+    
+  //   if(i === "true"){
+  //     $navBg.setAttribute("data-nav-cancel", false);
+  //   } else{
+  //     $navBg.setAttribute("data-nav-cancel", true);
+  //   }
+  //   })
+  
+
+
+
+
+const tabs = document.querySelectorAll(".tab a");
+const sections = document.querySelectorAll("[data-section]");
+
+
+
+tabs.forEach((tab, index)=>{
+  tab.addEventListener("click", ()=>{
+    tabs.forEach(tab => {tab.classList.remove("active")})
+    tab.classList.add("active");
+
+    sections.forEach(section=>{
+      const selected = section.getAttribute('data-section');
+
+      if (selected === "true"){
+        section.setAttribute('data-section', 'false');
+      } else{
+        section.setAttribute('data-section', 'true');
+      }
+
+  })
+  })
+
+
+})
+
+</script>
+</html>

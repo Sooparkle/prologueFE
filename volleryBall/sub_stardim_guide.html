@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홈경기장안내</title>
+  <style>
+    @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+ * {
+font-family: 'Nanum Gothic', sans-serif;
+}
+  html, body, p, h1, h2, h3, dl, dt, dd, ul, li{
+    margin:0;
+    padding:0;
+  }
+.screen_out{
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+  ul, li{
+    list-style: none;
+  }
+
+  a{
+    color:inherit;
+    text-decoration: none;
+  }
+
+
+  header{
+    min-width: 1200px;
+    width:100%;
+    position: relative;
+    z-index: 3;
+  }
+
+  header .top_menu_wrap{
+    height:40px;
+    width:100%;
+    background: #28292d
+  }
+
+  header  .top_wrap ul{
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color :#898989;
+
+  }
+
+  header  .top_wrap ul li{
+  vertical-align: middle;
+
+  }
+
+  header li a > img{
+      vertical-align: middle;
+  }
+
+  header .top_wrap ul li:nth-of-type(2),
+  header .top_wrap ul li:nth-of-type(3),
+  header .top_wrap ul li:nth-of-type(4),
+  header .top_wrap ul li:nth-of-type(5)  {
+  padding : 10px 45px 12px 25px;
+  border-right: 1px solid #4F5053;
+  background: url(https://www.kgcsports.com/images/common/ico_arr_g.png) no-repeat 80% 50%;
+}
+  header .top_wrap ul li:nth-of-type(1)
+  {
+  border-right: 1px solid #4F5053;
+  }
+
+
+.gnb_wrap{
+  border-bottom: 5px solid #D11732;
+  position: relative;
+}
+
+.gnb{
+  max-width:1200px;
+  width:100%;
+  height: 76px;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.gnb ul {
+  display: flex;
+  justify-content: space-between;
+  gap:50px;
+  font-size:1.2rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.gnb ul li dl{
+position: absolute;
+top:68px;
+font-weight: 300;
+font-size:0.9rem;
+z-index: 100;
+
+display: none;
+}
+
+.gnb ul li dl dt{
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.gnb ul li dl dd{
+  font-size: 0.8rem;
+  height: 30px;
+}
+
+.gnb ul li:nth-of-type(1) dl{
+  left:-420px;
+}
+
+.gnb ul li:nth-of-type(2) dl{
+  left:-230px;
+}
+
+.gnb ul li:nth-of-type(3) dl{
+  left:-40px;
+}
+
+.gnb ul li:nth-of-type(4) dl{
+  left:150px;
+}
+
+.gnb button{
+  background: url(https://www.kgcsports.com/images/common/btn_dep2_close.gif) no-repeat;
+  position: absolute;
+  width:41px;
+  height: 39px;
+  bottom:-195px;
+  right:0;
+  z-index: 4;
+  border: none;
+  transition: all 0.42ms;
+}
+
+.gnb button[data-nav-cancel="false"]{
+  display: none;
+  transition: all 0.42ms;
+}
+
+.gnb_wrap .nav_bg{
+  position: absolute;
+  top:81px;
+  width:100%;
+  height: 190px;
+  background: teal;
+  border-bottom: 5px solid #D11732;
+  transition: all 0.45ms;
+
+  display: none;
+}
+
+
+
+/* utilities area */
+header .utilities{
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+.utilities ul{
+  display: flex;
+  align-items: center;
+  color:#898989;
+
+}
+
+.utilities li a{
+  display: inline-block;
+  padding : 12px 15px 12px;
+  font-size:0.7rem;
+  color:#fff;
+  letter-spacing: -1px;
+  border-left: 1px solid #4F5053;
+}
+
+.utilities li:nth-of-type(1) a,
+.utilities li:nth-of-type(2) a
+{
+  color: #c2c2c2;
+  background: #3E3F42;;
+}
+
+main{
+  width:1200px;
+  min-width: 1200px;
+  margin :0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside{
+  width:200px;
+}
+
+aside h2{
+
+  height:170px;
+  line-height: 170px;
+  background: #D91833;
+  text-align: center;
+  margin-bottom:10px;
+  color:#fff;
+}
+
+aside ul a{
+  display: block;
+  width:100%;
+  height:44px;
+  line-height: 44px;;
+  padding-left: 15px;
+  border: 1px solid #c2c2c2;
+  margin-top: -1px;
+  box-sizing: border-box;
+
+}
+
+
+article{
+  width : 960px;
+}
+
+article .page_location{
+  text-align: right;
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color : #898989;
+}
+
+article .page_location .home{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/common/ico_home.gif) no-repeat;
+  vertical-align: -40%;
+  width: 24px;
+  height: 24px;
+}
+
+article .page_location .arrow::before{
+  content: ">";
+  padding:0 5px;
+}
+article .page_location .arrow::after{
+  content: ">";
+  padding:0 5px 0 7px;
+}
+
+article h2{
+  font-size: 1.8rem;
+  padding: 15px 0 20px;
+}
+
+article > p {
+  margin: 0;
+  padding-bottom: 53px;
+}
+
+article .chungmu_info,
+article .facilities,
+article .seat,
+article .kakaomap{
+  position: relative;
+  margin-bottom: 53px;
+}
+
+{
+  padding-bottom: 20px;
+}
+
+article .chungmu_info::before,
+article .facilities::before,
+article .seat::before,
+article .kakaomap::before{
+  content:"";
+  width:30px;
+  height: 3px;
+  background: url(https://www.kgcsports.com/images/common/bg_h4Txt.gif) no-repeat;
+  position: absolute;
+  top:-15px;
+}
+
+.chungmu_info h3,
+.facilities h3,
+.seat h3,
+.kakaomap h3
+{
+  padding-bottom: 20px;
+}
+
+
+article .chungmu_info img{
+  width:305px;
+  height:154px;
+  padding-right: 32px;
+  vertical-align: top;
+}
+
+
+article  .chungmu_info > div{
+  display: inline-block;
+}
+
+article .chungmu_info .description{
+  width:623px;
+  font-size: 0.9rem;
+  
+}
+
+article .chungmu_info .description{
+  width:600px;
+  font-size: 0.9rem;
+}
+
+article .chungmu_info .description p:nth-of-type(1){
+  line-height: 24px;
+}
+
+article .chungmu_info .description p:nth-of-type(2){
+  padding-top:10px;
+  color:#da1833;
+}
+
+article .chungmu_info .description p:nth-of-type(3){
+  padding-top:2px;
+
+}
+
+
+article .facilities table thead{
+background: #F5F5F5;
+}
+
+article .table_wrap{
+  border-top:1px solid #DA1E34;
+}
+
+table{
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: center;
+}
+thead{
+  line-height: 39px;
+}
+
+tbody{
+  line-height: 24px;
+}
+
+thead th{
+  border-left:1px solid #E1E1E1;
+  border-bottom: 1px solid #898989;
+}
+
+tbody, td{
+  border : 1px solid #E1E1E1;
+  padding: 8px 0 7px;
+}
+
+.seat .seat_map{
+  border: 1px solid #E1E1E1 ;
+}
+.seat img{
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0
+}
+
+
+/* map area */
+.kakaomap .kakao_API{
+  width:100%;
+  height: 381px;
+  border: 1px solid #c2c2c2;
+  margin-bottom: 7px;
+}
+
+.kakaomap p{
+  color: #da1833;
+  padding-bottom:7px;
+  font-size: 0.9rem;
+}
+
+.kakaomap p:nth-of-type(1),
+.kakaomap p:nth-of-type(2){
+  margin-top:20px;
+}
+
+.kakaomap ul li{
+  background: url(	https://www.kgcsports.com/images/common/bu_squre.gif) no-repeat center;
+  background-position: 0% 50%;
+  padding-left: 10px;
+  line-height: 24px;
+  font-size: 0.9rem;
+
+}
+
+
+/* footer area */
+.footer{
+  background: #555555;
+}
+.footer_top{ 
+  background: #4b4b4b;
+}
+
+.footer ul{
+  max-width: 1200px;
+  width:100%;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  color:#fff;
+}
+
+.footer ul li{
+  padding: 17px 28px;
+  position: relative;
+  color:#ccc;
+
+}
+
+.footer ul .border1{
+font-weight: 600;
+color: #fdd000;
+}
+
+.footer ul .border1::after,
+.footer ul .border2::after{
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 1px;
+  height: 9px;
+  background: #858585;
+  content: "";
+
+}
+
+.footer address{
+  max-width: 1200px;
+  width:100%;
+  margin: 0 auto;
+  text-align: center;
+  padding :34px 0 38px;
+  color : #e1e1e1;
+  font-style: normal;
+
+}
+
+.footer address p{
+  padding-bottom: 8px;
+}
+
+.footer address .copyright{
+  padding: 20px 0 0 0;
+  color : #aaa;
+  font-weight: 600;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top_menu_wrap">
+      <div class="top_wrap">
+        <h2 class="screen_out">탑메뉴</h2>
+        <ul>
+          <li>
+            <a href="">
+              <img src="https://www.kgcsports.com/images/logo/global_logo.gif" alt="정관장 스포츠단">
+            </a>
+          </li>
+          <li>
+            <a href="">BASKETBALL</a>
+          </li>
+          <li>
+            <a href="">VOLLEYBALL</a>
+          </li>
+          <li>
+            <a href="">TABLE TENNIE</a>
+          </li>
+          <li>
+            <a href="">BADMINTON</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gnb_wrap">
+      <div class="gnb">
+        <h1 class="screen_out">주요메뉴</h1>
+        <a href="">
+          <img src="https://www.kgcsports.com/images/logo/logo_volleyball.png?ver=2.0" alt="">
+        </a>
+        <ul>
+          <li>GAME
+            <dl>
+              <dt>GAME</dt>
+              <dd>경기일정및결과</dd>
+              <dd>기록실</dd>
+              <dd>홈구장안내</dd>
+              <dd>팈켓안내</dd>
+            </dl>
+          </li>
+
+          <li>PLAYER
+            <dl>
+              <dt>PLAYER</dt>
+              <dd>코칭스텝</dd>
+              <dd>선수</dd>
+            </dl>
+          </li>
+          
+          <li>COMMUNITY
+            <dl>
+              <dt>COMMUNITY</dt>
+              <dd>자유게시판</dd>
+              <dd>Q&A게시판</dd>
+              <dd>스폰서사이트</dd>
+              <dd>관련사이트</dd>
+            </dl>
+          </li>
+
+          <li>MEDIA
+            <dl>
+              <dt>MEDIA</dt>
+              <dd>구단뉴스</dd>
+              <dd>언론뉴스</dd>
+              <dd>동영상갤러리</dd>
+              <dd>포토갤러리</dd>
+            </dl>
+          </li>
+        </ul>
+        <button data-nav-cancel="false"></button>
+      </div>
+      <div class="nav_bg" data-nav-bg="false"></div>
+    </div>
+
+    <script>
+      const $navBg = document.querySelector("[data-nav-cancel]");
+
+      $navBg.addEventListener("click", ()=>{
+        const  i = $navBg.getAttribute("data-nav-cancel");
+        
+        if(i === "true"){
+          $navBg.setAttribute("data-nav-cancel", false);
+        } else{
+          $navBg.setAttribute("data-nav-cancel", true);
+        }
+        })
+
+    </script>
+
+
+    <div class="utilities">
+      <ul>
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <li><a href="">전체메뉴</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <h2>GAME</h2>
+      <ul>
+        <li><a href="">경기일정 및 결과</a></li>
+        <li><a href="">기록실</a></li>
+        <li><a href="">홈구장안내</a></li>
+        <li><a href="">티켓안내</a></li>
+      </ul>
+    </aside>
+
+
+    <article>
+      <div class="page_location">
+        <span class="home"></span>
+        <span class="arrow">GAME</span>
+        <span>홈구장안내</span>
+      </div>
+      <h2>홈구장안내</h2>
+      <p>홈 경기장인 충무체육관입니다.</p>
+      <div class="chungmu_info">
+        <h3>충무체육관</h3>
+        <img src="https://www.kgcsports.com/images/volleyball/img_homeground.gif" alt="충무체육관 이미지">
+        <div class="description">
+          <p>충무체육관은 수용인원이 약 6천여명으로 냉,난방 시설이 완비된 사계절 이용가능한 전천후 돔원형 실내체육관으로 배구,농구,배드민턴 등 실내 체육경기와 기업체 홍보행사 및 대규모 문화(콘서트)행사 등을 개최할 수 있는 각종 편의시설을 갖추고 있으며, 특히 중부권에 위치하여 교통이 편리하고 접근성이 뛰어나 전국 규모의 문화 체육행사에 적합합니다.</p>
+          <p>위치</p>
+          <p><strong>대전광역시 중구 부사동 177-1 (보문산공원 입구)</strong></p>
+        </div>
+      </div>
+
+        <div class="facilities">
+          <h3>주요시설 현황</h3>
+          <div class="table_wrap">
+            <table>
+              <caption class="screen_out">주요시설 현황표</caption>
+              <colgroup>
+                <col width="120">
+                <col width="120">
+                <col width="120">
+                <col width="120">
+                <col width="120">
+                <col width="120">
+                <col width="120">
+                <col width="120">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>시설명</th>
+                  <th>부지면적</th>
+                  <th>건축면적</th>
+                  <th>연면적</th>
+                  <th>층수</th>
+                  <th>수용인원</th>
+                  <th>좌석수</th>
+                  <th>개장년도</th>
+                </tr>
+              <tbody>
+                <tr>
+                  <td>충무체육관</td>
+                  <td>5,071평</td>
+                  <td>1,176</td>
+                  <td>10,548</td>
+                  <td>3층</td>
+                  <td>5,960명</td>
+                  <td>4,510명</td>
+                  <td>1970. 12</td>
+                </tr>
+              </tbody>
+              </thead>
+            </table>
+          </div>
+        </div>
+
+        <div class="seat">
+          <h3>좌석배치도</h3>
+          <div class="seat_map">
+            <img src="https://www.kgcsports.com/images/logo/seat_2024.png" alt="좌석배치 약도 이미지">
+          </div>
+        </div>
+
+        <div class="kakaomap">
+          <h3>찾아오시는길</h3>
+          <div class="kakao_API">          </div>
+          <p>교통편</p>
+          <ul>
+            <li>대중교통 : 대전역 3분출구 건너편 2번버스 → 한밭종합운동장 하차후 4분 도보</li>
+            <li>자가용 : 대전IC에서 동부네거리방면 1.4km → 충무네거리 방면 4.6km 이동 한밭종합운동장 하차</li>
+          </ul>
+          <p>안내 및 문의</p>
+          <ul>
+            <li>대전광역시 동부 부사동 177-1 (보문산공원입구) 대전광역시 시설관리공단 체육시설사업소</li>
+            <li>T. 042)253-4181~4 F. 042)252-6324</li>
+          </ul>
+
+          </dl>
+        </div>
+
+      </div>
+
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer_top">
+      <h2 class="screen_out">법적고지</h2>
+      <ul>
+        <li><a href="" class="border1">개인정보처리방침</a></li>
+        <li><a href="" class="border2">이용약관</a></li>
+        <li><a href="">이메일무단수집거부</a></li>
+      </ul>
+    </div>
+    <address>
+      <p>정관장 스포츠단 | 경기도 안양시 동안구 평촌대로 389 안양체육관 1층</p>
+      <p>농구단 : 031-478-6614  |  배구단: 031-478-6618  |  FAX: 031-478-6655</p>
+      <p class="copyright">COPYRIGHT(C) 2023 정관장 스포츠단. ALL RIGHTS RESERVED.</p>
+    </address>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경기일정 및 결과</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style>
+    /* hearder area*/
+    header{
+  position: relative;
+  z-index: 3;
+}
+
+.top_menu{
+  position: relative;
+  min-width: 1200px;
+  height:40px;
+  background:#28292D;
+}
+
+.top_menu{
+  display: flex;
+}
+
+.top_menu ul a{
+  padding:0 45px 0 25px;
+  color:#898989;
+  font-size:12px;
+  font-weight: 600;
+  font-family: "Nanum Gothic Bold";
+  background: url(https://www.kgcsports.com/images/common/ico_arr_g.png) no-repeat 80% 50%;
+}
+
+.top_menu .top_logo{
+  display: block;
+  background: url(https://www.kgcsports.com/images/logo/global_logo.gif) no-repeat;
+  width:131px;
+  height: 40px;
+  padding: 0;
+  text-indent: -9999px;
+}
+
+.top_menu ul{
+  display: flex;
+  align-items: center;
+}
+
+.top_menu li{
+border-left: 1px solid #4F5053;
+line-height: 40px;
+vertical-align: top;
+}
+
+.top_menu li:nth-last-of-type(1){
+  border-right: 1px solid #4F5053;
+
+}
+
+.top_menu li:nth-of-type(3){
+  border-left: none;
+
+}
+.top_menu .actived{
+  padding:0 45px 0 25px;
+  color:#E51937;
+  font-size:12px;
+  font-weight: bold;
+  background: url(https://www.kgcsports.com/images/common/ico_arr_r.png) no-repeat 80% 50%;
+}
+
+.top_menu .current{
+  line-height: 40px;
+  background: #fff;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  vertical-align: top;
+}
+
+
+/* gnb area */
+
+.gnb_wrap{
+  height: 77px;
+  border-bottom: 5px solid #D11732;
+
+}
+.gnb{ 
+  min-width: 1200px;
+  width:1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnb h1{
+  display: block;
+  width:247px;
+  height:59px;
+  background: url(https://www.kgcsports.com/images/logo/logo_volleyball.png?ver=2.0) no-repeat;
+  text-indent: -9999px;
+}
+
+.gnb .nav ul{
+  display: flex;
+  gap: 50px;
+}
+
+.gnb .nav li a {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+
+/* utility area */
+.utility{
+  position:absolute;
+  top:0;
+  right:0;
+
+}
+
+.utility ul{
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+}
+
+.utility ul li{
+  border-left: 1px solid #4F5053;
+  line-height: 40px;
+  vertical-align: top;
+  font-size: 0.7rem;
+  color : #fff;
+  letter-spacing: -1px;
+
+}
+
+.utility ul li:nth-of-type(1), .utility ul li:nth-of-type(2) {
+  color : #c2c2c2;
+  background: #3E3F42;;
+}
+
+.utility ul a{
+  padding:0 15px;
+}
+
+
+main{
+  max-width: 1200px;
+  width:100%;
+  margin: 0 auto;
+}
+main .container{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+aside{
+  width: 200px;
+}
+
+aside h2{
+  height: 170px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 160px;
+  background-color: #D11732;
+}
+
+aside ul{
+  margin-top: 10px;
+}
+
+aside li {
+    height: 46px;
+    border: 0.5px solid #d3d3d3;
+    margin-top:-1px;
+    padding:15px 0  0 10px;
+    box-sizing: border-box;
+
+}
+
+aside .actived{
+  background: linear-gradient(294deg, rgba(115,14,170,1) 0%, rgba(250,58,58,1) 100%);
+  color : #fff;
+  font-weight: 600;
+}
+
+
+aside li a{
+  display: block;
+}
+
+
+/* article area */
+
+article{
+  width:960px;
+  position: relative;
+
+}
+
+article .page_location{
+  text-align: right;
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color : #898989;
+}
+
+
+article .page_location .home{
+  width:24px;
+  margin-right: 2px;
+}
+
+article .page_location .arrow::before{
+  content: ">";
+  padding:0 5px;
+}
+
+article .page_location .arrow::after{
+  content: ">";
+  padding:0 5px 0 7px;
+}
+
+article  h3{
+  font-size: 2rem;
+  padding : 15px 0 20px;
+}
+
+article >  p{
+  padding-bottom: 53px;
+
+}
+
+
+article .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+article .header p{
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+article .header p::before{
+  content: "";
+  background: url(https://www.kgcsports.com/images/common/bg_h4Txt.gif) no-repeat;
+  position: absolute;
+  width:30px;
+  height: 100%;
+  top:-15px;
+  left:0;
+}
+
+
+article .header form{
+  position: absolute;
+  right: 0;
+}
+
+article .header form select{
+  font-size: 0.9rem;
+  border: 1px solid #E1E1E1;
+  vertical-align: middle;
+  height: 30px;
+}
+
+article .header form select:nth-of-type(1){
+width:220px;
+}
+
+article .header form select:nth-of-type(2){
+width: 140px;
+}
+
+
+/* table area */
+fieldset{
+  margin: 0 0 20px 0;
+  padding: 0;
+  border: none;
+
+}
+table{
+  border-collapse: collapse;
+
+}
+
+tr, td{
+  font-size: 0.8rem;
+}
+
+
+table th {
+  border-bottom: 1px solid #959595;
+  border-left: 1px solid #d3d3d3;
+
+}
+
+
+
+table th {
+  background: #F5F5F5;
+  border-bottom: ;
+}
+
+table th:first-child{
+  border-left: none;
+}
+
+
+.table_wrap{
+  border-top: 1px solid #DA1E34; 
+}
+
+tbody > tr > td{
+  line-height: 24px;
+  padding: 8px 0 7px;
+  border-bottom: 1px solid #E1E1E1;
+  text-align: center;
+  font-size: 0.9rem;
+  border-left:1px solid #d3d3d3; ;
+}
+
+
+table td:first-child{
+  border-left: none;
+}
+
+fieldset thead th:nth-of-type(1){
+  width: 80px;
+  height: 39.5px;
+}
+
+fieldset thead th:nth-of-type(2){
+  width: 206px;
+  height: 39.5px;
+}
+
+fieldset thead th:nth-of-type(3){
+  width: 109px;
+  height: 39.5px;
+}
+
+fieldset thead th:nth-of-type(4){
+  width: 93px;
+  height: 39.5px;
+}
+
+fieldset thead th:nth-of-type(5),
+fieldset thead th:nth-of-type(6){
+  width: 100px;
+  height: 39.5px;
+}
+
+fieldset thead th:nth-of-type(7){
+  width: 141px;
+  height: 39.5px;
+}
+
+fieldset thead th:nth-of-type(8){
+  width: 131px;
+  height: 39.5px;
+}
+
+tbody tr td:nth-of-type(2) {
+  text-align: left;
+  padding-left: 40px;
+}
+
+
+tbody tr:nth-of-type(1) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2004.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+tbody tr:nth-of-type(2) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2005.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+tbody tr:nth-of-type(3) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2001.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+tbody tr:nth-of-type(4) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2003.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+tbody tr:nth-of-type(5) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2006.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+tbody tr:nth-of-type(6) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2006.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+tbody tr:nth-of-type(6) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2002.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+tbody tr:nth-of-type(7) td > span{
+  display: inline-block;
+  background: url(https://www.kgcsports.com/images/volleyball/logo_2007.png) no-repeat;
+  background-size: 32px 26px;
+  width:32px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+
+}
+
+
+.record_info{
+  position: relative;
+  margin-left: 10px;;
+}
+
+.record_info p{
+
+  line-height: 24px;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top_menu">
+      <h2 class="screen_out">상단메뉴</h2>
+      <a href="" class="top_logo">정관장스포츠단</a>
+      <ul>
+        <li><a href="">BASKETBALL</a></li>
+        <li class="current"><a href="" class="actived">VOLLEYBALL</a></li>
+        <li><a href="">TABLE TENNIE</a></li>
+        <li><a href="">BADMINTON</a></li>
+      </ul>
+    </div>
+
+    <div class="gnb_wrap">
+      <div class="gnb">
+        <h1>정관장 레드스파크 프로배구단</h1>
+          <a href="" class="logo"></a>
+        </h1>
+        <div class="nav">
+          <h2 class="screen_out">주요메뉴</h2>
+          <ul>
+            <li><a href="">GAME</a></li>
+            <li><a href="">PLAYER</a></li>
+            <li><a href="">COMMUNITY</a></li>
+            <li><a href="">MEDIA</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="utility">
+      <h2 class="screen_out">유틸리티</h2>
+      <ul>
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <li><a href="">전체메뉴</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <aside class="aside">
+        <h2>GAME</h2>
+        <ul>
+          <li >
+            <a href="" >경기일정 및 결과</a>
+          </li>
+          <li class="actived">
+            <a href="">기록실</a>
+          </li>
+          <li>
+            <a href="">홈구장안내</a>
+          </li>
+          <li>
+            <a href="">티켓안내</a>
+          </li>
+        </ul>
+      </aside>
+
+      <article class="content">
+        <div class="page_location">
+          <span class="home">
+            <img src="https://www.kgcsports.com/images/common/ico_home.gif" alt="home">
+          </span>
+          <span class="arrow">GAME</span>
+          <span>기록실</span>
+        </div>
+
+        <h3>기록실</h3>
+        <p>시즌기록을 확인하실 수 있습니다.</p>
+        <div class="header">
+          <p>팀순위</p>
+          <form action="">
+            <div class="every-year">
+              <label for="sessions"></label>
+              <select name="" id="sessions">
+                <option value="">-도드람 2023-2024 V-리그</option>
+                <option value="">-도드람 2022-2023 V-리그</option>
+                <option value="">-도드람 2021-2022 V-리그</option>
+              </select>
+              <label for="filters"></label>
+              <select name="" id="filters">
+                <option value="">팀순위</option>
+                <option value="">득점</option>
+                <option value="">공격</option>
+                <option value="">오픈공격</option>
+                <option? value="">시간차공격</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="table_wrap">
+          <fieldset>
+            <legend class="screen_out">팀순위</legend>
+            <table>
+              <colgroup>
+                <col width="80px">
+                <col width="206px">
+                <col width="109px">
+                <col width="93px">
+                <col width="100px">
+                <col width="100px">
+                <col width="141px">
+                <col width="131px">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>순위</th>
+                  <th>팀명</th>
+                  <th>경기수</th>
+                  <th>승</th>
+                  <th>패</th>
+                  <th>승점</th>
+                  <th>득점/실점</th>
+                  <th>세트 득/실</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><span></span>흥국생명</td>
+                  <td>9</td>
+                  <td>8</td>
+                  <td>1</td>
+                  <td>23</td>
+                  <td>802/752</td>
+                  <td>26/9</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><span></span>GS칼텍스</td>
+                  <td>9</td>
+                  <td>6</td>
+                  <td>3</td>
+                  <td>17</td>
+                  <td>762/716</td>
+                  <td>20/14</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><span></span>현대건설</td>
+                  <td>9</td>
+                  <td>5</td>
+                  <td>4</td>
+                  <td>17</td>
+                  <td>768/742</td>
+                  <td>20/14</td>
+                </tr>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><span></span>정관장</td>
+                  <td>9</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>12</td>
+                  <td>711/705</td>
+                  <td>15/17</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><span></span>IBK기업은행</td>
+                  <td>10</td>
+                  <td>4</td>
+                  <td>6</td>
+                  <td>11</td>
+                  <td>846/855</td>
+                  <td>16/22</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td><span></span>한국도로공사</td>
+                  <td>9</td>
+                  <td>3</td>
+                  <td>6</td>
+                  <td>11</td>
+                  <td>770/809</td>
+                  <td>16/21</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td><span></span>페퍼저축은행</td>
+                  <td>9</td>
+                  <td>2</td>
+                  <td>7</td>
+                  <td>5</td>
+                  <td>774/854</td>
+                  <td>12/25</td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+        </div>
+
+
+        <div class="record_info">
+
+          <p>* 유효블락(유효블로킹) : 자기팀의 수비로 연결된 블로킹 <br>
+         * 기록은 소수 3째자리 반올림.</p>
+
+        </div>
+      </div>
+      
+
+      </div>
+
+    </article>
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer_top">
+      <h2 class="screen_out">법적고지</h2>
+      <ul>
+        <li><a href="" class="border1">개인정보처리방침</a></li>
+        <li><a href="" class="border2">이용약관</a></li>
+        <li><a href="">이메일무단수집거부</a></li>
+      </ul>
+    </div>
+    <address>
+      <p>정관장 스포츠단 | 경기도 안양시 동안구 평촌대로 389 안양체육관 1층</p>
+      <p>농구단 : 031-478-6614  |  배구단: 031-478-6618  |  FAX: 031-478-6655</p>
+      <p class="copyright">COPYRIGHT(C) 2023 정관장 스포츠단. ALL RIGHTS RESERVED.</p>
+    </address>
+  </footer>
+  
+</body>
+</html>
