@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>Document</title>
+</head>
+
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* {
+font-family: 'Nanum Gothic', sans-serif;
+}
+
+header{
+  position: relative;
+  z-index: 3;
+}
+
+.top_menu{
+  position: relative;
+  min-width: 1200px;
+  width:100%;
+  height:40px;
+  background:#28292D;
+}
+
+.top_menu{
+  display: flex;
+}
+
+.top_menu ul a{
+  padding:0 45px 0 25px;
+  color:#898989;
+  font-size:12px;
+  font-weight: 600;
+  font-family: "Nanum Gothic Bold";
+  background: url(https://www.kgcsports.com/images/common/ico_arr_g.png) no-repeat 80% 50%;
+}
+
+.top_menu .top_logo{
+  display: block;
+  background: url(https://www.kgcsports.com/images/logo/global_logo.gif) no-repeat;
+  width:131px;
+  height: 40px;
+  padding: 0;
+  text-indent: -9999px;
+}
+
+.top_menu ul{
+  display: flex;
+  align-items: center;
+}
+
+.top_menu li{
+border-left: 1px solid #4F5053;
+line-height: 40px;
+vertical-align: top;
+}
+
+.top_menu li:nth-last-of-type(1){
+  border-right: 1px solid #4F5053;
+
+}
+
+.top_menu li:nth-of-type(3){
+  border-left: none;
+
+}
+.top_menu .actived{
+  padding:0 45px 0 25px;
+  color:#E51937;
+  font-size:12px;
+  font-weight: bold;
+  background: url(https://www.kgcsports.com/images/common/ico_arr_r.png) no-repeat 80% 50%;
+}
+
+.top_menu .current{
+  line-height: 40px;
+  background: #fff;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  vertical-align: top;
+}
+
+.gnb {
+  width:100%;
+  height: 90px;
+  padding:0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.gnb .logo img{
+  width:100%;
+}
+
+.gnb ul{
+  display: flex;
+  gap:10px;
+}
+
+.gnb ul a{
+  display: block;
+  border: 1px solid #cecece;
+  border-radius: 50%;
+}
+
+/* utility area */
+.utility{
+  position:absolute;
+  top:0;
+  right:0;
+
+}
+
+.utility ul{
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+}
+
+.utility ul li{
+  border-left: 1px solid #4F5053;
+  line-height: 40px;
+  vertical-align: top;
+  font-size: 0.7rem;
+  color : #fff;
+  letter-spacing: -1px;
+
+}
+
+.utility ul li:nth-of-type(1), .utility ul li:nth-of-type(2) {
+  color : #c2c2c2;
+  background: #3E3F42;;
+}
+
+.utility ul a{
+  padding:0 15px;
+}
+
+
+/* main area */
+*{
+-webkit-scrollbar :none
+}
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+} 
+
+.css-pagination{
+  position: fixed;
+  top:50%;
+  right:0;
+  display: flex;
+  flex-flow: column;
+  gap:20px;
+  z-index: 100;
+}
+
+.css-pagination ul{
+  position: fixed;
+  top:50%;
+  right:33px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-flow: column;
+  gap:20px;
+  text-align: right;
+}
+
+.css-pagination::after{
+  content:" "
+}
+
+.css-pagination ul button{
+  border: none;
+  background-color: #ffffff00;
+  
+}
+
+  .main {
+    display: block;
+    width:100%;
+    height:100%;
+    background: url(https://www.kgcsports.com/images/basketball/2324/section07_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .team{
+    display: block;
+    width:100%;
+    height:100%;
+    background: url(https://www.kgcsports.com/images/basketball/20/section02_bg.jpg) no-repeat;
+  }
+
+  .arena{
+    display: block;
+    width:100vh;
+    height:100vh;
+    background: url(https://www.kgcsports.com/images/basketball/20/section03_bg.jpg) no-repeat;
+  }
+</style>
+
+<body>
+  <header>
+    <div class="top_menu">
+      <h2 class="screen_out">상단메뉴</h2>
+      <a href="" class="top_logo">정관장스포츠단</a>
+      <ul>
+        <li><a href="">BASKETBALL</a></li>
+        <li class="current"><a href="" class="actived">VOLLEYBALL</a></li>
+        <li><a href="">TABLE TENNIE</a></li>
+        <li><a href="">BADMINTON</a></li>
+      </ul>
+    </div>
+
+    <div class="gnb">
+      <h1 class="screen_out">안양 정관장 레드부스터스 프로배구단</h1>
+          <a href="#" class="logo">
+            <img src="https://www.kgcsports.com/images/logo/basketball_logo_2023.png?ver=2.0" alt="정관장레드부스터스">
+          </a>
+        </h1>
+        <ul>
+          <li><a href="#"><img src="https://www.kgcsports.com/images/basketball/20/social_f.png" alt="페이스북"></a></li>
+          <li><a href="#"><img src="https://www.kgcsports.com/images/basketball/20/social_i.png" alt="인스타그램"></a></li>
+          <li><a href="#"><img src="https://www.kgcsports.com/images/basketball/20/social_n.png" alt="네이버"></a></li>
+          <li><a href="#"><img src="https://www.kgcsports.com/images/basketball/20/social_nt.png" alt="네이버TV"></a></li>
+          <li><a href="#"><img src="https://www.kgcsports.com/images/basketball/20/social_y.png" alt="유튜브"></a></li>
+        </ul>
+      </div>
+
+    <div class="utility">
+      <h2 class="screen_out">유틸리티</h2>
+      <ul>
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <li><a href="">전체메뉴</a></li>
+      </ul>
+    </div>
+  </header>
+
+  
+
+  <main>
+    <div class="css-pagination js-pagination">
+      <ul>
+        <li><button data-pagination="#main">MAIN</button></li>
+        <li><button data-pagination="#team">TEAM</button></li>
+        <li><button data-pagination="#arena">HOME ARENA</button></li>
+        <li><button data-pagination="#map">MAP</button></li>
+      </ul>
+    </div>
+      <!-- <a href="#main">MAIN</a>
+      <a href="#team">TEAM</a>
+      <a href="#arena">HOME ARENA</a>
+      <a href="#map">MAP</a>
+    </div> -->
+
+    <section id="main" class="main">
+      <div class="css-bg js-bg"></div>
+
+    </section>
+
+    <section id="team" class="team">
+
+    </section>
+
+    <section id="arena" class="arena">
+      
+    </section>
+
+    <section id="map" class="map">
+
+    </section>
+
+    <section id="etc" class="etc">
+
+    </section>
+    <script defer>
+    const buttons = document.querySelectorAll('button');
+    
+    for (let button of buttons){
+      button.addEventListener("click", ()=>{
+        const scrollPosition = document.querySelector(button.dataset.pagination).offsetTop;
+        const eventInfo = document.querySelector('#team').getBoundingClientRect
+        
+        console.log(eventInfo);
+        window.scrollTo({ top:scrollPosition , behavior: 'smooth' });
+      });
+
+        }
+
+
+      // const buttons = document.querySelectorAll('button');
+
+      // console.log(buttons);
+      // for (const button of buttons) {
+      //   button.addEventListener('click', function () {
+        
+
+      //     const scrollPosition = document.querySelector(button.dataset.pagination).offsetTop;
+
+      //     //scroll을 offsetTop으로 이동시킨다.
+      //     window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+      //   });
+      // }
+    
+    </script>
+  </main>
+</body>
+</html>
