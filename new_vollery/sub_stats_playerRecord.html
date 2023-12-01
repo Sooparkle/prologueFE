@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정관장 선수기록</title>
+  <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+  @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body{
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+}
+
+header{
+  width:100%;
+  z-index: 10;
+  background: #fff;
+
+}
+
+header[data-gnb-bg="true"]{
+  position: absolute;
+  width:100%;
+  z-index: 10;
+  height:200px;
+  background: teal;
+
+}
+
+.gnb{
+  height:90px;
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnb  .logo-wrap{
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.gnb  .logo-wrap{
+  display: flex;
+  align-items: center;
+}
+.gnb  .logo-wrap img{
+  width:70px;
+  height:52px;
+
+  display: inline-block;
+  margin-right: 13px;
+}
+
+.gnb  .logo-wrap h1{
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.gnb  .logo-wrap h1{
+  font-size:1.4rem;
+  color:#000;
+  vertical-align: middle;
+}
+
+.gnb  .logo-wrap h1 svg{
+  font-size:1.5rem;
+  color:#ffffff00;
+  vertical-align: middle;
+}
+
+
+.gnb .nav ul{
+  display: flex;
+  align-items: center;
+
+  color:#000;
+  font-size:1.3rem;
+  font-weight: 500;
+}
+
+.gnb .nav ul li{
+  width:89px;
+}
+
+.gnb .nav dl{
+  position: absolute;
+
+  padding:50px 0;
+  font-weight: 300;
+
+  display: none;
+
+}
+
+
+
+.gnb .nav dl dt{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.gnb .nav dl dt{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+
+/* ul dl에 left에 주는 방식 */
+/* .gnb .nav li:nth-of-type(1) dl{
+  left: 14%
+}
+
+.gnb .nav li:nth-of-type(2) dl{
+  left:27%
+}
+.gnb .nav li:nth-of-type(3)  dl{
+  left:40%
+}
+.gnb .nav li:nth-of-type(4) dl{
+  left:52%
+}
+.gnb .nav li:nth-of-type(5) dl{
+  left:64%
+}
+.gnb .nav li:nth-of-type(6) dl{
+  left:77%
+} */
+
+
+
+
+.gnb .nav dl dd{
+  height:20px;
+  
+}
+
+.gnb .nav dl li{
+  width:161px;
+}
+
+
+
+/* utilies area */
+.gnb  .css-utilities ul{
+  display: flex;
+  gap:30px;  
+
+  color:#000;
+  font-size: 1.1rem;
+}
+
+.gnb  .css-utilities ul li{
+  position: relative;
+
+}
+
+.gnb  .css-utilities ul li:nth-child(1):after,
+.gnb  .css-utilities ul li:nth-child(2)::after,
+.gnb  .css-utilities ul li:nth-child(3)::after{
+  content: "|";
+  position: absolute;
+  right:-16px;
+}
+
+
+/* main area */
+main{
+  position: relative;
+  z-index: 2;
+}
+
+.top-banner{
+  background: url(https://kovo.co.kr/assets/pc_sub_banner_jeong.5be398ba.png) no-repeat;
+  width:100%;
+  height: 199px;
+  position: relative;
+}
+
+.top-banner h2{
+  color:#fff;
+  font-size: 3.8rem;
+  font-weight: bold;
+  position: absolute;;
+  top: 50%;
+  left:280px;
+  transform: translateY(-50%);
+  
+}
+
+
+/* tag area */
+
+.tag ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height:57px; 
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.tag ul li{
+  text-align: center;
+  width:130px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color : #999999;
+}
+
+.tag ul .actived{
+  text-align: center;
+  width:130px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color : #000;
+  border-bottom: 2px solid;
+  line-height: 57px;
+
+}
+
+ /* main pagination area */
+ article{
+  min-width: 1025px;
+  width:71.25%;
+  margin: 50px auto 0;
+  position: relative;
+}
+
+.player-record div[data-pagination]{
+  position: absolute;
+  right:0;
+  top: 20px;
+}
+
+.player-record div[data-pagination] svg{
+  vertical-align: middle;
+}
+
+
+
+/* player record area */
+
+.player-record h2{
+font-size: 2.6rem;
+margin-bottom: 24px;
+}
+
+.css-player-tab ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.css-player-tab li{
+  width:50%;
+  text-align: center;
+  background: #eee;
+}
+
+.css-player-tab li{
+  width:50%;
+  text-align: center;
+  background: #eee;
+}
+
+.css-player-tab .actived{
+  width:50%;
+  text-align: center;
+  background: #2438ef;
+  color : #fff;
+}
+
+.css-player-tab li a{
+line-height: 56px;
+}
+
+
+
+
+
+
+</style>
+<body>
+  <header data-gnb-bg="false">
+    <div class="gnb">
+
+      <div class="logo-wrap">
+        <a href="#">
+          <div class="logo-box">
+            <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
+            <h1 class="scree_out">정관장</h1>
+          </div>
+        </a>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222" class="css-10i3oi9"><g clip-path="url(#clip0_2327_5794)"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5794"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+      </div>
+
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href=""#>CLUB</a>
+            <dl>
+              <dt>CLUB</dt>
+              <dd><a href="#">인사말</a></dd>
+              <dd><a href="#">소개</a></dd>
+              <dd><a href="#">연혁</a></dd>
+              <dd><a href="#">홈경기장 소개</a></dd>
+              <dd></dd>
+            </dl>
+          </li>
+
+          <li>
+            <a href=""#>TEAM</a>
+            <dl>
+              <dt>TEAM</dt>
+              <dd><a href="#">코칭 스태프</a></dd>
+              <dd><a href="#">지원 스태프</a></dd>
+              <dd><a href="#">선수</a></dd>
+            </dl>
+          </li>
+
+          <li>
+            <a href=""#>STATS</a>
+              <dl>
+                <dt>STATS</dt>
+                <dd><a href="#">선수 기록</a></dd>
+                <dd><a href="#">팀 기록</a></dd>
+              </dl>
+          </li>
+
+          <li>
+            <a href=""#>GAME</a>
+              <dl>
+                <dt>GAME</dt>
+                <dd><a href="#">V-리그</a></dd>
+                <dd><a href="#">컵대회</a></dd>
+              </dl>
+          </li>
+
+          <li>
+            <a href=""#>MEDIA</a>
+              <dl>
+                <dt>MEDIA</dt>
+                <dd><a href="#">SNS</a></dd>
+              </dl>
+          </li>
+
+          <li>
+            <a href=""#>TICKET</a>
+              <dl>
+                <dt>TICKET</dt>
+                <dd><a href="#">단일권 구매</a></dd>
+                <dd><a href="#">티켓가격</a></dd>
+                <dd><a href="#">맴버십 구매</a></dd>
+                <dd><a href="#">티캣안내(공통)</a></dd>
+                <dd><a href="#">모바일티켓 이용방법</a></dd>
+              </dl>
+          </li>
+        
+        </ul>
+      </nav>
+
+      <div class="css-utilities js-utilities">
+        <ul>
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">SEARCH</a></li>
+          <li><a href="#">KO</a></li>
+          <li><a href="#">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+      <section class="top-banner">
+        <h2> STATS</h2>
+      </section>
+
+      <section class="tag">
+        <ul>
+          <li class="actived"><a href="#">선수 기록</a></li>
+          <li><a href="#">팀 기록</a></li>
+        </ul>
+        <div class="css-line js-line"></div>
+      </section>
+      <script>
+        const tabs = document.querySelectorAll('.tag li');
+        const list = document.querySelectorAll('.tag ul')
+
+        console.log(list);
+
+      </script>
+
+    <article>
+      <section class="player-record">
+        <h2>선수 기록</h2>
+        <div data-pagination>
+          <a class="home"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+          <span>STATS</span>
+          <span>선수 기록</span>
+        </div>
+
+        <div class="css-player-tab js-player-tab">
+          <ul>
+            <li class="actived"><a href="#">남자부</a></li>
+            <li><a href="#">여자부</a></li>
+          </ul>
+        </div>
+      </section>
+
+    </article>
+  </main>
+</body>
+</html>

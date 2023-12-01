@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정관장 선수기록</title>
+  <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+  @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body{
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+}
+
+header{
+  position: absolute;
+  width:100%;
+  z-index: 10;
+
+  
+
+}
+
+header[data-gnb-bg="true"]{
+  position: absolute;
+  width:100%;
+  z-index: 10;
+  height:200px;
+  background: teal;
+
+}
+
+.gnb{
+  height:90px;
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnb  .logo-wrap{
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+}
+
+.gnb  .logo-wrap{
+  display: flex;
+  align-items: center;
+}
+.gnb  .logo-wrap img{
+  width:70px;
+  height:52px;
+
+  display: inline-block;
+  margin-right: 13px;
+}
+
+.gnb  .logo-wrap h1{
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.gnb  .logo-wrap h1{
+  font-size:1.4rem;
+  color:#fff;
+  vertical-align: middle;
+}
+
+.gnb  .logo-wrap h1 svg{
+  font-size:1.5rem;
+  color:#fff;
+  vertical-align: middle;
+}
+
+
+.gnb .nav ul{
+  display: flex;
+  align-items: center;
+
+  color:#fff;
+  font-size:1.3rem;
+  font-weight: 500;
+}
+
+.gnb .nav ul li{
+  width:89px;
+  position: relative;
+  
+}
+
+.gnb .nav dl{
+  position: absolute;
+  width: 161px;
+  padding:50px 0;
+  font-weight: 300;
+  left:-50%;
+
+  display: none;
+}
+
+
+/* ul dl에 left에 주는 방식 */
+.gnb .nav li:nth-of-type(1) dl{
+  left: 0
+}
+
+.gnb .nav li:nth-of-type(2) dl{
+  left:-20%
+}
+.gnb .nav li:nth-of-type(3)  dl{
+  left:40%
+}
+.gnb .nav li:nth-of-type(4) dl{
+  left:52%
+}
+.gnb .nav li:nth-of-type(5) dl{
+  left:64%
+}
+.gnb .nav li:nth-of-type(6) dl{
+  left:77%
+}
+
+
+
+.gnb .nav dl dt{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.gnb .nav dl dt{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+
+
+.gnb .nav dl dd{
+  height:20px;
+  
+}
+
+.gnb .nav dl li{
+  width:161px;
+}
+
+
+
+
+/* utilies area */
+.gnb  .css-utilities ul{
+  display: flex;
+  gap:30px;  
+
+  color:#fff;
+  font-size: 1.1rem;
+}
+
+.gnb  .css-utilities ul li{
+  position: relative;
+
+}
+
+.gnb  .css-utilities ul li:nth-child(1):after,
+.gnb  .css-utilities ul li:nth-child(2)::after,
+.gnb  .css-utilities ul li:nth-child(3)::after{
+  content: "|";
+  position: absolute;
+  right:-16px;
+}
+
+
+/* main area */
+main{
+  position: relative;
+  z-index: 2;
+}
+.main-banner{
+  position: relative;
+}
+
+.main-banner ul{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow: hidden;
+}
+
+
+.main-banner li img{
+  height: 560px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.css-main-banner-pagination{
+  position: absolute;
+  left:50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.css-main-banner-pagination span{
+  background: #fff;;
+  width:10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+
+
+
+.main-banner button{
+  position: absolute;
+  border: none;
+  background: #ffffff00;
+}
+
+.main-banner button[data-main-banner="prev"]{
+  top:50%;
+  left:0;
+  transform: translateY(-50%);
+}
+
+.main-banner button[data-main-banner="next"]{
+  top:50%;
+  right:0;
+  transform: translateY(-50%);
+}
+
+
+
+</style>
+<body>
+  <header data-gnb-bg="false">
+    <div class="gnb">
+
+      <div class="logo-wrap">
+        <a href="#">
+          <div class="logo-box">
+            <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
+            <h1 class="scree_out">정관장</h1>
+          </div>
+        </a>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff" class="ant-tooltip-open css-10i3oi9"><g clip-path="url(#clip0_2327_5794)"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5794"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+      </div>
+
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href=""#>CLUB</a>
+            <dl>
+              <dt>CLUB</dt>
+              <dd><a href="#">인사말</a></dd>
+              <dd><a href="#">소개</a></dd>
+              <dd><a href="#">연혁</a></dd>
+              <dd><a href="#">홈경기장 소개</a></dd>
+              <dd></dd>
+            </dl>
+          </li>
+
+          <li>
+            <a href=""#>TEAM</a>
+            <dl>
+              <dt>TEAM</dt>
+              <dd><a href="#">코칭 스태프</a></dd>
+              <dd><a href="#">지원 스태프</a></dd>
+              <dd><a href="#">선수</a></dd>
+            </dl>
+          </li>
+
+          <li>
+            <a href=""#>STATS</a>
+              <dl>
+                <dt>STATS</dt>
+                <dd><a href="#">선수 기록</a></dd>
+                <dd><a href="#">팀 기록</a></dd>
+              </dl>
+          </li>
+
+          <li>
+            <a href=""#>GAME</a>
+              <dl>
+                <dt>GAME</dt>
+                <dd><a href="#">V-리그</a></dd>
+                <dd><a href="#">컵대회</a></dd>
+              </dl>
+          </li>
+
+          <li>
+            <a href=""#>MEDIA</a>
+              <dl>
+                <dt>MEDIA</dt>
+                <dd><a href="#">SNS</a></dd>
+              </dl>
+          </li>
+
+          <li>
+            <a href=""#>TICKET</a>
+              <dl>
+                <dt>TICKET</dt>
+                <dd><a href="#">단일권 구매</a></dd>
+                <dd><a href="#">티켓가격</a></dd>
+                <dd><a href="#">맴버십 구매</a></dd>
+                <dd><a href="#">티캣안내(공통)</a></dd>
+                <dd><a href="#">모바일티켓 이용방법</a></dd>
+              </dl>
+          </li>
+        
+        </ul>
+      </nav>
+
+      <div class="css-utilities js-utilities">
+        <ul>
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">SEARCH</a></li>
+          <li><a href="#">KO</a></li>
+          <li><a href="#">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="main-banner">
+      
+      <ul>
+        <li>
+          <a href="">
+            <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/club/14/banner/Frame%2021578.png" alt="정관장 레드스파크스 이미지">
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://www.kgcsports.com/images/basketball/2324/section01.jpg" alt="정관장 레드스파크스 선수 단체 사진">
+          </a>
+        </li>  
+      </ul>
+
+      <div class="css-main-banner-pagination js-main-banner-pagination">
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="main-banner-btns" data-main-banner-btns>
+        <button type="button" data-main-banner="prev">
+          <svg width="56" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff"><g id="ic/32px/left" clip-path="url(#clip0_2773_91864)"><path id="Vector" d="M20 26.5L10 16.5L20 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91864"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+        </button>
+        <button type="button" data-main-banner="next">
+          <svg width="56" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#fff"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+        </button>
+      </div>
+
+    </section>
+    <script>
+      const btns = document.querySelectorAll("[data-main-banner-btns]");
+      const  i = document.querySelector(".main-banner ul");
+
+console.log(btns)
+
+      for (btn of btns){
+        b
+
+      }
+
+    </script>
+
+  </main>
+</body>
+</html>
