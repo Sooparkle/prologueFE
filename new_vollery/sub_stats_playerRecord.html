@@ -247,12 +247,16 @@ main{
   vertical-align: middle;
 }
 
+.player-record div[data-pagination] span:nth-of-type(1){
+  color:#8c8c8c
+}
 
 
 /* player record area */
 
 .player-record h2{
 font-size: 2.6rem;
+font-weight: bold;
 margin-bottom: 24px;
 }
 
@@ -285,7 +289,49 @@ margin-bottom: 24px;
 line-height: 56px;
 }
 
+.player-record p{
+  text-align: end;
+  padding:6px 0;
+  margin-bottom: 30px;
+}
 
+form{
+  padding: 30px 20px;
+  background: #eee;
+}
+
+.css-search-wrap select{
+  height: 38px;
+  border-radius: 4px;
+}
+
+.session-top{
+  margin-bottom: 20px;
+}
+
+.css-search-wrap .tilde{
+  margin: 0 20px;
+}
+.css-search-wrap .session{
+  width: 300px;
+  margin-right: 10px;
+}
+.css-search-wrap .round{
+  width:120px;
+}
+
+.css-search-wrap .type{
+  width:120px;
+}
+
+.css-search-wrap button{
+  color: #fff;
+  background: #2438EF;
+  margin-left: 10px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 4px;
+}
 
 
 
@@ -387,7 +433,7 @@ line-height: 56px;
         <h2> STATS</h2>
       </section>
 
-      <section class="tag">
+      <section class="tag" data->
         <ul>
           <li class="actived"><a href="#">선수 기록</a></li>
           <li><a href="#">팀 기록</a></li>
@@ -407,17 +453,76 @@ line-height: 56px;
         <h2>선수 기록</h2>
         <div data-pagination>
           <a class="home"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+          <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
           <span>STATS</span>
+          <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
           <span>선수 기록</span>
         </div>
 
         <div class="css-player-tab js-player-tab">
           <ul>
-            <li class="actived"><a href="#">남자부</a></li>
-            <li><a href="#">여자부</a></li>
+            <li><a href="#">남자부</a></li>
+            <li class="actived"><a href="#">여자부</a></li>
           </ul>
         </div>
+        <p>※ 다득점 기준 정렬/시즌 선수순위는 GAME > V-리그 > 선수순위 참조</p>
+
+        <div class="css-search-wrap">
+          <form action="">
+            <fieldset class="screen_out">시즌별 선기록 표 검대</fieldset>
+            <div class="session-top">
+              <span class="item session-start">
+                <select name="session_start" id="session_start" class="session session_start">
+                  <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
+                  <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
+                  <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
+                </select>
+              </span>
+              <span class="item round-start">
+                <select name="round" id="round" class="round">
+                  <option value="1round">1round</option>
+                  <option value="2round">2round</option>
+                  <option value="3round">3round</option>
+                  <option value="4round">4round</option>
+                  <option value="5round">5round</option>
+                  <option value="6round">6round`</option>
+                </select>
+                <span class="tilde">~</span>
+                <span class="item session-end">
+                  <select name="session_end" id="session_end" class="session session_end">
+                    <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
+                    <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
+                    <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
+                  </select>
+                </span>
+                <span class="item round-end">
+                  <select name="round" id="round" class="round">
+                    <option value="1round">1round</option>
+                    <option value="2round">2round</option>
+                    <option value="3round">3round</option>
+                    <option value="4round">4round</option>
+                    <option value="5round">5round</option>
+                    <option value="6round">6round`</option>
+                  </select>
+              </span>
+            </div>
+            <div class="session-bottom">
+              <span class="item action-type">
+                <select name="type" id="type" class="type">
+                  <option value="score">득점</option>
+                  <option value="attack">공격</option>
+                  <option value="open">오픈공격</option>
+                  <option value="timegap">시간차</option>
+                </select>
+                <button type="button">경기보기</button>
+              </span>
+            </div>
+            
+          </form>
+        </div>
       </section>
+
+
 
     </article>
   </main>
