@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정관장 선수기록</title>
-  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="css/reset.css">
 </head>
 <style>
   @font-face {
@@ -564,8 +564,8 @@ footer .footer-wrap{
 
         <div class="css-player-tab js-player-tab">
           <ul>
-            <li><a href="#" data-tab="men">남자부</a></li>
-            <li class="actived" data-tab="women"><a href="#">여자부</a></li>
+            <li class=""><a href="#" data-tab="men">남자부</a></li>
+            <li class="actived"><a href="#" data-tab="women">여자부</a></li>
           </ul>
         </div>
         <p>※ 다득점 기준 정렬/시즌 선수순위는 GAME > V-리그 > 선수순위 참조</p>
@@ -625,7 +625,7 @@ footer .footer-wrap{
 
         <!-- table area -->
 
-        <table class="women " data-table="true">
+        <table class="women" data-table="true">
           <legend class="screen_out">도드람 리그 경기 여자 기록표</legend>
           <thead>
             <tr>
@@ -804,24 +804,38 @@ footer .footer-wrap{
       </section>
 
       <script>
-        const tabBtn = document.querySelectorAll(".js-player-tab ul li");
-        const tabTable = document.querySelectorAll("[data-table]");
-        const tabTable1 = document.querySelector('[data-tab="men"]');
+        const tabBtns = document.querySelectorAll(".js-player-tab ul li");
+        const tabTables = document.querySelectorAll("[data-table]");
 
-      
-
-        tabBtn.forEach( btn =>{
+        console.log(tabTables);
+        tabBtns.forEach( btn =>{
           btn.addEventListener("click", (e)=>{
-          const menWomen = e.target.getAttribute("data-tab");
-          console.log(menWomen);
+            e.preventDefault();
+            const menWomen = e.target.getAttribute("data-tab");
+            
+            tabBtns.forEach( btn => btn.classList.remove("actived"));
+            btn.classList.add("actived");
 
-          tabBtn.forEach( btn => btn.classList.remove("actived"));
-          btn.classList.add("actived");
-          for ( tab of tabTable){
-            tab.setAttribute("data-table", false);
-          }
-        })
-        })
+            // table area
+            
+
+
+            tabTables.forEach(tab => {
+            
+              tab.setAttribute("data-table", false);
+
+              if( menWomen === 'women'){
+                document.querySelector(`.${menWomen}`).setAttribute("data-table", true);
+                return
+              } else if( menWomen === 'men'){
+                document.querySelector(`.${menWomen}`).setAttribute("data-table", true);
+                return
+              }
+            })
+        
+          });
+        });
+
 
         //         if( menWomen === 'women' ){ //women이면 table true
         //           document.querySelector(".women").setAttribute("data-table", true);
