@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정관장 선수기록</title>
-  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="../css/reset.css">
 </head>
 <style>
   @font-face {
@@ -231,8 +231,8 @@ main{
 
  /* main pagination area */
  article{
-  min-width: 1025px;
-  width:71.25%;
+  max-width: 1025px;
+  /* width:71.25%; */
   margin: 50px auto 0;
   position: relative;
 }
@@ -278,15 +278,18 @@ margin-bottom: 24px;
   background: #eee;
 }
 
-.css-player-tab .actived{
+
+.css-player-tab li[data-tab="true"] {
   width:50%;
   text-align: center;
   background: #2438ef;
   color : #fff;
 }
 
+
 .css-player-tab li a{
 line-height: 56px;
+display: block;
 }
 
 .player-record > p{
@@ -350,7 +353,7 @@ form{
 table[data-table="true"]{
   width: 100%;
   border-collapse: collapse;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 
@@ -360,13 +363,37 @@ table[data-table="false"]{
 }
 
 table thead th{
-  width:13.2%;
+  height:32px;
   border-left : 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
   border-top: 1px solid #eaeaea;
   background: #f9f9f9;
-  padding:16px;
+  padding:8px 16px
 }
+
+/* table thead th:nth-of-type(2){
+  width:18%
+}
+table thead th:nth-of-type(3)
+{
+  width:16%;
+}
+
+table thead th:nth-of-type(4),
+table thead th:nth-of-type(5),
+table thead th:nth-of-type(7)
+{
+  width:11.2%;
+}
+
+table thead th:nth-of-type(6),
+table thead th:nth-of-type(8),
+table thead th:nth-of-type(9)
+{
+  width:8.2%;
+
+} */
+
 
 table thead th:nth-of-type(1){
   width:auto;
@@ -378,15 +405,26 @@ table tbody td{
   background: #fff;
   border-left : 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
+
 }
 
 table tbody td:nth-of-type(1){
   border-left : none;
 }
 
-.player-record p:nth-of-type(2){
+.player-record p:nth-of-type(2),
+.player-record p:nth-of-type(3),
+.player-record p:nth-of-type(4)
+{
   text-align: left;
+
+}
+
+.player-record .table-info{
   margin-top: 16px;
+}
+.player-record .table-info li{
+  padding: 2px 0;
 }
 
 
@@ -395,6 +433,7 @@ table tbody td:nth-of-type(1){
   /* footer area */
 footer{
   background: #393a45;
+
 }
 
 .footer-wrap{
@@ -413,7 +452,8 @@ footer .footer-wrap{
 }
 
 .footer-wrap .policies-sns ul{
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   gap:32px;
   font-size:1.1rem;
   color :#fff;
@@ -442,6 +482,19 @@ footer .footer-wrap{
 
 .footer-wrap .info dd{
   padding:2px 0
+}
+
+
+
+@media (min-width: 500px) and (max-width: 1024px){
+  article{
+    margin: auto 16px;
+    max-width:1024px;
+  }
+
+.footer-bottom ul{
+    gap: 1.5rem !important;
+  }
 }
 
 
@@ -564,8 +617,8 @@ footer .footer-wrap{
 
         <div class="css-player-tab js-player-tab">
           <ul>
-            <li class=""><a href="#" data-tab="men">남자부</a></li>
-            <li class="actived"><a href="#" data-tab="women">여자부</a></li>
+            <li class="" data-tab="false"><a href="#" >남자부</a></li>
+            <li class="" data-tab="true"><a href="#" >여자부</a></li>
           </ul>
         </div>
         <p>※ 다득점 기준 정렬/시즌 선수순위는 GAME > V-리그 > 선수순위 참조</p>
@@ -624,231 +677,1110 @@ footer .footer-wrap{
         </div>
 
         <!-- table area -->
+        <table class="men" data-table="true">
+          <legend class="screen_out">도드람 리그 경기 남자 기록표</legend>
+          <colgroup>
+            <col width="auto">
+            <col width="18%">
+            <col width="16%">
+            <col width="11.2%">
+            <col width="11.2%">
+            <col width="8.2%">
+            <col width="11.2%">
+            <col width="8.2%">
+            <col width="8.2%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>순서</th>
+              <th>선수</th>
+              <th>전체팀</th>
+              <th>경기수</th>
+              <th>세트수</th>
+              <th>공격</th>
+              <th>블록킹</th>
+              <th>서브</th>
+              <th>득점</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>1</td>
+              <td>요스바니 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>삼성화재</td>
+              <td>6</td>
+              <td>21</td>
+              <td>144</td>
+              <td>10</td>
+              <td>7</td>
+              <td>161</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>비예나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>KB손해보험</td>
+              <td>6</td>
+              <td>24</td>
+              <td>137</td>
+              <td>15</td>
+              <td>7</td>
+              <td>159</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>아흐메드<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>현대캐피탈</td>
+              <td>6</td>
+              <td>22</td>
+              <td>142</td>
+              <td>6</td>
+              <td>9</td>
+              <td>157</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>마테이<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>우리카드</td>
+              <td>6</td>
+              <td>21</td>
+              <td>134</td>
+              <td>6</td>
+              <td>9</td>
+              <td>1149</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>레오<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>OK금융그룹</td>
+              <td>6</td>
+              <td>23</td>
+              <td>119</td>
+              <td>12</td>
+              <td>9</td>
+              <td>140</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>타이스<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>한국전력</td>
+              <td>6</td>
+              <td>23</td>
+              <td>112</td>
+              <td>7</td>
+              <td>4</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>전한용<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>대한항공</td>
+              <td>6</td>
+              <td>24</td>
+              <td>88</td>
+              <td>12</td>
+              <td>5</td>
+              <td>105</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>황경민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>KB손해보험</td>
+              <td>6</td>
+              <td>24</td>
+              <td>81</td>
+              <td>6</td>
+              <td>3</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>링컨<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>대한항공</td>
+              <td>6</td>
+              <td>20</td>
+              <td>71</td>
+              <td>6</td>
+              <td>3</td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>김정호<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>삼성화재</td>
+              <td>6</td>
+              <td>21</td>
+              <td>57</td>
+              <td>7</td>
+              <td>6</td>
+              <td>70</td>
+            </tr>
+
+            <tr>
+              <td>11</td>
+              <td>요스바니 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>삼성화재</td>
+              <td>6</td>
+              <td>21</td>
+              <td>144</td>
+              <td>10</td>
+              <td>7</td>
+              <td>161</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>비예나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>KB손해보험</td>
+              <td>6</td>
+              <td>24</td>
+              <td>137</td>
+              <td>15</td>
+              <td>7</td>
+              <td>159</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>아흐메드<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>현대캐피탈</td>
+              <td>6</td>
+              <td>22</td>
+              <td>142</td>
+              <td>6</td>
+              <td>9</td>
+              <td>157</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>마테이<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>우리카드</td>
+              <td>6</td>
+              <td>21</td>
+              <td>134</td>
+              <td>6</td>
+              <td>9</td>
+              <td>1149</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>레오<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>OK금융그룹</td>
+              <td>6</td>
+              <td>23</td>
+              <td>119</td>
+              <td>12</td>
+              <td>9</td>
+              <td>140</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>타이스<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>한국전력</td>
+              <td>6</td>
+              <td>23</td>
+              <td>112</td>
+              <td>7</td>
+              <td>4</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>전한용<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>대한항공</td>
+              <td>6</td>
+              <td>24</td>
+              <td>88</td>
+              <td>12</td>
+              <td>5</td>
+              <td>105</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>황경민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>KB손해보험</td>
+              <td>6</td>
+              <td>24</td>
+              <td>81</td>
+              <td>6</td>
+              <td>3</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>링컨<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>대한항공</td>
+              <td>6</td>
+              <td>20</td>
+              <td>71</td>
+              <td>6</td>
+              <td>3</td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>김정호<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>삼성화재</td>
+              <td>6</td>
+              <td>21</td>
+              <td>57</td>
+              <td>7</td>
+              <td>6</td>
+              <td>70</td>
+            </tr>
+
+            <tr>
+              <td>21</td>
+              <td>요스바니 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>삼성화재</td>
+              <td>6</td>
+              <td>21</td>
+              <td>144</td>
+              <td>10</td>
+              <td>7</td>
+              <td>161</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>비예나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>KB손해보험</td>
+              <td>6</td>
+              <td>24</td>
+              <td>137</td>
+              <td>15</td>
+              <td>7</td>
+              <td>159</td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td>아흐메드<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>현대캐피탈</td>
+              <td>6</td>
+              <td>22</td>
+              <td>142</td>
+              <td>6</td>
+              <td>9</td>
+              <td>157</td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>마테이<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>우리카드</td>
+              <td>6</td>
+              <td>21</td>
+              <td>134</td>
+              <td>6</td>
+              <td>9</td>
+              <td>1149</td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td>레오<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>OK금융그룹</td>
+              <td>6</td>
+              <td>23</td>
+              <td>119</td>
+              <td>12</td>
+              <td>9</td>
+              <td>140</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td>타이스<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>한국전력</td>
+              <td>6</td>
+              <td>23</td>
+              <td>112</td>
+              <td>7</td>
+              <td>4</td>
+              <td>123</td>
+            </tr>
+            <tr>
+              <td>27</td>
+              <td>전한용<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>대한항공</td>
+              <td>6</td>
+              <td>24</td>
+              <td>88</td>
+              <td>12</td>
+              <td>5</td>
+              <td>105</td>
+            </tr>
+            <tr>
+              <td>28</td>
+              <td>황경민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>KB손해보험</td>
+              <td>6</td>
+              <td>24</td>
+              <td>81</td>
+              <td>6</td>
+              <td>3</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>29</td>
+              <td>링컨<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>대한항공</td>
+              <td>6</td>
+              <td>20</td>
+              <td>71</td>
+              <td>6</td>
+              <td>3</td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>김정호<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>삼성화재</td>
+              <td>6</td>
+              <td>21</td>
+              <td>57</td>
+              <td>7</td>
+              <td>6</td>
+              <td>70</td>
+            </tr>
+          </tbody>
+        </table>
 
         <table class="women" data-table="true">
           <legend class="screen_out">도드람 리그 경기 여자 기록표</legend>
           <thead>
             <tr>
-              <th>순위</th>
-              <th>팀</th>
+              <th>순서</th>
+              <th>선수</th>
+              <th>전체팀</th>
               <th>경기수</th>
               <th>세트수</th>
               <th>공격</th>
               <th>블록킹</th>
               <th>서브</th>
-              <th>득정</th>
+              <th>득점</th>
             </tr>
           </thead>
           <tbody>
+            
             <tr>
               <td>1</td>
+              <td>실바 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>GS칼텍스</td>
+              <td>6</td>
+              <td>23</td>
+              <td>155</td>
+              <td>9</td>
+              <td>7</td>
+              <td>171</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>부키리치<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>한국도로공사</td>
+              <td>6</td>
+              <td>25</td>
+              <td>150</td>
+              <td>9</td>
+              <td>7</td>
+              <td>166</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>아베크롬비<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
               <td>IBK기업은행</td>
               <td>6</td>
               <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>흥국생명</td>
+              <td>152</td>
+              <td>5</td>
               <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>한국도로공사</td>
-              <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
+              <td>163</td>
             </tr>
             <tr>
               <td>4</td>
-              <td>GS칼텍스</td>
-              <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>페퍼저축은행</td>
-              <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>현대건설</td>
-              <td>6</td>
-              <td>23</td>
-              <td>293</td>
-              <td>49</td>
-              <td>14</td>
-              <td>487</td>
-            </tr>
-            <tr>
-              <td>7</td>
+              <td>메가<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
               <td>정관장</td>
               <td>6</td>
               <td>20</td>
-              <td>297</td>
-              <td>59</td>
-              <td>29</td>
-              <td>465</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="men" data-table="false">
-          <legend class="screen_out">도드람 리그 경기 남자 기록표</legend>
-          <thead>
-            <tr>
-              <th>순위</th>
-              <th>팀</th>
-              <th>경기수</th>
-              <th>세트수</th>
-              <th>공격</th>
-              <th>블록킹</th>
-              <th>서브</th>
-              <th>득정</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>대한항공</td>
-              <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>KB손해보험</td>
-              <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>우리카드</td>
-              <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
-            </tr>
-            <tr>
+              <td>126</td>
+              <td>8</td>
               <td>4</td>
-              <td> OK금융그룹</td>
-              <td>6</td>
-              <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
+              <td>138</td>
             </tr>
             <tr>
               <td>5</td>
-              <td>현대캐피탈</td>
+              <td>야스민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>페퍼저축은행</td>
               <td>6</td>
               <td>24</td>
-              <td>320</td>
-              <td>50</td>
-              <td>18</td>
-              <td>529</td>
+              <td>116</td>
+              <td>19</td>
+              <td>0</td>
+              <td>135</td>
             </tr>
             <tr>
               <td>6</td>
-              <td>삼성화재</td>
+              <td>옐레나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>흥국생명</td>
               <td>6</td>
               <td>23</td>
-              <td>293</td>
-              <td>49</td>
-              <td>14</td>
-              <td>487</td>
+              <td>116</td>
+              <td>6</td>
+              <td>7</td>
+              <td>129</td>
             </tr>
             <tr>
               <td>7</td>
-              <td>한국전력</td>
+              <td>김연경<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>흥국생명</td>
+              <td>6</td>
+              <td>23</td>
+              <td>111</td>
+              <td>5</td>
+              <td>3</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>모아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>현대건설</td>
+              <td>6</td>
+              <td>23</td>
+              <td>106</td>
+              <td>6</td>
+              <td>1</td>
+              <td>113</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>지아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>정관장</td>
               <td>6</td>
               <td>20</td>
-              <td>297</td>
-              <td>59</td>
+              <td>90</td>
+              <td>5</td>
+              <td>6</td>
+              <td>101</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>강소휘<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>GS칼텍스</td>
+              <td>6</td>
+              <td>23</td>
+              <td>85</td>
+              <td>7</td>
+              <td>3</td>
+              <td>95</td>
+
+            <tr>
+              <td>11</td>
+              <td>실바 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>GS칼텍스</td>
+              <td>6</td>
+              <td>23</td>
+              <td>155</td>
+              <td>9</td>
+              <td>7</td>
+              <td>171</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>부키리치<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>한국도로공사</td>
+              <td>6</td>
+              <td>25</td>
+              <td>150</td>
+              <td>9</td>
+              <td>7</td>
+              <td>166</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>아베크롬비<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>IBK기업은행</td>
+              <td>6</td>
+              <td>24</td>
+              <td>152</td>
+              <td>5</td>
+              <td>6</td>
+              <td>163</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>메가<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>정관장</td>
+              <td>6</td>
+              <td>20</td>
+              <td>126</td>
+              <td>8</td>
+              <td>4</td>
+              <td>138</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>야스민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>페퍼저축은행</td>
+              <td>6</td>
+              <td>24</td>
+              <td>116</td>
+              <td>19</td>
+              <td>0</td>
+              <td>135</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>옐레나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>흥국생명</td>
+              <td>6</td>
+              <td>23</td>
+              <td>116</td>
+              <td>6</td>
+              <td>7</td>
+              <td>129</td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>김연경<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>흥국생명</td>
+              <td>6</td>
+              <td>23</td>
+              <td>111</td>
+              <td>5</td>
+              <td>3</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>모아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>현대건설</td>
+              <td>6</td>
+              <td>23</td>
+              <td>106</td>
+              <td>6</td>
+              <td>1</td>
+              <td>113</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>지아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>정관장</td>
+              <td>6</td>
+              <td>20</td>
+              <td>90</td>
+              <td>5</td>
+              <td>6</td>
+              <td>101</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>강소휘<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>GS칼텍스</td>
+              <td>6</td>
+              <td>23</td>
+              <td>85</td>
+              <td>7</td>
+              <td>3</td>
+              <td>95</td>
+            </tr>
+
+            <tr>
+              <td>21</td>
+              <td>실바 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>GS칼텍스</td>
+              <td>6</td>
+              <td>23</td>
+              <td>155</td>
+              <td>9</td>
+              <td>7</td>
+              <td>171</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>부키리치<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>한국도로공사</td>
+              <td>6</td>
+              <td>25</td>
+              <td>150</td>
+              <td>9</td>
+              <td>7</td>
+              <td>166</td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td>아베크롬비<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>IBK기업은행</td>
+              <td>6</td>
+              <td>24</td>
+              <td>152</td>
+              <td>5</td>
+              <td>6</td>
+              <td>163</td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>메가<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>정관장</td>
+              <td>6</td>
+              <td>20</td>
+              <td>126</td>
+              <td>8</td>
+              <td>4</td>
+              <td>138</td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td>야스민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>페퍼저축은행</td>
+              <td>6</td>
+              <td>24</td>
+              <td>116</td>
+              <td>19</td>
+              <td>0</td>
+              <td>135</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td>옐레나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>흥국생명</td>
+              <td>6</td>
+              <td>23</td>
+              <td>116</td>
+              <td>6</td>
+              <td>7</td>
+              <td>129</td>
+            </tr>
+            <tr>
+              <td>27</td>
+              <td>김연경<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>흥국생명</td>
+              <td>6</td>
+              <td>23</td>
+              <td>111</td>
+              <td>5</td>
+              <td>3</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>28</td>
+              <td>모아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>현대건설</td>
+              <td>6</td>
+              <td>23</td>
+              <td>106</td>
+              <td>6</td>
+              <td>1</td>
+              <td>113</td>
+            </tr>
+            <tr>
               <td>29</td>
-              <td>465</td>
+              <td>지아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>정관장</td>
+              <td>6</td>
+              <td>20</td>
+              <td>90</td>
+              <td>5</td>
+              <td>6</td>
+              <td>101</td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>강소휘<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                border: 1px solid #eee;
+                border-radius: 100%;
+                margin-left: 10px;
+                transform: rotate(90deg);
+                vertical-align: middle;
+            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
+              <td>GS칼텍스</td>
+              <td>6</td>
+              <td>23</td>
+              <td>85</td>
+              <td>7</td>
+              <td>3</td>
+              <td>95</td>
             </tr>
           </tbody>
         </table>
-        <p>*기록은 소수 3째자리까지 반올림</p>
+
+        <ul class="table-info">
+          <li>* 성공률=성공*100/시도, 점유율=개인시도*100/팀시도, 세트당(세트당평균)=성공/세트수</li>
+          <li>* 유효블락(유효블로킹) : 자기팀의 수비로 연결된 블로킹</li>
+          <li>* 기록은 소수 3째자리 반올림</li>
+        </ul>
+
+
       </section>
 
       <script>
-        const tabBtns = document.querySelectorAll(".js-player-tab ul li");
-        const tabTables = document.querySelectorAll("[data-table]");
+        const contain = document.querySelector(".js-player-tab");
+        const tabs = contain.querySelectorAll("[data-tab]");
+        const tables = document.querySelectorAll("[data-table]");
 
-        console.log(tabTables);
-        tabBtns.forEach( btn =>{
-          btn.addEventListener("click", (e)=>{
+        console.log(tables);
+
+        tabs.forEach((tab, index) =>{
+          tab.addEventListener( "click", (e)=>{
             e.preventDefault();
-            const menWomen = e.target.getAttribute("data-tab");
             
-            tabBtns.forEach( btn => btn.classList.remove("actived"));
-            btn.classList.add("actived");
+            tabs.forEach(tab =>{ tab.setAttribute("data-tab", false)});
+            tab.setAttribute("data-tab", true);
 
-            // table area
+            tables.forEach(table => {table.setAttribute("data-table", false);});
+            tables[index].setAttribute("data-table", true);
+
             
 
-
-            tabTables.forEach(tab => {
-            
-              tab.setAttribute("data-table", false);
-
-              if( menWomen === 'women'){
-                document.querySelector(`.${menWomen}`).setAttribute("data-table", true);
-                return
-              } else if( menWomen === 'men'){
-                document.querySelector(`.${menWomen}`).setAttribute("data-table", true);
-                return
-              }
-            })
-        
           });
-        });
-
-
-        //         if( menWomen === 'women' ){ //women이면 table true
-        //           document.querySelector(".women").setAttribute("data-table", true);
-        //           return
-                  
-        //         } else if ( menWomen === 'men' ) { //men이면 table true
-        //           document.querySelector(".men").setAttribute("data-table", true)
-        //           return
-        //         }
-        //     }
-
-        //     });
-        // })
+        })
 
 
 
@@ -872,7 +1804,6 @@ footer .footer-wrap{
             <li><a href="#">ANTIDOPING</a></li>
             <li><a href="#">선수고충처리센터</a></li>
             <li><a href="#">클린센터</a></li>
-            <li><a href="#">개인정보처리방침</a></li>
             <li><a href="#">개인정보처리방침</a></li>
             <li><a href="#">이용약관</a></li>
             <li><a href="#">이메일무단수집거부</a></li>
