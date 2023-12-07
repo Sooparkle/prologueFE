@@ -199,23 +199,42 @@ main{
 
 
 /* tag area */
+.tag{
+  border-bottom: 1px solid #eee;
+}
 
 .tag ul{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
-  height:57px; 
-  border-bottom: 1px solid #eee;
-  box-sizing: border-box;
+  height:fit-content;
+  width: fit-content;
+  margin:0 auto;
+  position: relative;
 }
 
 .tag ul li{
   text-align: center;
   width:130px;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color : #999999;
+  line-height: 57px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.tag ul .line{
+position: absolute;
+bottom:0;
+left:0;
+height: 2px;
+width:130px;
+background: #222;
+
+cursor: none;
+transition: left 0.3s, right 0.3s ;
 }
 
 .tag ul .actived{
@@ -232,7 +251,6 @@ main{
  /* main pagination area */
  article{
   max-width: 1025px;
-  /* width:71.25%; */
   margin: 50px auto 0;
   position: relative;
 }
