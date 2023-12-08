@@ -19,12 +19,19 @@ html, body{
   font-size: 14px;
 }
 
+.tablet-unblock, .mobile-unblock{
+  display: none;
+}
+
 header{
+  position: relative;
   width:100%;
   z-index: 10;
   background: #fff;
 
 }
+
+
 
 header[data-gnb-bg="true"]{
   position: absolute;
@@ -43,7 +50,7 @@ header[data-gnb-bg="true"]{
   align-items: center;
 }
 
-.gnb  .logo-wrap{
+.gnb .logo-wrap{
   display: flex;
   align-items: center;
   margin-right: 80px;
@@ -67,7 +74,7 @@ header[data-gnb-bg="true"]{
 }
 
 .gnb  .logo-wrap h1{
-  font-size:1.4rem;
+  font-size:20px;
   color:#000;
   vertical-align: middle;
 }
@@ -137,8 +144,6 @@ header[data-gnb-bg="true"]{
 } */
 
 
-
-
 .gnb .nav dl dd{
   height:20px;
   
@@ -149,6 +154,10 @@ header[data-gnb-bg="true"]{
 }
 
 
+/* gnb tablet area */
+.tablet-nav{
+  display: none;
+}
 
 /* utilies area */
 .gnb  .css-utilities ul{
@@ -188,7 +197,7 @@ main{
 
 .top-banner h2{
   color:#fff;
-  font-size: 3.8rem;
+  font-size: 50px;
   font-weight: bold;
   position: absolute;;
   top: 50%;
@@ -217,7 +226,7 @@ main{
 .tag ul li{
   text-align: center;
   width:130px;
-  font-size: 1.15rem;
+  font-size: 16px;
   font-weight: 600;
   color : #999999;
   line-height: 57px;
@@ -226,31 +235,29 @@ main{
 }
 
 .tag ul .line{
-position: absolute;
-bottom:0;
-left:0;
-height: 2px;
-width:130px;
-background: #222;
+  position: absolute;
+  bottom:0;
+  left:0;
+  height: 2px;
+  width:130px;
+  background: #222;
 
-cursor: none;
-transition: left 0.3s, right 0.3s ;
+  cursor: none;
+  transition: left 0.3s, right 0.3s ;
 }
 
 .tag ul .actived{
   text-align: center;
   width:130px;
-  font-size: 1.2rem;
   font-weight: 600;
-  color : #000;
-  border-bottom: 2px solid;
-  line-height: 57px;
+  color:#000
 
 }
 
  /* main pagination area */
- article{
-  max-width: 1025px;
+article{
+  min-width: 1025px;
+  width:71.25%;
   margin: 50px auto 0;
   position: relative;
 }
@@ -273,8 +280,9 @@ transition: left 0.3s, right 0.3s ;
 /* player record area */
 
 .player-record h2{
-font-size: 2.6rem;
+font-size: 32px;
 font-weight: bold;
+margin-top:40px;
 margin-bottom: 24px;
 }
 
@@ -321,6 +329,9 @@ display: block;
   margin-bottom: 24px;
 }
 
+
+/* search area */
+
 form{
   padding: 30px 20px;
   background: #eee;
@@ -331,15 +342,24 @@ form{
   border-radius: 8px;
 }
 
+.session-start,
+.session-end{
+  display: inline-block;
+}
+
 .session-top{
   margin-bottom: 20px;
+}
+
+.session-top label{
+  font-weight: 600;
 }
 
 .css-search-wrap .tilde{
   margin: 0 20px;
 }
 .css-search-wrap .session{
-  width: 300px;
+  width: 250px;
   margin-right: 10px;
 }
 .css-search-wrap .round{
@@ -358,7 +378,7 @@ form{
   padding: 0 40px;
   border: none;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 14px;
   line-height: 38px;
   box-sizing:border-box;
   cursor: pointer;
@@ -447,7 +467,6 @@ table tbody td:nth-of-type(1){
 
 
 
-
   /* footer area */
 footer{
   background: #393a45;
@@ -475,6 +494,7 @@ footer .footer-wrap{
   gap:32px;
   font-size:1.1rem;
   color :#fff;
+  white-space: nowrap;
 }
 
 .footer-wrap .info dl{
@@ -503,17 +523,230 @@ footer .footer-wrap{
 }
 
 
+.footer-bottom ul{
+    gap: 1.5rem;
+}
 
-@media (min-width: 500px) and (max-width: 1024px){
-  article{
-    margin: auto 16px;
-    max-width:1024px;
+
+/* media area */
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .tablet-unblock{
+    display: inline-block;
+    font-size :16px;
+    font-weight: 600;
+    padding: 5px;
+    
   }
 
-.footer-bottom ul{
-    gap: 1.5rem !important;
+    .gnb{
+      position: fixed;
+      top:0;
+      width:100dvw;
+      padding: 11px 16px;
+
+      box-sizing: border-box;
+
+      transition: all 0.3s ease 0s;
+      background-color: white;
+      border-bottom: 1px solid rgb(238, 238, 238);
+    }
+
+    .gnb{
+      height: 57px;
+      margin:0
+      
+    }
+
+    .gnb .logo-wrap h1{
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .gnb .logo-wrap img{
+      width:34px;
+      height: 100%;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    .tablet-nav{
+      display: flex;
+      gap:16px;
+    }
+
+    .tablet-nav button{
+      border : none;
+      background: none;
+      transition: all 0.3s ease 0s;
+    }
+
+    nav{
+      display: none;
+
+    }
+
+    .css-utilities{
+      display: none;
+    }
+
+    /* tablet main area */
+    .top-banner{
+      background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+      
+    }
+
+    .top-banner h2{
+      position: unset;
+      padding:62px 0;
+      height:100%;
+      box-sizing: border-box;
+      text-align: center;
+      
+      transform: none;
+    }
+
+    main{
+      margin-top : 57px;
+    }
+
+      article{
+      min-width: auto;
+      width:auto;
+      margin : 0 16px;
+    }
+
+
+    .session-end{
+      margin-top:10px;
+    }
+
+    footer .footer-wrap{
+    min-width: auto;
+    width:auto;
+    margin: 144px 16px 0;
+    position: relative;
+    gap:40px;
+}
+
+.footer-wrap .policies-sns ul{
+  font-size:14px;
+  gap:1.5rem;
+  flex-wrap: wrap;
+}
+
+  footer .logo img{
+    width:100px;
+  }
+
+}
+
+
+
+@media  (max-width:768px){
+  .top-banner{
+    display: none;
+
+  }
+
+
+  .gnb{
+      position: fixed;
+      top:0;
+      width:100dvw;
+      padding: 11px 16px;
+
+      box-sizing: border-box;
+
+      transition: all 0.3s ease 0s;
+      background-color: white;
+      border-bottom: 1px solid rgb(238, 238, 238);
+    }
+
+    .gnb{
+      height: 57px;
+      margin:0
+      
+    }
+    .gnb .logo-wrap h1{
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .gnb .logo-wrap img{
+      width:34px;
+      height: 100%;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    .tablet-nav{
+      display: flex;
+      gap:16px;
+    }
+
+    .tablet-nav button{
+      border : none;
+      background: none;
+      transition: all 0.3s ease 0s;
+    }
+
+
+    nav{
+      display: none;
+
+    }
+    .css-utilities{
+      display: none;
+    }
+
+    /* tablet main area */
+    .top-banner{
+      background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+
+      
+    }
+
+    .top-banner h2{
+      position: unset;
+      padding:62px 0;
+      height:100%;
+      box-sizing: border-box;
+      text-align: center;
+      
+      transform: none;
+    }
+
+    main{
+      margin-top : 57px;
+    }
+      article{
+      min-width: auto;
+      width:auto;
+      margin : 0 16px;
+    }
+
+
+  footer .footer-wrap{
+    min-width: auto;
+    width:auto;
+    margin: 144px 16px 0;
+    position: relative;
+    gap:40px;
+}
+
+  .footer-wrap .policies-sns ul{
+  font-size:14px;
+  gap:1.5rem;
+  flex-wrap: wrap;
+  }
+
+  footer .logo img{
+    width:100px;
   }
 }
+
+
 
 
 
@@ -530,6 +763,18 @@ footer .footer-wrap{
           </div>
         </a>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222" class="css-10i3oi9"><g clip-path="url(#clip0_2327_5794)"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5794"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+      </div>
+
+      <div class="tablet-nav">
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-ticket-wh-md" clip-path="url(#clip0_2327_5801)"><path id="Vector" d="M9 5.25V18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M2.25 15.6741C2.25018 15.5013 2.30998 15.3339 2.4193 15.2002C2.52862 15.0665 2.68075 14.9745 2.85 14.94C3.52817 14.8023 4.13788 14.4344 4.57583 13.8986C5.01377 13.3627 5.25301 12.692 5.25301 12C5.25301 11.308 5.01377 10.6373 4.57583 10.1014C4.13788 9.56564 3.52817 9.19771 2.85 9.06C2.68075 9.02545 2.52862 8.93354 2.4193 8.7998C2.30998 8.66605 2.25018 8.49867 2.25 8.32594V5C2.25 4.80109 2.32902 4.61032 2.46967 4.46967C2.61032 4.32902 2.80109 4.25 3 4.25H21C21.1989 4.25 21.3897 4.32902 21.5303 4.46967C21.671 4.61032 21.75 4.80109 21.75 5V8.32594C21.7498 8.49867 21.69 8.66605 21.5807 8.7998C21.4714 8.93354 21.3192 9.02545 21.15 9.06C20.4718 9.19771 19.8621 9.56564 19.4242 10.1014C18.9862 10.6373 18.747 11.308 18.747 12C18.747 12.692 18.9862 13.3627 19.4242 13.8986C19.8621 14.4344 20.4718 14.8023 21.15 14.94C21.3192 14.9745 21.4714 15.0665 21.5807 15.2002C21.69 15.3339 21.7498 15.5013 21.75 15.6741V19C21.75 19.1989 21.671 19.3897 21.5303 19.5303C21.3897 19.671 21.1989 19.75 21 19.75H12H3C2.80109 19.75 2.61032 19.671 2.46967 19.5303C2.32902 19.3897 2.25 19.1989 2.25 19V15.6741Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5801"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+        </a>
+        <button type="button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-srach-wh-md" clip-path="url(#clip0_2327_5817)"><path id="Vector" d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M15.8035 15.8034L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5817"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+        </button>
+        <button>
+          <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-menu-wh-md" clip-path="url(#clip0_2413_54173)"><path id="Vector" d="M3.75 12.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M3.75 6.78516H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_3" d="M3.75 18.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2413_54173"><rect width="24" height="24" fill="currentColor" transform="translate(0 0.785156)"></rect></clipPath></defs></svg>
+        </button>
       </div>
 
       <nav class="nav">
@@ -610,17 +855,37 @@ footer .footer-wrap{
 
   <main>
 
-      <section class="top-banner">
-        <h2> STATS</h2>
-      </section>
+    <section class="top-banner">
+      <h2> STATS</h2>
+    </section>
 
-      <section class="tag">
-        <ul>
-          <li class="actived"><a href="#">선수 기록</a></li>
-          <li><a href="#">팀 기록</a></li>
-        </ul>
-        <div class="css-line js-line"></div>
-      </section>
+    <section class="tag">
+      <ul>
+        <li class="actived"><a href="#">선수 기록</a></li>
+        <li><a href="#">팀 기록</a></li>
+        <li class="line"></li>
+      </ul>
+      <div class="css-line js-line"></div>
+    </section>
+    <script>
+      const tagContainer =document.querySelector(".tag");
+      const tagLiList = tagContainer.querySelectorAll("li");
+      const lineTag = tagContainer.querySelector(".line");
+      
+      
+      tagLiList.forEach((li, index)=>{
+        li.addEventListener("click", ()=>{
+          event.preventDefault();
+          
+          tagLiList.forEach(li =>{li.classList.remove("actived")});
+          li.classList.add("actived");
+        
+          lineTag.style.width = li.offsetWidth + 'px';
+          lineTag.style.left = li.offsetLeft + 'px';
+
+        });
+      })
+    </script>
 
     <article>
       <section class="player-record">
@@ -644,32 +909,17 @@ footer .footer-wrap{
         <div class="css-search-wrap">
           <form action="">
             <fieldset class="screen_out">시즌별 선기록 표 검대</fieldset>
+
             <div class="session-top">
-              <span class="item session-start">
-                <select name="session_start" id="session_start" class="session session_start">
-                  <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
-                  <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
-                  <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
-                </select>
-              </span>
-              <span class="item round-start">
-                <select name="round" id="round" class="round">
-                  <option value="1round">1round</option>
-                  <option value="2round">2round</option>
-                  <option value="3round">3round</option>
-                  <option value="4round">4round</option>
-                  <option value="5round">5round</option>
-                  <option value="6round">6round`</option>
-                </select>
-                <span class="tilde">~</span>
-                <span class="item session-end">
-                  <select name="session_end" id="session_end" class="session session_end">
+              <div class="session-start">
+                <label for="session_start"></label>
+                  <p class="tablet-unblock">리그 시작 :</p>
+                  <select name="session_start" id="session_start" class="session session_start">
                     <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
                     <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
                     <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
                   </select>
-                </span>
-                <span class="item round-end">
+
                   <select name="round" id="round" class="round">
                     <option value="1round">1round</option>
                     <option value="2round">2round</option>
@@ -678,8 +928,32 @@ footer .footer-wrap{
                     <option value="5round">5round</option>
                     <option value="6round">6round`</option>
                   </select>
-              </span>
+              </div>
+
+              <span class="tilde">~</span>
+              <span class="mobile-unblock">~ 부터</span>
+
+              <div class="session-end">
+                <label for="session_end"></label>
+                <p class="tablet-unblock">리그 끝 :</p>
+                  <select name="session_end" id="session_end" class="session session_end">
+                    <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
+                    <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
+                    <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
+                  </select>
+
+                  <select name="round" id="round" class="round">
+                    <option value="1round">1round</option>
+                    <option value="2round">2round</option>
+                    <option value="3round">3round</option>
+                    <option value="4round">4round</option>
+                    <option value="5round">5round</option>
+                    <option value="6round">6round`</option>
+                  </select>
+              </div>
+              <span class="mobile-unblock">~ 까지</span>
             </div>
+
             <div class="session-bottom">
               <span class="item action-type">
                 <select name="type" id="type" class="type">
@@ -695,7 +969,7 @@ footer .footer-wrap{
         </div>
 
         <!-- table area -->
-        <table class="men" data-table="true">
+        <table class="men" data-table="false">
           <legend class="screen_out">도드람 리그 경기 남자 기록표</legend>
           <colgroup>
             <col width="auto">
@@ -1799,9 +2073,6 @@ footer .footer-wrap{
 
           });
         })
-
-
-
 
 
 
