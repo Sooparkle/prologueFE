@@ -262,24 +262,24 @@ article{
   position: relative;
 }
 
-.player-record div[data-pagination]{
+.content div[data-pagination]{
   position: absolute;
   right:0;
   top: 20px;
 }
 
-.player-record div[data-pagination] svg{
+.content div[data-pagination] svg{
   vertical-align: middle;
 }
 
-.player-record div[data-pagination] span:nth-of-type(1){
+.content div[data-pagination] span:nth-of-type(1){
   color:#8c8c8c
 }
 
 
 /* player record area */
 
-.player-record h2{
+.content h2{
 font-size: 32px;
 font-weight: bold;
 margin-top:40px;
@@ -318,7 +318,7 @@ line-height: 56px;
 display: block;
 }
 
-.player-record > p{
+.content > p{
   text-align: end;
   padding:6px 0;
   margin-bottom: 30px;
@@ -453,18 +453,18 @@ table tbody td:nth-of-type(1){
   border-left : none;
 }
 
-.player-record p:nth-of-type(2),
-.player-record p:nth-of-type(3),
-.player-record p:nth-of-type(4)
+.content p:nth-of-type(2),
+.content p:nth-of-type(3),
+.content p:nth-of-type(4)
 {
   text-align: left;
 
 }
 
-.player-record .table-info{
+.content .table-info{
   margin-top: 16px;
 }
-.player-record .table-info li{
+.content .table-info li{
   padding: 2px 0;
 }
 
@@ -624,10 +624,16 @@ footer .footer-wrap{
       margin-top:10px;
     }
 
+    .content > p{
+      font-size :13px;
+    }
+
+
+/* footer area */
     footer .footer-wrap{
     min-width: auto;
     width:auto;
-    margin: 144px 16px 0;
+    margin: 80px 16px 0;
     position: relative;
     gap:40px;
 }
@@ -637,6 +643,16 @@ footer .footer-wrap{
   gap:1.5rem;
   flex-wrap: wrap;
 }
+
+.footer-wrap .info dt,
+.footer-wrap .info dd{
+  font-size:13px;
+  }
+
+  .info p{
+    font-size:13px;
+  }
+
 
   footer .logo img{
     width:100px;
@@ -742,7 +758,6 @@ footer .footer-wrap{
     /* tablet main area */
     .top-banner{
       background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
-
       
     }
 
@@ -760,21 +775,25 @@ footer .footer-wrap{
       display: none;
     }
 
-    .player-record div[data-pagination]{
+    .content div[data-pagination]{
       display: none;
     }
 
-    .player-record h2{
+    .content h2{
       font-size: 24px;
       margin-top:0;
       margin-bottom: 24px;
       padding-top:30px;
       }
 
+      .content > p{
+      font-size :13px;
+    }
+
     main{
       margin-top : 57px;
     }
-      article{
+    article{
       min-width: auto;
       width:auto;
       margin : 0 16px;
@@ -1023,7 +1042,7 @@ footer .footer-wrap{
     </script>
 
     <article>
-      <section class="player-record">
+      <section class="content">
         <h2>선수 기록</h2>
         <div data-pagination>
           <a class="home"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
@@ -2221,7 +2240,6 @@ footer .footer-wrap{
         const tabs = contain.querySelectorAll("[data-tab]");
         const tables = document.querySelectorAll("[data-table]");
 
-        console.log(tables);
 
         tabs.forEach((tab, index) =>{
           tab.addEventListener( "click", (e)=>{
