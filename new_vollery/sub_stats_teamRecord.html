@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정관장 팀기록</title>
-  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../VolleryBall/css/reset.css">
 </head>
 <style>
   @font-face {
@@ -21,9 +21,14 @@ html, body{
 
 header{
   width:100%;
+  position: relative;
   z-index: 10;
   background: #fff;
 
+}
+
+.tablet-unblock-p, .mobile-unblock{
+  display: none;
 }
 
 header[data-gnb-bg="true"]{
@@ -249,9 +254,9 @@ transition: left 0.3s, right 0.3s ;
 }
 
  /* main pagination area */
- article{
-  max-width: 1025px;
-
+article{
+  min-width: 1025px;
+  width:71.25%;
   margin: 50px auto 0;
   position: relative;
 }
@@ -325,44 +330,56 @@ display: block;
   margin-bottom: 24px;
 }
 
+
+/* * search area */
+
 form{
   padding: 30px 20px;
   background: #eee;
 }
 
-.css-search-wrap select{
+form select{
   height: 38px;
   border-radius: 8px;
+}
+
+.session-start,
+.session-end{
+  display: inline-block;
 }
 
 .session-top{
   margin-bottom: 20px;
 }
 
-.css-search-wrap .tilde{
+.session-top label{
+  font-weight: 600;
+}
+
+form .tilde{
   margin: 0 20px;
 }
-.css-search-wrap .session{
-  width: 300px;
+form .session{
+  width: 250px;
   margin-right: 10px;
 }
-.css-search-wrap .round{
+form .round{
   width:120px;
 }
 
-.css-search-wrap .type{
+form .type{
   width:120px;
 }
 
 
-.css-search-wrap button{
+form button{
   color: #fff;
   background: #2438EF;
   margin-left: 10px;
   padding: 0 40px;
   border: none;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 14px;
   line-height: 38px;
   box-sizing:border-box;
   cursor: pointer;
@@ -409,7 +426,7 @@ table tbody td:nth-of-type(1){
   border-left : none;
 }
 
-.content p:nth-of-type(2){
+.content p:nth-of-type(1){
   text-align: left;
   margin-top: 16px;
 }
@@ -444,6 +461,10 @@ footer .footer-wrap{
   color :#fff;
 }
 
+.footer-wrap .policies-sns ul li{
+  white-space: nowrap;
+}
+
 .footer-wrap .info dl{
   margin: 20px 0;
 }
@@ -468,6 +489,350 @@ footer .footer-wrap{
   padding:2px 0
 }
 
+@media (min-width:768px) and (max-width:1024px){
+  .tablet-unblock-p{
+    display: inline-block;
+    font-size :16px;
+    font-weight: 600;
+    padding: 5px 0 ;
+    
+  }
+
+    .gnb{
+      position: fixed;
+      top:0;
+      width:100dvw;
+      padding: 11px 16px;
+
+      box-sizing: border-box;
+
+      transition: all 0.3s ease 0s;
+      background-color: white;
+      border-bottom: 1px solid rgb(238, 238, 238);
+    }
+
+    .gnb{
+      height: 57px;
+      margin:0
+      
+    }
+
+    .gnb .logo-wrap h1{
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .gnb .logo-wrap img{
+      width:34px;
+      height: 100%;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    .tablet-nav{
+      display: flex;
+      gap:16px;
+    }
+
+    .tablet-nav button{
+      border : none;
+      background: none;
+      transition: all 0.3s ease 0s;
+    }
+
+    nav{
+      display: none;
+
+    }
+
+    .css-utilities{
+      display: none;
+    }
+
+    /* tablet main area */
+    .top-banner{
+      background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+      
+    }
+
+    .top-banner h2{
+      position: unset;
+      padding:62px 0;
+      height:100%;
+      box-sizing: border-box;
+      text-align: center;
+      
+      transform: none;
+    }
+
+    main{
+      margin-top : 57px;
+    }
+
+article {
+  margin: auto 16px;
+  min-width: auto;
+  width:auto;
+}
+
+  .content h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top:2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .content > p{
+      font-size :13px;
+    }
+
+/* footer area */
+footer .footer-wrap{
+    min-width: auto;
+    width:auto;
+    margin: 80px 16px 0;
+    position: relative;
+    gap:40px;
+}
+
+.footer-wrap .policies-sns ul{
+  font-size:14px;
+  gap:1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-wrap .info dt,
+.footer-wrap .info dd{
+  font-size:13px;
+  }
+
+  .info p{
+    font-size:13px;
+  }
+
+  footer .logo img{
+    width:100px;
+  }
+
+}
+
+
+
+
+@media (max-width:768px){
+  .mobile-unblock{
+    display: block;
+  }
+
+  .mobile-unblock-p{
+    font-size :16px;
+    font-weight: 600;
+    padding: 5px 0;
+    display: block;
+    
+  }
+
+  .top-banner{
+    display: none;
+  }
+
+  .gnb{
+      position: fixed;
+      top:0;
+      width:100dvw;
+      padding: 11px 16px;
+
+      box-sizing: border-box;
+
+      transition: all 0.3s ease 0s;
+      background-color: white;
+      border-bottom: 1px solid rgb(238, 238, 238);
+    }
+    .gnb{
+      height: 57px;
+      margin:0
+      
+    }
+    .gnb .logo-wrap h1{
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .gnb .logo-wrap img{
+      width:34px;
+      height: 100%;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    .tablet-nav{
+      display: flex;
+      gap:16px;
+    }
+
+    .tablet-nav button{
+      border : none;
+      background: none;
+      transition: all 0.3s ease 0s;
+    }
+
+
+    nav{
+      display: none;
+
+    }
+    .css-utilities{
+      display: none;
+    }
+
+
+    /* table area */
+
+    .top-banner{
+      background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+      
+    }
+
+    .top-banner h2{
+      position: unset;
+      padding:62px 0;
+      height:100%;
+      box-sizing: border-box;
+      text-align: center;
+      
+      transform: none;
+    }
+
+
+    .tag{
+      display: none;
+    }
+
+    .content div[data-pagination]{
+      display: none;
+    }
+
+    .content h2{
+      font-size: 24px;
+      margin-top:0;
+      margin-bottom: 24px;
+      padding-top:30px;
+      }
+
+    main{
+      margin-top : 57px;
+    }
+    article{
+      min-width: auto;
+      width:auto;
+      margin : 0 16px;
+    }
+
+        /* table block CSS area */
+        table th{
+      display: none;
+    }
+
+    table tbody td{
+      display: grid;
+      gap:0.5rem;
+      grid-template-columns: 20% auto;
+      border-left: none;
+    }
+
+    table td:first-child{
+      /* padding-top:2rem; */
+      background: #eaeaea;
+    }
+
+    /* table td:last-child{
+      padding-bottom: 2rem;
+    } */
+
+    table td:nth-of-type(1):before{
+      content : "순위";
+    }
+
+    table td:nth-of-type(2):before{
+      content : "팀";
+    }
+    table td:nth-of-type(3):before{
+      content : "경기수";
+    }
+    table td:nth-of-type(4):before{
+      content : "세트수";
+    }
+    table td:nth-of-type(5):before{
+      content : "공격";
+    }
+    table td:nth-of-type(6):before{
+      content : "블로킹";
+    }
+    table td:nth-of-type(7):before{
+      content : "서브";
+    }
+    table td:nth-of-type(8):before{
+      content : "득점";
+    }
+
+    table td::before{
+      font-size: 1.2rem;
+      font-weight: 600;
+
+    }
+
+    table svg{
+      position: absolute;
+      left : 18%;      
+    }
+
+    .table-info li{
+      font-size:1rem;
+      line-height: 1.5rem;
+    }
+
+    .content > p{
+      font-size :13px;
+    }
+
+
+    /* footer area */
+
+    footer .footer-wrap{
+    flex-flow: wrap;
+    min-width: auto;
+    width:auto;
+    margin: 40px 16px 0;
+    position: relative;
+    gap:1rem;
+    padding: 1.5rem;
+}
+
+  .footer-wrap .policies-sns ul{
+  font-size:13px;
+  gap:0.75rem;
+  flex-wrap: wrap;
+  }
+
+
+
+  .footer-wrap .info dt,
+  .footer-wrap .info dd{
+  font-size:11px;
+  }
+
+  .info p{
+    font-size:11px;
+  }
+
+  footer .logo img{
+    width:100px;
+  }
+
+}
+
+
+
 
 
 </style>
@@ -483,6 +848,18 @@ footer .footer-wrap{
           </div>
         </a>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222" class="css-10i3oi9"><g clip-path="url(#clip0_2327_5794)"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5794"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+      </div>
+
+      <div class="tablet-nav">
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-ticket-wh-md" clip-path="url(#clip0_2327_5801)"><path id="Vector" d="M9 5.25V18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M2.25 15.6741C2.25018 15.5013 2.30998 15.3339 2.4193 15.2002C2.52862 15.0665 2.68075 14.9745 2.85 14.94C3.52817 14.8023 4.13788 14.4344 4.57583 13.8986C5.01377 13.3627 5.25301 12.692 5.25301 12C5.25301 11.308 5.01377 10.6373 4.57583 10.1014C4.13788 9.56564 3.52817 9.19771 2.85 9.06C2.68075 9.02545 2.52862 8.93354 2.4193 8.7998C2.30998 8.66605 2.25018 8.49867 2.25 8.32594V5C2.25 4.80109 2.32902 4.61032 2.46967 4.46967C2.61032 4.32902 2.80109 4.25 3 4.25H21C21.1989 4.25 21.3897 4.32902 21.5303 4.46967C21.671 4.61032 21.75 4.80109 21.75 5V8.32594C21.7498 8.49867 21.69 8.66605 21.5807 8.7998C21.4714 8.93354 21.3192 9.02545 21.15 9.06C20.4718 9.19771 19.8621 9.56564 19.4242 10.1014C18.9862 10.6373 18.747 11.308 18.747 12C18.747 12.692 18.9862 13.3627 19.4242 13.8986C19.8621 14.4344 20.4718 14.8023 21.15 14.94C21.3192 14.9745 21.4714 15.0665 21.5807 15.2002C21.69 15.3339 21.7498 15.5013 21.75 15.6741V19C21.75 19.1989 21.671 19.3897 21.5303 19.5303C21.3897 19.671 21.1989 19.75 21 19.75H12H3C2.80109 19.75 2.61032 19.671 2.46967 19.5303C2.32902 19.3897 2.25 19.1989 2.25 19V15.6741Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5801"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+        </a>
+        <button type="button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-srach-wh-md" clip-path="url(#clip0_2327_5817)"><path id="Vector" d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M15.8035 15.8034L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5817"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+        </button>
+        <button>
+          <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-menu-wh-md" clip-path="url(#clip0_2413_54173)"><path id="Vector" d="M3.75 12.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M3.75 6.78516H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_3" d="M3.75 18.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2413_54173"><rect width="24" height="24" fill="currentColor" transform="translate(0 0.785156)"></rect></clipPath></defs></svg>
+        </button>
       </div>
 
       <nav class="nav">
@@ -595,33 +972,18 @@ footer .footer-wrap{
 
         <div class="css-search-wrap">
           <form action="">
-            <fieldset class="screen_out">시즌별 선기록 표 검대</fieldset>
+            <fieldset class="hide">시즌별 선기록 표 검대</fieldset>
+
             <div class="session-top">
-              <span class="item session-start">
-                <select name="session_start" id="session_start" class="session session_start">
-                  <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
-                  <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
-                  <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
-                </select>
-              </span>
-              <span class="item round-start">
-                <select name="round" id="round" class="round">
-                  <option value="1round">1round</option>
-                  <option value="2round">2round</option>
-                  <option value="3round">3round</option>
-                  <option value="4round">4round</option>
-                  <option value="5round">5round</option>
-                  <option value="6round">6round`</option>
-                </select>
-                <span class="tilde">~</span>
-                <span class="item session-end">
-                  <select name="session_end" id="session_end" class="session session_end">
+              <div class="session-start">
+                <label for="session_start"></label>
+                  <p class="tablet-unblock-p mobile-unblock-p">리그 시작 :</p>
+                  <select name="session_start" id="session_start" class="session session_start">
                     <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
                     <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
                     <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
                   </select>
-                </span>
-                <span class="item round-end">
+
                   <select name="round" id="round" class="round">
                     <option value="1round">1round</option>
                     <option value="2round">2round</option>
@@ -630,21 +992,68 @@ footer .footer-wrap{
                     <option value="5round">5round</option>
                     <option value="6round">6round`</option>
                   </select>
-              </span>
+              </div>
+
+              <span class="tilde">~</span>
+
+
+              <div class="session-end">
+                <label for="session_end"></label>
+                <p class="tablet-unblock-p mobile-unblock-p">리그 끝 :</p>
+                  <select name="session_end" id="session_end" class="session session_end">
+                    <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
+                    <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
+                    <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
+                  </select>
+
+                  <select name="round" id="round" class="round">
+                    <option value="1round">1round</option>
+                    <option value="2round">2round</option>
+                    <option value="3round">3round</option>
+                    <option value="4round">4round</option>
+                    <option value="5round">5round</option>
+                    <option value="6round">6round`</option>
+                  </select>
+              </div>
             </div>
+
             <div class="session-bottom">
               <span class="item action-type">
+                <label for="type"></label>
                 <select name="type" id="type" class="type">
                   <option value="score">득점</option>
                   <option value="attack">공격</option>
                   <option value="open">오픈공격</option>
                   <option value="timegap">시간차</option>
                 </select>
-                <button type="button">기록 보기</button>
+                <button  type="button">기록 보기</button>
               </span>
             </div>
           </form>
+
+          <!-- <div class="search-detail mobile-unblock">
+            <button type="button">상세조건</button>
+            <div class="overflow">
+              <form id="team-by-player" class="team-by-player" action="">
+                <fieldset class="hide">선수 기준 지금까지 팀 결과 조건</fieldset>
+                <label for="player-team"></label>
+                <p class="mobile-unblock-p">팀 기준 : </p>
+                <select name="" id="player-team" class="player-team">
+                  <option value="all" selected>전체팀</option>
+                  <option value="koreaair">대한항공</option>
+                  <option value="hyundai">현대캐피탈</option>
+                  <option value="electricity">한국전력</option>
+                  <option value="woori">우리카드</option>
+                  <option value="ok">OK금융그룹</option>
+                  <option value="kb">KB손해보험</option>
+                  <option value="samsung">섬성화재</option>
+                </select>
+                <button class="mobile-unblock-btn" type="button">검색하기</button>
+              </form>
+            </div> -->
+          </div>
         </div>
+
 
         <!-- table area -->
         <table class="man" data-table="false">
@@ -746,7 +1155,7 @@ footer .footer-wrap{
               <th>공격</th>
               <th>블록킹</th>
               <th>서브</th>
-              <th>득정</th>
+              <th>득점</th>
             </tr>
           </thead>
           <tbody>
