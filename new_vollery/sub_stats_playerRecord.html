@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정관장 선수기록</title>
-  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../VolleryBall/css/reset.css">
 </head>
 <style>
   @font-face {
@@ -19,7 +19,7 @@ html, body{
   font-size: 14px;
 }
 
-.tablet-unblock, .mobile-unblock{
+.tablet-unblock-p, .mobile-unblock{
   display: none;
 }
 
@@ -80,7 +80,7 @@ header[data-gnb-bg="true"]{
 }
 
 .gnb  .logo-wrap h1 svg{
-  font-size:1.5rem;
+  font-size:20px;
   color:#ffffff00;
   vertical-align: middle;
 }
@@ -322,12 +322,10 @@ display: block;
   text-align: end;
   padding:6px 0;
   margin-bottom: 30px;
+  font-size:0.85rem;
 }
 
 
-.css-search-wrap{
-  margin-bottom: 24px;
-}
 
 
 /* search area */
@@ -337,7 +335,7 @@ form{
   background: #eee;
 }
 
-.css-search-wrap select{
+form select{
   height: 38px;
   border-radius: 8px;
 }
@@ -355,23 +353,23 @@ form{
   font-weight: 600;
 }
 
-.css-search-wrap .tilde{
+form .tilde{
   margin: 0 20px;
 }
-.css-search-wrap .session{
+form .session{
   width: 250px;
   margin-right: 10px;
 }
-.css-search-wrap .round{
+form .round{
   width:120px;
 }
 
-.css-search-wrap .type{
+form .type{
   width:120px;
 }
 
 
-.css-search-wrap button{
+form button{
   color: #fff;
   background: #2438EF;
   margin-left: 10px;
@@ -391,13 +389,18 @@ form{
 table[data-table="true"]{
   width: 100%;
   border-collapse: collapse;
-  font-size: 1.1rem;
+  font-size: 14px;
   text-align: center;
+  margin-top: 24px;
 }
 
 table[data-table="false"]{
 
   display:none;
+}
+
+thead th svg{
+  vertical-align: text-top;
 }
 
 table thead th{
@@ -524,18 +527,18 @@ footer .footer-wrap{
 
 
 .footer-bottom ul{
-    gap: 1.5rem;
+  gap: 1.5rem;
 }
 
 
 /* media area */
 
 @media (min-width: 768px) and (max-width: 1024px){
-  .tablet-unblock{
+  .tablet-unblock-p{
     display: inline-block;
     font-size :16px;
     font-weight: 600;
-    padding: 5px;
+    padding: 5px 0 ;
     
   }
 
@@ -644,11 +647,47 @@ footer .footer-wrap{
 
 
 @media  (max-width:768px){
-  .top-banner{
-    display: none;
-
+  .mobile-unblock{
+    display: block;
   }
 
+  .mobile-unblock-p{
+    font-size :16px;
+    font-weight: 600;
+    padding: 5px 0;
+    display: block;
+    
+  }
+
+  .search-detail .overflow{
+    height: 60px;
+    text-align: center;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+
+    display: grid;
+    grid-template-rows:0fr;
+    transition : grid-template-rows 400ms;
+
+
+    background: #fff;
+  }
+
+  .search-detail .overflow > form{
+    overflow: hidden;
+    background:#fff;
+    padding:0;
+  }
+  
+  .search-detail:hover{
+    grid-template-rows: 1fr;
+  }
+  
+
+  .top-banner{
+    display: none;
+  }
 
   .gnb{
       position: fixed;
@@ -717,6 +756,21 @@ footer .footer-wrap{
       transform: none;
     }
 
+    .tag{
+      display: none;
+    }
+
+    .player-record div[data-pagination]{
+      display: none;
+    }
+
+    .player-record h2{
+      font-size: 24px;
+      margin-top:0;
+      margin-bottom: 24px;
+      padding-top:30px;
+      }
+
     main{
       margin-top : 57px;
     }
@@ -727,18 +781,99 @@ footer .footer-wrap{
     }
 
 
+    /* table block CSS area */
+    table th{
+      display: none;
+    }
+
+    table tbody td{
+      display: grid;
+      gap:0.5rem;
+      grid-template-columns: 20% auto;
+      border-left: none;
+    }
+
+    table td:first-child{
+      /* padding-top:2rem; */
+      background: #eaeaea;
+    }
+
+    /* table td:last-child{
+      padding-bottom: 2rem;
+    } */
+
+    table td:nth-of-type(1):before{
+      content : "순위";
+    }
+
+    table td:nth-of-type(2):before{
+      content : "선수";
+    }
+    table td:nth-of-type(3):before{
+      content : "전체팀";
+    }
+    table td:nth-of-type(4):before{
+      content : "경기수";
+    }
+    table td:nth-of-type(5):before{
+      content : "세트수";
+    }
+    table td:nth-of-type(6):before{
+      content : "공격";
+    }
+    table td:nth-of-type(7):before{
+      content : "블로킹";
+    }
+    table td:nth-of-type(8):before{
+      content : "서브";
+    }
+    table td:nth-of-type(9):before{
+      content : "득점";
+    }
+    
+    table td::before{
+      font-size: 1.2rem;
+      font-weight: 600;
+
+    }
+
+    table svg{
+      position: absolute;
+      left : 18%;      
+    }
+
+    .table-info li{
+      font-size:1rem;
+      line-height: 1.5rem;
+    }
+
+
+
   footer .footer-wrap{
+    flex-flow: wrap;
     min-width: auto;
     width:auto;
-    margin: 144px 16px 0;
+    margin: 40px 16px 0;
     position: relative;
-    gap:40px;
+    gap:1rem;
+    padding: 1.5rem;
 }
 
   .footer-wrap .policies-sns ul{
-  font-size:14px;
-  gap:1.5rem;
+  font-size:13px;
+  gap:0.75rem;
   flex-wrap: wrap;
+  }
+
+
+
+  .footer-wrap .info dt,
+  .footer-wrap .info dd{
+  font-size:11px;
+  }
+
+  .info p{
+    font-size:11px;
   }
 
   footer .logo img{
@@ -759,7 +894,7 @@ footer .footer-wrap{
         <a href="#">
           <div class="logo-box">
             <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
-            <h1 class="scree_out">정관장</h1>
+            <h1>정관장</h1>
           </div>
         </a>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222" class="css-10i3oi9"><g clip-path="url(#clip0_2327_5794)"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5794"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
@@ -908,12 +1043,12 @@ footer .footer-wrap{
 
         <div class="css-search-wrap">
           <form action="">
-            <fieldset class="screen_out">시즌별 선기록 표 검대</fieldset>
+            <fieldset class="hide">시즌별 선기록 표 검대</fieldset>
 
             <div class="session-top">
               <div class="session-start">
                 <label for="session_start"></label>
-                  <p class="tablet-unblock">리그 시작 :</p>
+                  <p class="tablet-unblock-p mobile-unblock-p">리그 시작 :</p>
                   <select name="session_start" id="session_start" class="session session_start">
                     <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
                     <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
@@ -931,11 +1066,11 @@ footer .footer-wrap{
               </div>
 
               <span class="tilde">~</span>
-              <span class="mobile-unblock">~ 부터</span>
+
 
               <div class="session-end">
                 <label for="session_end"></label>
-                <p class="tablet-unblock">리그 끝 :</p>
+                <p class="tablet-unblock-p mobile-unblock-p">리그 끝 :</p>
                   <select name="session_end" id="session_end" class="session session_end">
                     <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
                     <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
@@ -951,26 +1086,51 @@ footer .footer-wrap{
                     <option value="6round">6round`</option>
                   </select>
               </div>
-              <span class="mobile-unblock">~ 까지</span>
             </div>
 
             <div class="session-bottom">
               <span class="item action-type">
+                <label for="type"></label>
                 <select name="type" id="type" class="type">
                   <option value="score">득점</option>
                   <option value="attack">공격</option>
                   <option value="open">오픈공격</option>
                   <option value="timegap">시간차</option>
                 </select>
-                <button type="button">기록 보기</button>
+                <button  type="button">기록 보기</button>
               </span>
             </div>
           </form>
+
+          <!-- <div class="search-detail mobile-unblock">
+            <button type="button">상세조건</button>
+            <div class="overflow">
+              <form id="team-by-player" class="team-by-player" action="">
+                <fieldset class="hide">선수 기준 지금까지 팀 결과 조건</fieldset>
+                <label for="player-team"></label>
+                <p class="mobile-unblock-p">팀 기준 : </p>
+                <select name="" id="player-team" class="player-team">
+                  <option value="all" selected>전체팀</option>
+                  <option value="koreaair">대한항공</option>
+                  <option value="hyundai">현대캐피탈</option>
+                  <option value="electricity">한국전력</option>
+                  <option value="woori">우리카드</option>
+                  <option value="ok">OK금융그룹</option>
+                  <option value="kb">KB손해보험</option>
+                  <option value="samsung">섬성화재</option>
+                </select>
+                <button class="mobile-unblock-btn" type="button">검색하기</button>
+              </form>
+            </div> -->
+          </div>
         </div>
+
+
+
 
         <!-- table area -->
         <table class="men" data-table="false">
-          <legend class="screen_out">도드람 리그 경기 남자 기록표</legend>
+          <legend class="hide">도드람 리그 경기 남자 기록표</legend>
           <colgroup>
             <col width="auto">
             <col width="18%">
@@ -986,7 +1146,9 @@ footer .footer-wrap{
             <tr>
               <th>순서</th>
               <th>선수</th>
-              <th>전체팀</th>
+              <th>전체팀
+                <span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><path d="M10 12.71L5.65 8.36C5.45 8.16 5.45 7.85 5.65 7.65C5.85 7.45 6.15999 7.45 6.35999 7.65L10.01 11.3L13.66 7.65C13.86 7.45 14.17 7.45 14.37 7.65C14.57 7.85 14.57 8.16 14.37 8.36L10.02 12.71H10Z" fill="currentColor"></path></svg></span>
+              </th>
               <th>경기수</th>
               <th>세트수</th>
               <th>공격</th>
@@ -1513,12 +1675,14 @@ footer .footer-wrap{
         </table>
 
         <table class="women" data-table="true">
-          <legend class="screen_out">도드람 리그 경기 여자 기록표</legend>
+          <legend class="hide">도드람 리그 경기 여자 기록표</legend>
           <thead>
             <tr>
               <th>순서</th>
               <th>선수</th>
-              <th>전체팀</th>
+              <th>전체팀
+                <span><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><path d="M10 12.71L5.65 8.36C5.45 8.16 5.45 7.85 5.65 7.65C5.85 7.45 6.15999 7.45 6.35999 7.65L10.01 11.3L13.66 7.65C13.86 7.45 14.17 7.45 14.37 7.65C14.57 7.85 14.57 8.16 14.37 8.36L10.02 12.71H10Z" fill="currentColor"></path></svg></span>
+              </th>
               <th>경기수</th>
               <th>세트수</th>
               <th>공격</th>
@@ -2088,7 +2252,7 @@ footer .footer-wrap{
       </div>
       <div class="footer-bottom">
         <div class="policies-sns">
-          <h3 class="screen_out">홈페이지 법적고지 및 연맹 기타 정보</h3>
+          <h3 class="hide">홈페이지 법적고지 및 연맹 기타 정보</h3>
           <ul>
             <li><a href="#">ANTIDOPING</a></li>
             <li><a href="#">선수고충처리센터</a></li>
@@ -2103,7 +2267,7 @@ footer .footer-wrap{
 
         <div class="info">
         <dl>
-          <dt class="screen_out">한국배구연명 주소 및 전화</dt>
+          <dt class="hide">한국배구연명 주소 및 전화</dt>
           <dd>[03925] 서울특별시 마포구 월드컵북로 402 KGIT센터 11층 한국배구연맹<span class="seperation">TEL : 02-422-0110</span>FAX : 02-418-0131</dd>
           <dd>Copyright (C) KOREAN VOLLEYBALL FEDERATION. ALL RIGHT RESERVED.</dd>
         </dl>
