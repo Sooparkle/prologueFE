@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>정관장 선수기록</title>
-  <link rel="stylesheet" href="../css/reset.css">
+  <title>정관장 레드스파크스</title>
+  <link rel="stylesheet" href="../VolleryBall/css/reset.css">
 </head>
 <style>
   @font-face {
@@ -19,14 +19,18 @@ html, body{
   font-size: 14px;
 }
 
+.tablet-unblock-p, .mobile-unblock{
+  display: none;
+}
+
+
 header{
   width:100%;
+  position: relative;
   z-index: 10;
   background: #fff;
 
 }
-
-
 
 header[data-gnb-bg="true"]{
   position: absolute;
@@ -45,7 +49,7 @@ header[data-gnb-bg="true"]{
   align-items: center;
 }
 
-.gnb .logo-wrap{
+.gnb  .logo-wrap{
   display: flex;
   align-items: center;
   margin-right: 80px;
@@ -75,7 +79,7 @@ header[data-gnb-bg="true"]{
 }
 
 .gnb  .logo-wrap h1 svg{
-  font-size:1.5rem;
+  font-size:20px;
   color:#ffffff00;
   vertical-align: middle;
 }
@@ -103,7 +107,6 @@ header[data-gnb-bg="true"]{
   display: none;
 
 }
-
 
 
 .gnb .nav dl dt{
@@ -139,6 +142,8 @@ header[data-gnb-bg="true"]{
 } */
 
 
+
+
 .gnb .nav dl dd{
   height:20px;
   
@@ -153,6 +158,8 @@ header[data-gnb-bg="true"]{
 .tablet-nav{
   display: none;
 }
+
+
 
 /* utilies area */
 .gnb  .css-utilities ul{
@@ -192,7 +199,7 @@ main{
 
 .top-banner h2{
   color:#fff;
-  font-size: 3.8rem;
+  font-size: 50px;
   font-weight: bold;
   position: absolute;;
   top: 50%;
@@ -211,16 +218,18 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
   height:fit-content;
   width: fit-content;
   margin:0 auto;
+
   position: relative;
 }
 
 .tag ul li{
   text-align: center;
-  width:130px;
+  width:140px;
+  min-width: 130px;
   font-size: 16px;
   font-weight: 600;
   color : #999999;
@@ -230,230 +239,218 @@ main{
 }
 
 .tag ul .line{
-  position: absolute;
-  bottom:0;
-  left:0;
-  height: 2px;
-  width:130px;
-  background: #222;
+position: absolute;
+bottom:0;
+left:0;
+height: 2px;
+width:140px;
+background: #222;
 
-  cursor: none;
-  transition: left 0.3s, right 0.3s ;
+cursor: none;
+transition: left 0.3s, right 0.3s ;
 }
 
 .tag ul .actived{
   text-align: center;
-  width:130px;
+  width:140px;
+  font-size: 16px;
   font-weight: 600;
-  color:#000
+  color : #000;
 
 }
 
  /* main pagination area */
 article{
   min-width: 1025px;
-  width:71.25%;
+  width: 71.25%;
   margin: 50px auto 0;
   position: relative;
 }
 
-.player-record div[data-pagination]{
+
+.content h2{
+font-size:36px;
+font-weight: bold;
+margin-top: 40px;
+margin-bottom: 24px;
+}
+
+.content .pagination{
   position: absolute;
   right:0;
   top: 20px;
 }
 
-.player-record div[data-pagination] svg{
+.content .pagination svg{
+  vertical-align: text-top;
+}
+
+.content .pagination svg:nth-of-type(1){
   vertical-align: middle;
 }
 
-.player-record div[data-pagination] span:nth-of-type(1){
+.content .pagination span:nth-of-type(1){
   color:#8c8c8c
 }
 
 
-/* player record area */
-
-.player-record h2{
-font-size: 2.6rem;
-font-weight: bold;
-margin-bottom: 24px;
+.content .notice{
+  display: flex;
+  align-items: center;
+  gap:1.5rem;
+  padding : 1.5rem 2rem;
+  background: #f9f9f9;
+  margin-bottom: 32px;
 }
 
-.css-player-tab ul{
+.content .notice dt{
+  font-size : 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.content .notice dd{
+  font-size: 15px;
+  padding:0.15rem;
+}
+
+
+/* table commen area */
+.body > div{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.css-player-tab li{
-  width:50%;
-  text-align: center;
-  background: #eee;
+.body{
+  border: 1px solid #e5e5e5;
 }
 
-.css-player-tab li{
-  width:50%;
-  text-align: center;
-  background: #eee;
+.body .red{
+  color:#000;
+  font-weight: 600;
 }
 
-
-.css-player-tab li[data-tab="true"] {
-  width:50%;
-  text-align: center;
-  background: #2438ef;
-  color : #fff;
-}
-
-
-.css-player-tab li a{
-line-height: 56px;
-display: block;
-}
-
-.player-record > p{
-  text-align: end;
-  padding:6px 0;
-  margin-bottom: 30px;
-}
-
-
-.css-search-wrap{
-  margin-bottom: 24px;
-}
-
-form{
-  padding: 30px 20px;
-  background: #eee;
-}
-
-.css-search-wrap select{
-  height: 38px;
-  border-radius: 8px;
-}
-
-.session-top{
-  margin-bottom: 20px;
-}
-
-.css-search-wrap .tilde{
-  margin: 0 20px;
-}
-.css-search-wrap .session{
-  width: 300px;
-  margin-right: 10px;
-}
-.css-search-wrap .round{
-  width:120px;
-}
-
-.css-search-wrap .type{
-  width:120px;
-}
-
-
-.css-search-wrap button{
-  color: #fff;
-  background: #2438EF;
-  margin-left: 10px;
-  padding: 0 40px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  line-height: 38px;
-  box-sizing:border-box;
-  cursor: pointer;
-}
-
-
-/* table area */
-
-/* tab selection area */
-table[data-table="true"]{
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1.1rem;
+/* TOP area */
+.table .header{
+  display: grid;
+  grid-template-columns: 6% 18% 45% 15% 16%;
+  align-items: center;
   text-align: center;
 }
 
-table[data-table="false"]{
-
-  display:none;
-}
-
-table thead th{
-  height:32px;
-  border-left : 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
-  border-top: 1px solid #eaeaea;
+.table .header{
+  font-size: 16px;
+  font-weight: 600;
+  height: 47px;
   background: #f9f9f9;
-  padding:8px 16px
 }
 
-/* table thead th:nth-of-type(2){
-  width:18%
-}
-table thead th:nth-of-type(3)
-{
-  width:16%;
-}
+.table .body{
+  display: grid;
+  grid-template-columns: 6% 18% 45% 15% 16%;
+  grid-template-rows: 150px;
+  align-items: center;
+  text-align: center;
 
-table thead th:nth-of-type(4),
-table thead th:nth-of-type(5),
-table thead th:nth-of-type(7)
-{
-  width:11.2%;
+  font-size:17px;
 }
 
-table thead th:nth-of-type(6),
-table thead th:nth-of-type(8),
-table thead th:nth-of-type(9)
-{
-  width:8.2%;
-
-} */
-
-
-table thead th:nth-of-type(1){
-  width:auto;
-  border-left : none;
+.table .type{
+  height: 100%;
+  background: #ebebeb;
 }
 
-table tbody td{
-  padding:16px;
-  background: #fff;
-  border-left : 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
+.table .away {
+  width:100%;
+  height: 100%;
+  background: #f5f5f5;
+  color : #474747;
 
 }
 
-table tbody td:nth-of-type(1){
-  border-left : none;
+.body .home {
+  width:100%;
+  height:100%;
+  background: #434343;
+  color : #fff
 }
 
-.player-record p:nth-of-type(2),
-.player-record p:nth-of-type(3),
-.player-record p:nth-of-type(4)
-{
-  text-align: left;
+
+.body .data{
+  font-size : 18px;
+  font-weight: 600;
 
 }
 
-.player-record .table-info{
-  margin-top: 16px;
-}
-.player-record .table-info li{
-  padding: 2px 0;
+
+.body .battle-left img,
+.body .battle-right img{
+  width:88px;
+  height:76px;
+  object-fit: cover;
+  margin-bottom:10px;
 }
 
+.body .battle {
+  position: relative;
+} 
+
+.body .battle::before,
+.body .battle::after{
+  position: absolute;
+  content:"";
+  width:1px;
+  height:100px;
+  background: #e5e5e5;
+} 
+
+.body .battle::before{
+  left: 0;
+}
+.body .battle::after{
+  right: 0;
+}
+
+.body .versus{
+  display: inline-block;
+  font-size: 44px;
+  font-weight: 600;
+  color:#2223;
+  margin:0 25px;
+}
+
+.body .ticket-buy{
+  position: relative;
+  background: url(https://kovo.co.kr/assets/ticket_bg.04127fdd.svg) no-repeat;
+  background-size : cover;
+  background-position: 0px -18px;
+  height:100%;
+}
+
+.body .ticket-buy::before{
+  position: absolute;
+  left:0;
+  content:"";
+  width:1px;
+  height:100px;
+  background: #e5e5e5;
+}
+
+.body .ticket-buy a{
+  display: inline-block;
+  color : #fff;
+
+  padding: 16px 32px;
+  background:#2438ef;
+  border-radius: 0.5rem;
+}
 
 
 
   /* footer area */
 footer{
   background: #393a45;
-
 }
 
 .footer-wrap{
@@ -472,11 +469,11 @@ footer .footer-wrap{
 }
 
 .footer-wrap .policies-sns ul{
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   gap:32px;
-  font-size:1.1rem;
+  font-size:15px;
   color :#fff;
+  white-space: nowrap;
 }
 
 .footer-wrap .info dl{
@@ -504,18 +501,21 @@ footer .footer-wrap{
   padding:2px 0
 }
 
-
-
-
 .footer-bottom ul{
-    gap: 1.5rem;
+  gap: 1.5rem;
 }
 
 
-
-@media (min-width: 768px) and (max-width: 1024px){
-header{
+@media (min-width:768px) and (max-width:1024px){
+.tablet-unblock-p{
+  display: inline-block;
+  font-size :16px;
+  font-weight: 600;
+  padding: 5px 0 ;
+}
+.gnb{
   position: fixed;
+  top:0;
   width:100dvw;
   padding: 11px 16px;
 
@@ -525,16 +525,15 @@ header{
   background-color: white;
   border-bottom: 1px solid rgb(238, 238, 238);
 }
-
 .gnb{
   height: 57px;
   margin:0
   
 }
 .gnb .logo-wrap h1{
-  font-size: 16px;
-  font-weight: 600;
-}
+    font-size: 16px;
+    font-weight: 600;
+  }
 
 .gnb .logo-wrap img{
   width:34px;
@@ -544,30 +543,345 @@ header{
 }
 
 .tablet-nav{
-  display: flex;
-  gap:16px;
-}
+    display: flex;
+    gap:16px;
+  }
 
 .tablet-nav button{
   border : none;
   background: none;
+  transition: all 0.3s ease 0s;
 }
-
 
 nav{
   display: none;
 
 }
+
 .css-utilities{
   display: none;
 }
 
-  article{
+/* tablet main area */
+.top-banner{
+  background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+  
+}
+
+.top-banner h2{
+  position: unset;
+  padding:62px 0;
+  height:100%;
+  box-sizing: border-box;
+  text-align: center;
+  
+  transform: none;
+}
+
+main{
+  margin-top : 57px;
+}
+
+article{
+  min-width: auto;
   width:auto;
-  margin : auto 16px;
+  margin : 0 16px;
+}
+
+
+.tag ul{
+gap : 1rem;
+}
+
+/* table area  */
+
+.body .away span,
+.body .home span{
+  transform : rotate(-90deg);
+}
+
+.body .data{
+  font-size : 16px;
+}
+
+.body .place{
+  font-size: 15px;
+}
+
+.body .versus{
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 600;
+  color:#2223;
+  margin:0 25px;
+}
+
+.body .ticket-buy{
+  background-position: 0 0;
+}
+
+.body .ticket-buy a{
+  padding: 1rem 1.6rem;
+}
+
+
+/* footer area */
+footer .footer-wrap{
+  min-width: auto;
+  width:auto;
+  margin: 80px 16px 0;
+  position: relative;
+  gap:40px;
+}
+
+.footer-wrap .policies-sns ul{
+  font-size:14px;
+  gap:1.5rem;
+  flex-wrap: wrap;
+}
+
+
+.footer-wrap .policies-sns ul{
+  font-size:14px;
+  gap:1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-wrap .info dt,
+.footer-wrap .info dd{
+  font-size:13px;
+}
+
+  .info p{
+  font-size:13px;
+}
+
+  footer .logo img{
+  width:100px;
 }
 
 }
+
+
+
+
+
+@media  (max-width:768px){
+  .mobile-unblock{
+    display: block;
+  }
+
+
+  .tablet-unblock-p{
+  display: inline-block;
+  font-size :16px;
+  font-weight: 600;
+  padding: 5px 0 ;
+}
+.gnb{
+  position: fixed;
+  top:0;
+  width:100dvw;
+  padding: 11px 16px;
+
+  box-sizing: border-box;
+
+  transition: all 0.3s ease 0s;
+  background-color: white;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+.gnb{
+  height: 57px;
+  margin:0
+  
+}
+.gnb .logo-wrap h1{
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+.gnb .logo-wrap img{
+  width:34px;
+  height: 100%;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.tablet-nav{
+    display: flex;
+    gap:16px;
+  }
+
+.tablet-nav button{
+  border : none;
+  background: none;
+  transition: all 0.3s ease 0s;
+}
+
+nav{
+  display: none;
+
+}
+
+.css-utilities{
+  display: none;
+}
+
+/* tablet main area */
+.top-banner{
+  background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+  
+}
+
+.top-banner h2{
+  position: unset;
+  padding:62px 0;
+  height:100%;
+  box-sizing: border-box;
+  text-align: center;
+  
+  transform: none;
+}
+
+main{
+  margin-top : 57px;
+}
+
+article{
+  min-width: auto;
+  width:auto;
+  margin : 0 16px;
+}
+.top-banner{
+  display: none;
+}
+
+.tag{
+  display: none;
+}
+
+.content div[data-pagination]{
+  display: none;
+}
+
+
+.content .notice svg{
+  display: none;
+}
+
+.content .notice dd{
+  font-size: 14px;
+}
+
+
+
+/* TOP area */
+.table .header{
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: 6% 18% 45% 15% 16%; */
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+
+  display: none;
+}
+
+.table .header{
+  font-size: 16px;
+  font-weight: 600;
+  height: 47px;
+  background: #f9f9f9;
+}
+
+.table .body{
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: 6% 18% 45% 15% 16%; */
+  grid-template-rows: 50px 40px 100px 60px 40px;
+  align-items: center;
+  text-align: center;
+
+  font-size:14px;
+  margin : 20px 0;
+  padding-bottom: 10px;
+}
+
+.body .home, .body .away{
+  font-size: 16px;
+}
+
+.body .battle{
+  margin : 1rem 0;
+}
+
+.body .battle-left img,
+.body .battle-right img{
+  width:70px;
+  height:100%;
+  object-fit: cover;
+  margin-bottom:10px;
+}
+
+.body .ticket-buy::before{
+  display: none;
+}
+
+.body .ticket-buy{
+  width:100%;
+  height:100%;
+}
+
+.body .ticket-buy a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+  height: 100%;
+  color : #fff;
+  padding: 0
+
+}
+
+
+
+
+/* footer area */
+footer .footer-wrap{
+  flex-flow: wrap;
+  min-width: auto;
+  width:auto;
+  margin: 40px 16px 0;
+  position: relative;
+  gap:1rem;
+  padding: 1.5rem;
+}
+
+  .footer-wrap .policies-sns ul{
+  font-size:13px;
+  gap:0.75rem;
+  flex-wrap: wrap;
+  }
+
+
+
+  .footer-wrap .info dt,
+  .footer-wrap .info dd{
+  font-size:11px;
+  }
+
+  .info p{
+    font-size:11px;
+  }
+
+
+  footer .logo img{
+    width:100px;
+  }
+}
+
+
+
 
 </style>
 <body>
@@ -674,1222 +988,225 @@ nav{
 
   <main>
 
-    <section class="top-banner">
-      <h2> STATS</h2>
-    </section>
-
-    <section class="tag">
-      <ul>
-        <li class="actived"><a href="#">선수 기록</a></li>
-        <li><a href="#">팀 기록</a></li>
-        <li class="line"></li>
-      </ul>
-      <div class="css-line js-line"></div>
-    </section>
-    <script>
-      const tagContainer =document.querySelector(".tag");
-      const tagLiList = tagContainer.querySelectorAll("li");
-      const lineTag = tagContainer.querySelector(".line");
-      
-      
-      tagLiList.forEach((li, index)=>{
-        li.addEventListener("click", ()=>{
-          event.preventDefault();
-          
-          tagLiList.forEach(li =>{li.classList.remove("actived")});
-          li.classList.add("actived");
-        
-          lineTag.style.width = li.offsetWidth + 'px';
-          lineTag.style.left = li.offsetLeft + 'px';
-
-        });
-      })
-    </script>
-
-    <article>
-      <section class="player-record">
-        <h2>선수 기록</h2>
-        <div data-pagination>
-          <a class="home"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
-          <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
-          <span>STATS</span>
-          <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
-          <span>선수 기록</span>
-        </div>
-
-        <div class="css-player-tab js-player-tab">
-          <ul>
-            <li class="" data-tab="false"><a href="#" >남자부</a></li>
-            <li class="" data-tab="true"><a href="#" >여자부</a></li>
-          </ul>
-        </div>
-        <p>※ 다득점 기준 정렬/시즌 선수순위는 GAME > V-리그 > 선수순위 참조</p>
-
-        <div class="css-search-wrap">
-          <form action="">
-            <fieldset class="screen_out">시즌별 선기록 표 검대</fieldset>
-            <div class="session-top">
-              <span class="item session-start">
-                <select name="session_start" id="session_start" class="session session_start">
-                  <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
-                  <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
-                  <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
-                </select>
-              </span>
-              <span class="item round-start">
-                <select name="round" id="round" class="round">
-                  <option value="1round">1round</option>
-                  <option value="2round">2round</option>
-                  <option value="3round">3round</option>
-                  <option value="4round">4round</option>
-                  <option value="5round">5round</option>
-                  <option value="6round">6round`</option>
-                </select>
-                <span class="tilde">~</span>
-                <span class="item session-end">
-                  <select name="session_end" id="session_end" class="session session_end">
-                    <option value="도드람 2023-2024 V-리그">도드람 2023-2024 V-리그</option>
-                    <option value="도드람 2022-2023 V-리그">도드람 2022-2023 V-리그</option>
-                    <option value="도드람 2021-2022 V-리그">도드람 2021-2022 V-리그</option>
-                  </select>
-                </span>
-                <span class="item round-end">
-                  <select name="round" id="round" class="round">
-                    <option value="1round">1round</option>
-                    <option value="2round">2round</option>
-                    <option value="3round">3round</option>
-                    <option value="4round">4round</option>
-                    <option value="5round">5round</option>
-                    <option value="6round">6round`</option>
-                  </select>
-              </span>
-            </div>
-            <div class="session-bottom">
-              <span class="item action-type">
-                <select name="type" id="type" class="type">
-                  <option value="score">득점</option>
-                  <option value="attack">공격</option>
-                  <option value="open">오픈공격</option>
-                  <option value="timegap">시간차</option>
-                </select>
-                <button type="button">기록 보기</button>
-              </span>
-            </div>
-          </form>
-        </div>
-
-        <!-- table area -->
-        <table class="men" data-table="true">
-          <legend class="screen_out">도드람 리그 경기 남자 기록표</legend>
-          <colgroup>
-            <col width="auto">
-            <col width="18%">
-            <col width="16%">
-            <col width="11.2%">
-            <col width="11.2%">
-            <col width="8.2%">
-            <col width="11.2%">
-            <col width="8.2%">
-            <col width="8.2%">
-          </colgroup>
-          <thead>
-            <tr>
-              <th>순서</th>
-              <th>선수</th>
-              <th>전체팀</th>
-              <th>경기수</th>
-              <th>세트수</th>
-              <th>공격</th>
-              <th>블록킹</th>
-              <th>서브</th>
-              <th>득점</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            <tr>
-              <td>1</td>
-              <td>요스바니 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>삼성화재</td>
-              <td>6</td>
-              <td>21</td>
-              <td>144</td>
-              <td>10</td>
-              <td>7</td>
-              <td>161</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>비예나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>KB손해보험</td>
-              <td>6</td>
-              <td>24</td>
-              <td>137</td>
-              <td>15</td>
-              <td>7</td>
-              <td>159</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>아흐메드<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>현대캐피탈</td>
-              <td>6</td>
-              <td>22</td>
-              <td>142</td>
-              <td>6</td>
-              <td>9</td>
-              <td>157</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>마테이<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>우리카드</td>
-              <td>6</td>
-              <td>21</td>
-              <td>134</td>
-              <td>6</td>
-              <td>9</td>
-              <td>1149</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>레오<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>OK금융그룹</td>
-              <td>6</td>
-              <td>23</td>
-              <td>119</td>
-              <td>12</td>
-              <td>9</td>
-              <td>140</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>타이스<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>한국전력</td>
-              <td>6</td>
-              <td>23</td>
-              <td>112</td>
-              <td>7</td>
-              <td>4</td>
-              <td>123</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>전한용<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>대한항공</td>
-              <td>6</td>
-              <td>24</td>
-              <td>88</td>
-              <td>12</td>
-              <td>5</td>
-              <td>105</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>황경민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>KB손해보험</td>
-              <td>6</td>
-              <td>24</td>
-              <td>81</td>
-              <td>6</td>
-              <td>3</td>
-              <td>90</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>링컨<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>대한항공</td>
-              <td>6</td>
-              <td>20</td>
-              <td>71</td>
-              <td>6</td>
-              <td>3</td>
-              <td>80</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>김정호<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>삼성화재</td>
-              <td>6</td>
-              <td>21</td>
-              <td>57</td>
-              <td>7</td>
-              <td>6</td>
-              <td>70</td>
-            </tr>
-
-            <tr>
-              <td>11</td>
-              <td>요스바니 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>삼성화재</td>
-              <td>6</td>
-              <td>21</td>
-              <td>144</td>
-              <td>10</td>
-              <td>7</td>
-              <td>161</td>
-            </tr>
-            <tr>
-              <td>12</td>
-              <td>비예나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>KB손해보험</td>
-              <td>6</td>
-              <td>24</td>
-              <td>137</td>
-              <td>15</td>
-              <td>7</td>
-              <td>159</td>
-            </tr>
-            <tr>
-              <td>13</td>
-              <td>아흐메드<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>현대캐피탈</td>
-              <td>6</td>
-              <td>22</td>
-              <td>142</td>
-              <td>6</td>
-              <td>9</td>
-              <td>157</td>
-            </tr>
-            <tr>
-              <td>14</td>
-              <td>마테이<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>우리카드</td>
-              <td>6</td>
-              <td>21</td>
-              <td>134</td>
-              <td>6</td>
-              <td>9</td>
-              <td>1149</td>
-            </tr>
-            <tr>
-              <td>15</td>
-              <td>레오<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>OK금융그룹</td>
-              <td>6</td>
-              <td>23</td>
-              <td>119</td>
-              <td>12</td>
-              <td>9</td>
-              <td>140</td>
-            </tr>
-            <tr>
-              <td>16</td>
-              <td>타이스<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>한국전력</td>
-              <td>6</td>
-              <td>23</td>
-              <td>112</td>
-              <td>7</td>
-              <td>4</td>
-              <td>123</td>
-            </tr>
-            <tr>
-              <td>17</td>
-              <td>전한용<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>대한항공</td>
-              <td>6</td>
-              <td>24</td>
-              <td>88</td>
-              <td>12</td>
-              <td>5</td>
-              <td>105</td>
-            </tr>
-            <tr>
-              <td>18</td>
-              <td>황경민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>KB손해보험</td>
-              <td>6</td>
-              <td>24</td>
-              <td>81</td>
-              <td>6</td>
-              <td>3</td>
-              <td>90</td>
-            </tr>
-            <tr>
-              <td>19</td>
-              <td>링컨<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>대한항공</td>
-              <td>6</td>
-              <td>20</td>
-              <td>71</td>
-              <td>6</td>
-              <td>3</td>
-              <td>80</td>
-            </tr>
-            <tr>
-              <td>20</td>
-              <td>김정호<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>삼성화재</td>
-              <td>6</td>
-              <td>21</td>
-              <td>57</td>
-              <td>7</td>
-              <td>6</td>
-              <td>70</td>
-            </tr>
-
-            <tr>
-              <td>21</td>
-              <td>요스바니 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>삼성화재</td>
-              <td>6</td>
-              <td>21</td>
-              <td>144</td>
-              <td>10</td>
-              <td>7</td>
-              <td>161</td>
-            </tr>
-            <tr>
-              <td>22</td>
-              <td>비예나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>KB손해보험</td>
-              <td>6</td>
-              <td>24</td>
-              <td>137</td>
-              <td>15</td>
-              <td>7</td>
-              <td>159</td>
-            </tr>
-            <tr>
-              <td>23</td>
-              <td>아흐메드<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>현대캐피탈</td>
-              <td>6</td>
-              <td>22</td>
-              <td>142</td>
-              <td>6</td>
-              <td>9</td>
-              <td>157</td>
-            </tr>
-            <tr>
-              <td>24</td>
-              <td>마테이<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>우리카드</td>
-              <td>6</td>
-              <td>21</td>
-              <td>134</td>
-              <td>6</td>
-              <td>9</td>
-              <td>1149</td>
-            </tr>
-            <tr>
-              <td>25</td>
-              <td>레오<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>OK금융그룹</td>
-              <td>6</td>
-              <td>23</td>
-              <td>119</td>
-              <td>12</td>
-              <td>9</td>
-              <td>140</td>
-            </tr>
-            <tr>
-              <td>26</td>
-              <td>타이스<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>한국전력</td>
-              <td>6</td>
-              <td>23</td>
-              <td>112</td>
-              <td>7</td>
-              <td>4</td>
-              <td>123</td>
-            </tr>
-            <tr>
-              <td>27</td>
-              <td>전한용<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>대한항공</td>
-              <td>6</td>
-              <td>24</td>
-              <td>88</td>
-              <td>12</td>
-              <td>5</td>
-              <td>105</td>
-            </tr>
-            <tr>
-              <td>28</td>
-              <td>황경민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>KB손해보험</td>
-              <td>6</td>
-              <td>24</td>
-              <td>81</td>
-              <td>6</td>
-              <td>3</td>
-              <td>90</td>
-            </tr>
-            <tr>
-              <td>29</td>
-              <td>링컨<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>대한항공</td>
-              <td>6</td>
-              <td>20</td>
-              <td>71</td>
-              <td>6</td>
-              <td>3</td>
-              <td>80</td>
-            </tr>
-            <tr>
-              <td>30</td>
-              <td>김정호<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>삼성화재</td>
-              <td>6</td>
-              <td>21</td>
-              <td>57</td>
-              <td>7</td>
-              <td>6</td>
-              <td>70</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="women" data-table="true">
-          <legend class="screen_out">도드람 리그 경기 여자 기록표</legend>
-          <thead>
-            <tr>
-              <th>순서</th>
-              <th>선수</th>
-              <th>전체팀</th>
-              <th>경기수</th>
-              <th>세트수</th>
-              <th>공격</th>
-              <th>블록킹</th>
-              <th>서브</th>
-              <th>득점</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            <tr>
-              <td>1</td>
-              <td>실바 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>GS칼텍스</td>
-              <td>6</td>
-              <td>23</td>
-              <td>155</td>
-              <td>9</td>
-              <td>7</td>
-              <td>171</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>부키리치<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>한국도로공사</td>
-              <td>6</td>
-              <td>25</td>
-              <td>150</td>
-              <td>9</td>
-              <td>7</td>
-              <td>166</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>아베크롬비<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>IBK기업은행</td>
-              <td>6</td>
-              <td>24</td>
-              <td>152</td>
-              <td>5</td>
-              <td>6</td>
-              <td>163</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>메가<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>정관장</td>
-              <td>6</td>
-              <td>20</td>
-              <td>126</td>
-              <td>8</td>
-              <td>4</td>
-              <td>138</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>야스민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>페퍼저축은행</td>
-              <td>6</td>
-              <td>24</td>
-              <td>116</td>
-              <td>19</td>
-              <td>0</td>
-              <td>135</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>옐레나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>흥국생명</td>
-              <td>6</td>
-              <td>23</td>
-              <td>116</td>
-              <td>6</td>
-              <td>7</td>
-              <td>129</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>김연경<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>흥국생명</td>
-              <td>6</td>
-              <td>23</td>
-              <td>111</td>
-              <td>5</td>
-              <td>3</td>
-              <td>119</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>모아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>현대건설</td>
-              <td>6</td>
-              <td>23</td>
-              <td>106</td>
-              <td>6</td>
-              <td>1</td>
-              <td>113</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>지아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>정관장</td>
-              <td>6</td>
-              <td>20</td>
-              <td>90</td>
-              <td>5</td>
-              <td>6</td>
-              <td>101</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>강소휘<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>GS칼텍스</td>
-              <td>6</td>
-              <td>23</td>
-              <td>85</td>
-              <td>7</td>
-              <td>3</td>
-              <td>95</td>
-
-            <tr>
-              <td>11</td>
-              <td>실바 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>GS칼텍스</td>
-              <td>6</td>
-              <td>23</td>
-              <td>155</td>
-              <td>9</td>
-              <td>7</td>
-              <td>171</td>
-            </tr>
-            <tr>
-              <td>12</td>
-              <td>부키리치<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>한국도로공사</td>
-              <td>6</td>
-              <td>25</td>
-              <td>150</td>
-              <td>9</td>
-              <td>7</td>
-              <td>166</td>
-            </tr>
-            <tr>
-              <td>13</td>
-              <td>아베크롬비<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>IBK기업은행</td>
-              <td>6</td>
-              <td>24</td>
-              <td>152</td>
-              <td>5</td>
-              <td>6</td>
-              <td>163</td>
-            </tr>
-            <tr>
-              <td>14</td>
-              <td>메가<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>정관장</td>
-              <td>6</td>
-              <td>20</td>
-              <td>126</td>
-              <td>8</td>
-              <td>4</td>
-              <td>138</td>
-            </tr>
-            <tr>
-              <td>15</td>
-              <td>야스민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>페퍼저축은행</td>
-              <td>6</td>
-              <td>24</td>
-              <td>116</td>
-              <td>19</td>
-              <td>0</td>
-              <td>135</td>
-            </tr>
-            <tr>
-              <td>16</td>
-              <td>옐레나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>흥국생명</td>
-              <td>6</td>
-              <td>23</td>
-              <td>116</td>
-              <td>6</td>
-              <td>7</td>
-              <td>129</td>
-            </tr>
-            <tr>
-              <td>17</td>
-              <td>김연경<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>흥국생명</td>
-              <td>6</td>
-              <td>23</td>
-              <td>111</td>
-              <td>5</td>
-              <td>3</td>
-              <td>119</td>
-            </tr>
-            <tr>
-              <td>18</td>
-              <td>모아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>현대건설</td>
-              <td>6</td>
-              <td>23</td>
-              <td>106</td>
-              <td>6</td>
-              <td>1</td>
-              <td>113</td>
-            </tr>
-            <tr>
-              <td>19</td>
-              <td>지아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>정관장</td>
-              <td>6</td>
-              <td>20</td>
-              <td>90</td>
-              <td>5</td>
-              <td>6</td>
-              <td>101</td>
-            </tr>
-            <tr>
-              <td>20</td>
-              <td>강소휘<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>GS칼텍스</td>
-              <td>6</td>
-              <td>23</td>
-              <td>85</td>
-              <td>7</td>
-              <td>3</td>
-              <td>95</td>
-            </tr>
-
-            <tr>
-              <td>21</td>
-              <td>실바 <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>GS칼텍스</td>
-              <td>6</td>
-              <td>23</td>
-              <td>155</td>
-              <td>9</td>
-              <td>7</td>
-              <td>171</td>
-            </tr>
-            <tr>
-              <td>22</td>
-              <td>부키리치<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>한국도로공사</td>
-              <td>6</td>
-              <td>25</td>
-              <td>150</td>
-              <td>9</td>
-              <td>7</td>
-              <td>166</td>
-            </tr>
-            <tr>
-              <td>23</td>
-              <td>아베크롬비<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>IBK기업은행</td>
-              <td>6</td>
-              <td>24</td>
-              <td>152</td>
-              <td>5</td>
-              <td>6</td>
-              <td>163</td>
-            </tr>
-            <tr>
-              <td>24</td>
-              <td>메가<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>정관장</td>
-              <td>6</td>
-              <td>20</td>
-              <td>126</td>
-              <td>8</td>
-              <td>4</td>
-              <td>138</td>
-            </tr>
-            <tr>
-              <td>25</td>
-              <td>야스민<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>페퍼저축은행</td>
-              <td>6</td>
-              <td>24</td>
-              <td>116</td>
-              <td>19</td>
-              <td>0</td>
-              <td>135</td>
-            </tr>
-            <tr>
-              <td>26</td>
-              <td>옐레나<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>흥국생명</td>
-              <td>6</td>
-              <td>23</td>
-              <td>116</td>
-              <td>6</td>
-              <td>7</td>
-              <td>129</td>
-            </tr>
-            <tr>
-              <td>27</td>
-              <td>김연경<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>흥국생명</td>
-              <td>6</td>
-              <td>23</td>
-              <td>111</td>
-              <td>5</td>
-              <td>3</td>
-              <td>119</td>
-            </tr>
-            <tr>
-              <td>28</td>
-              <td>모아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>현대건설</td>
-              <td>6</td>
-              <td>23</td>
-              <td>106</td>
-              <td>6</td>
-              <td>1</td>
-              <td>113</td>
-            </tr>
-            <tr>
-              <td>29</td>
-              <td>지아<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>정관장</td>
-              <td>6</td>
-              <td>20</td>
-              <td>90</td>
-              <td>5</td>
-              <td>6</td>
-              <td>101</td>
-            </tr>
-            <tr>
-              <td>30</td>
-              <td>강소휘<svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
-                border: 1px solid #eee;
-                border-radius: 100%;
-                margin-left: 10px;
-                transform: rotate(90deg);
-                vertical-align: middle;
-            "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg></td>
-              <td>GS칼텍스</td>
-              <td>6</td>
-              <td>23</td>
-              <td>85</td>
-              <td>7</td>
-              <td>3</td>
-              <td>95</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <ul class="table-info">
-          <li>* 성공률=성공*100/시도, 점유율=개인시도*100/팀시도, 세트당(세트당평균)=성공/세트수</li>
-          <li>* 유효블락(유효블로킹) : 자기팀의 수비로 연결된 블로킹</li>
-          <li>* 기록은 소수 3째자리 반올림</li>
-        </ul>
-
-
+      <section class="top-banner">
+        <h2> TICKET</h2>
       </section>
 
+      <section class="tag">
+        <ul>
+          <li class="actived"><a href="#">단일권 구매</a></li>
+          <li><a href="#">티켓가격</a></li>
+          <li><a href="#">맴버십 구매</a></li>
+          <li><a href="#">티켓안내(공통)</a></li>
+          <li><a href="#">모바일티켓 이용방법</a></li>
+          <li class="line"></li>
+        </ul>
+        <div class="css-line js-line"></div>
+      </section>
       <script>
-        const contain = document.querySelector(".js-player-tab");
-        const tabs = contain.querySelectorAll("[data-tab]");
-        const tables = document.querySelectorAll("[data-table]");
+        const tagContainer = document.querySelector(".tag");
+        const tagLine = document.querySelector(".line");
 
-        console.log(tables);
 
-        tabs.forEach((tab, index) =>{
-          tab.addEventListener( "click", (e)=>{
-            e.preventDefault();
-            
-            tabs.forEach(tab =>{ tab.setAttribute("data-tab", false)});
-            tab.setAttribute("data-tab", true);
+        tagContainer.addEventListener("click", (e)=>{
+          const target = e.target
+          const clicked = target.closest("li");
+          
+          e.preventDefault();
+          if(!clicked) return;
 
-            tables.forEach(table => {table.setAttribute("data-table", false);});
-            tables[index].setAttribute("data-table", true);
+          tagLine.style.width = clicked.offsetWidth +"px";
+          tagLine.style.left = clicked.offsetLeft +"px";
+          
 
-            
-
-          });
         })
-
-
-
-
-
-
       </script>
+
+    <article>
+      <section class="content">
+        <h2>단일권 구매</h2>
+        <div class="pagination" data-pagination>
+          <a class="home"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+          <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+          <span>TICKET</span>
+          <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+          <span>단일권 구매</span>
+        </div>
+        <div class="notice">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="50" fill="#999999"></rect><path d="M51.3571 31.4255C59.7165 32.1539 66.2857 39.55 66.2857 48.5667V62.9H69V65.7667H31V62.9H33.7143V48.5667C33.7143 39.55 40.2835 32.1539 48.6429 31.4255V28.5H51.3571V31.4255ZM63.5714 62.9V48.5667C63.5714 40.6506 57.4953 34.2333 50 34.2333C42.5047 34.2333 36.4286 40.6506 36.4286 48.5667V62.9H63.5714ZM44.5714 68.6333H55.4286V71.5H44.5714V68.6333Z" fill="white"></path></svg>
+          <dl>
+            <dt>예매전 확인해주세요!</dt>
+              <dd>· 선예매는 구단 멤버십 상품 구매 회원에 한해 제공됩니다. </dd>
+              <dd>· 구단 멤버십 구매 계정으로 선예매 기간 내 예매가 가능합니다. (선예매 권한 자동 부여)</dd>
+              <dd>· 일반 예매는 경기일 5일 전 오전 11시에 오픈됩니다.</dd>
+              <dd>· 예매하기 버튼 클릭 후 연결되는 티켓 예매 페이지에서 예매하고자 하는 경기 일시를 꼭 확인하신 후 예매를 진행해주시기 바랍니다.</dd>
+          </dl>
+          </div>
+
+
+        <!-- table area -->
+        <div class="table">
+          <div class="header">
+            <div class="type"></div>
+            <div class="data">경기일시</div>
+            <div class="battle">경기팀</div>
+            <div class="place">경기장</div>
+            <div class="ticket-buy">티켓예매</div>
+          </div>
+          <div class="body">
+            <div class="away"><span>AWAY</span></div>
+            <div class="data"><span>12.08 (금) 19:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/emblem_peppers.png" alt="페퍼저축은행">
+                <p>페퍼저축은행</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+            </div>
+            <div class="place">페퍼스타디움</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="home"><span>HOME</span></div>
+            <div class="data"><span>12.13 (수) 19:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/hipass_400x300.png" alt="한국도로공사">
+                <p>한국도로공사</p>
+              </div>
+            </div>
+            <div class="place">대전충무체육관</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="home"><span>HOME</span></div>
+            <div class="data"><span>12.16 (토) 16:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/emblem_hyundai.png" alt="현대건설">
+                <p>현대건설</p>
+              </div>
+            </div>
+            <div class="place">대전충무체육관</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="home"><span>HOME</span></div>
+            <div class="data"><span>12.21 (목) 19:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/emblem_gscaltex.png" alt="GS칼텍스">
+                <p>GS칼텍스</p>
+              </div>
+            </div>
+            <div class="place">대전충무체육관</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="away"><span>AWAY</span></div>
+            <div class="data"><span>12.24 (일) 16:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/emblem_pinkspiders.png" alt="흥국생명">
+                <p>흥국생명</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+            </div>
+            <div class="place">인천삼산월드체육관</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="home"><span>HOME</span></div>
+            <div class="data"><span>12.28 (목) 19:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/emblem_pinkspiders.png" alt="흥국생명">
+                <p>흥국생명</p>
+              </div>
+            </div>
+            <div class="place">대전충무체육관</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="away"><span>AWAY</span></div>
+            <div class="data"><span>01.01 (월) 16:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/hipass_400x300.png" alt="한국도로공사">
+                <p>한국도로공사</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+            </div>
+            <div class="place">김천실내체육관</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="home"><span>HOME</span></div>
+            <div class="data"><span>01.06 (토) 16:00</span></div>
+            <div class="battle">
+              <div class="battle-left">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장">
+                <p class="red">정관장</p>
+              </div>
+              <span class="versus">vs</span>
+              <div class="battle-right">
+                <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/emblem_gscaltex.png" alt="GS칼텍스">
+                <p>GS칼텍스</p>
+              </div>
+            </div>
+            <div class="place">대전충무체육관</div>
+            <div class="ticket-buy">
+              <a href="#=">예매하기</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </article>
   </main>
