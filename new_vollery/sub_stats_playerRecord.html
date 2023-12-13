@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정관장 선수기록</title>
-  <link rel="stylesheet" href="../VolleryBall/css/reset.css">
+  <link rel="stylesheet" href="../css/reset.css">
 </head>
 <style>
   @font-face {
@@ -54,6 +54,7 @@ header[data-gnb-bg="true"]{
   display: flex;
   align-items: center;
   margin-right: 80px;
+  white-space: nowrap;
 }
 
 .gnb  .logo-wrap{
@@ -101,7 +102,6 @@ header[data-gnb-bg="true"]{
 
 .gnb .nav dl{
   position: absolute;
-
   padding:50px 0;
   font-weight: 300;
 
@@ -207,12 +207,12 @@ main{
 }
 
 
-/* tag area */
-.tag{
+/* tab area */
+.tab{
   border-bottom: 1px solid #eee;
 }
 
-.tag ul{
+.tab ul{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +223,20 @@ main{
   position: relative;
 }
 
-.tag ul li{
+.tab ul::after{
+  content: "";
+  position: absolute;
+  bottom:0;
+  left:0;
+  height:2px;
+  width:130px;
+  background: #000;
+  translate: var(--_left, 0) 0;
+  transition : 300ms
+
+}
+
+.tab ul li{
   text-align: center;
   width:130px;
   font-size: 16px;
@@ -234,19 +247,8 @@ main{
   white-space: nowrap;
 }
 
-.tag ul .line{
-  position: absolute;
-  bottom:0;
-  left:0;
-  height: 2px;
-  width:130px;
-  background: #222;
 
-  cursor: none;
-  transition: left 0.3s, right 0.3s ;
-}
-
-.tag ul .actived{
+.tab ul .activated{
   text-align: center;
   width:130px;
   font-weight: 600;
@@ -382,6 +384,40 @@ form button{
   cursor: pointer;
 }
 
+
+.search-detail{
+    overflow: hidden;
+  }
+
+  .button-wrap{
+    display: block;
+    width:auto;
+    text-align: center;
+    padding:10px 0;
+    cursor: pointer;
+    border-right:1px solid#eaeaea;
+    border-left:1px solid #eaeaea;
+    border-bottom:1px solid #eaeaea;
+    box-sizing: border-box;
+  }
+  .search-detail button{
+    background: none;
+    border: none;
+  }
+
+  .form-wrap[data-form="false"]{
+    height: 0;
+    transition : height 0.3s ease-in-out;
+  }
+
+  .form-wrap[data-form="true"]{
+    height: 100;
+    transition : height 0.3s ease-in-out;
+  }
+
+  .search-detail p{
+    display: inline-block;
+  }
 
 /* table area */
 
@@ -675,30 +711,42 @@ footer .footer-wrap{
     
   }
 
-  .search-detail .overflow{
-    height: 60px;
-    text-align: center;
-    border-left: 1px solid #eaeaea;
-    border-right: 1px solid #eaeaea;
-    border-bottom: 1px solid #eaeaea;
-
-    display: grid;
-    grid-template-rows:0fr;
-    transition : grid-template-rows 400ms;
 
 
-    background: #fff;
-  }
-
-  .search-detail .overflow > form{
+  .search-detail{
     overflow: hidden;
-    background:#fff;
-    padding:0;
   }
-  
-  .search-detail:hover{
-    grid-template-rows: 1fr;
+
+  .button-wrap{
+    display: block;
+    width:auto;
+    text-align: center;
+    padding:10px 0;
+    cursor: pointer;
+    border-right:1px solid#eaeaea;
+    border-left:1px solid #eaeaea;
+    border-bottom:1px solid #eaeaea;
+    box-sizing: border-box;
   }
+  .search-detail button{
+    background: none;
+    border: none;
+  }
+
+  .form-wrap[data-form="false"]{
+    height: 0;
+    transition : height 0.3s ease-in-out;
+  }
+
+  .form-wrap[data-form="true"]{
+    height: 100;
+    transition : height 0.3s ease-in-out;
+  }
+
+  .search-detail p{
+    display: inline-block;
+  }
+
   
 
   .top-banner{
@@ -771,7 +819,7 @@ footer .footer-wrap{
       transform: none;
     }
 
-    .tag{
+    .tab{
       display: none;
     }
 
@@ -801,6 +849,16 @@ footer .footer-wrap{
 
 
     /* table block CSS area */
+        form .tilde{
+      display: block;
+      margin: 20px 0;
+      padding-right: 240px;
+      text-align: center;
+      font-size:large;
+    }
+
+
+
     table th{
       display: none;
     }
@@ -853,7 +911,6 @@ footer .footer-wrap{
     table td::before{
       font-size: 1.2rem;
       font-weight: 600;
-
     }
 
     table svg{
@@ -865,8 +922,6 @@ footer .footer-wrap{
       font-size:1rem;
       line-height: 1.5rem;
     }
-
-
 
   footer .footer-wrap{
     flex-flow: wrap;
@@ -899,7 +954,6 @@ footer .footer-wrap{
     width:100px;
   }
 }
-
 
 
 
@@ -987,7 +1041,7 @@ footer .footer-wrap{
                 <dt>TICKET</dt>
                 <dd><a href="#">단일권 구매</a></dd>
                 <dd><a href="#">티켓가격</a></dd>
-                <dd><a href="#">맴버십 구매</a></dd>
+                <dd><a href="#">멤버십 구매</a></dd>
                 <dd><a href="#">티캣안내(공통)</a></dd>
                 <dd><a href="#">모바일티켓 이용방법</a></dd>
               </dl>
@@ -1013,32 +1067,30 @@ footer .footer-wrap{
       <h2> STATS</h2>
     </section>
 
-    <section class="tag">
+    <section class="tab">
       <ul>
-        <li class="actived"><a href="#">선수 기록</a></li>
+        <li class="activated"><a href="#">선수 기록</a></li>
         <li><a href="#">팀 기록</a></li>
-        <li class="line"></li>
       </ul>
       <div class="css-line js-line"></div>
     </section>
     <script>
-      const tagContainer =document.querySelector(".tag");
-      const tagLiList = tagContainer.querySelectorAll("li");
-      const lineTag = tagContainer.querySelector(".line");
+      const tabContainer =document.querySelector(".tab");
+      const tabList = tabContainer.querySelectorAll("li");
+      const tabUl = tabContainer.querySelector("ul");
       
-      
-      tagLiList.forEach((li, index)=>{
-        li.addEventListener("click", ()=>{
-          event.preventDefault();
-          
-          tagLiList.forEach(li =>{li.classList.remove("actived")});
-          li.classList.add("actived");
-        
-          lineTag.style.width = li.offsetWidth + 'px';
-          lineTag.style.left = li.offsetLeft + 'px';
+      tabContainer.addEventListener("click", (e)=>{
+        const clickedTab = e.target.closest("li")
 
-        });
+        e.preventDefault();
+        if(!clickedTab) return;
+
+        tabList.forEach(li =>{li.classList.remove("activated")});
+        clickedTab.classList.add("activated");
+
+        tabUl.style.setProperty("--_left", clickedTab.offsetLeft+"px");
       })
+
     </script>
 
     <article>
@@ -1121,9 +1173,18 @@ footer .footer-wrap{
             </div>
           </form>
 
-          <!-- <div class="search-detail mobile-unblock">
-            <button type="button">상세조건</button>
-            <div class="overflow">
+          <div class="search-detail ">
+            <div class="button-wrap">
+              <button type="button">상세조건</button>
+              <svg width="22" height="22" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" hanging="15" class="css-o82kp5" style="
+                  border: 1px solid #eee;
+                  border-radius: 100%;
+                  margin-left: 10px;
+                  transform: rotate(90deg);
+                  vertical-align: middle;
+              "><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+            </div>
+            <div class="form-wrap" data-form="false">
               <form id="team-by-player" class="team-by-player" action="">
                 <fieldset class="hide">선수 기준 지금까지 팀 결과 조건</fieldset>
                 <label for="player-team"></label>
@@ -1138,19 +1199,48 @@ footer .footer-wrap{
                   <option value="kb">KB손해보험</option>
                   <option value="samsung">섬성화재</option>
                 </select>
-                <button class="mobile-unblock-btn" type="button">검색하기</button>
               </form>
-            </div> -->
+            </div>
           </div>
         </div>
 
+        <script>
+          const detailSearch = document.querySelector(".button-wrap");
+          const teamSelectBox = document.querySelector(".form-wrap");
+          
+          let isOpen = teamSelectBox.getAttribute("data-form") === "false";
+          
+
+          console.log(isOpen);
+
+          detailSearch.addEventListener("click", () => {
+            isOpen = !isOpen;
+
+            teamSelectBox.setAttribute("data-form", isOpen ? "true" : "false");
+            teamSelectBox.style.height = isOpen ? "100px" : "0";
+          });
+
+          
+
+
+
+
+          // detailSearch.addEventListener("click", (e)=>{
+          //   const openDetail = teamSelectBox.getAttribute("data-form");
+
+          //   console.log(openDetail);
+
+          //   openDetail === 'false' ? teamSelectBox.setAttribute("data-form", true) :  teamSelectBox.setAttribute("data-form", false);
+          //     // if(openDetail === )
+          // })
+        </script>
 
 
 
         <!-- table area -->
         <table class="men" data-table="false">
           <legend class="hide">도드람 리그 경기 남자 기록표</legend>
-          <colgroup>
+          <!-- <colgroup>
             <col width="auto">
             <col width="18%">
             <col width="16%">
@@ -1160,7 +1250,7 @@ footer .footer-wrap{
             <col width="11.2%">
             <col width="8.2%">
             <col width="8.2%">
-          </colgroup>
+          </colgroup> -->
           <thead>
             <tr>
               <th>순서</th>
@@ -2239,7 +2329,6 @@ footer .footer-wrap{
         const contain = document.querySelector(".js-player-tab");
         const tabs = contain.querySelectorAll("[data-tab]");
         const tables = document.querySelectorAll("[data-table]");
-
 
         tabs.forEach((tab, index) =>{
           tab.addEventListener( "click", (e)=>{
