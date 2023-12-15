@@ -443,15 +443,28 @@ margin-bottom: 24px;
   background: #e5e5e5;
 }
 
-.body .ticket-buy a{
+.body .ticket-buy > .home {
+  width:auto;
+  height:auto;
   display: inline-block;
   color : #fff;
 
   padding: 16px 32px;
-  background:#2438ef;
+  background:#d91833;
   border-radius: 0.5rem;
 }
 
+
+.body .ticket-buy > .away {
+  width:auto;
+  height:auto;
+  display: inline-block;
+  color : #fff;
+
+  padding: 16px 32px;
+  background:#ef9a9a;
+  border-radius: 0.5rem;
+}
 
 
   /* footer area */
@@ -587,6 +600,10 @@ nav{
 main{
   margin-top : 57px;
   overflow-x: hidden;
+}
+
+main::-webkit-scrollbar{
+  display: none;
 }
 
 article{
@@ -1059,7 +1076,7 @@ footer .footer-wrap{
             </div>
             <div class="place">페퍼스타디움</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="away" href="#=">예매하기</a>
             </div>
           </div>
           <div class="body">
@@ -1078,7 +1095,7 @@ footer .footer-wrap{
             </div>
             <div class="place">대전충무체육관</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="home" href="#=">예매하기</a>
             </div>
           </div>
           <div class="body">
@@ -1097,7 +1114,7 @@ footer .footer-wrap{
             </div>
             <div class="place">대전충무체육관</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="home" href="#=">예매하기</a>
             </div>
           </div>
           <div class="body">
@@ -1116,7 +1133,7 @@ footer .footer-wrap{
             </div>
             <div class="place">대전충무체육관</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="home" href="#=">예매하기</a>
             </div>
           </div>
           <div class="body">
@@ -1135,7 +1152,7 @@ footer .footer-wrap{
             </div>
             <div class="place">인천삼산월드체육관</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="away" href="#=">예매하기</a>
             </div>
           </div>
           <div class="body">
@@ -1154,7 +1171,7 @@ footer .footer-wrap{
             </div>
             <div class="place">대전충무체육관</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="home" href="#=">예매하기</a>
             </div>
           </div>
           <div class="body">
@@ -1173,7 +1190,7 @@ footer .footer-wrap{
             </div>
             <div class="place">김천실내체육관</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="away" href="#=">예매하기</a>
             </div>
           </div>
           <div class="body">
@@ -1192,7 +1209,7 @@ footer .footer-wrap{
             </div>
             <div class="place">대전충무체육관</div>
             <div class="ticket-buy">
-              <a href="#=">예매하기</a>
+              <a class="home" href="#=">예매하기</a>
             </div>
           </div>
         </div>
