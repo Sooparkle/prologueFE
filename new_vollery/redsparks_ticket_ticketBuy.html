@@ -306,7 +306,7 @@ margin-bottom: 24px;
   gap:1.5rem;
   padding : 1.5rem 2rem;
   background: #f9f9f9;
-  margin-bottom: 32px;
+  margin-bottom: 42px;
 }
 
 .content .notice dt{
@@ -319,6 +319,75 @@ margin-bottom: 24px;
   font-size: 15px;
   padding:0.15rem;
 }
+
+/* caldendar area */
+
+.calendar{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  margin-bottom:30px;
+  
+}
+
+.calendar .calendar-indicator{
+  display: grid;
+  grid-template-columns:1fr 2fr 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.calendar .calendar-indicator .year-month-list {
+  order:1;
+}
+
+.calendar .calendar-indicator .year-month-list p{
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.calendar .calendar-indicator .prev{
+  order:0;
+  transform:  rotate(180deg);
+  cursor: pointer;
+}
+
+.calendar .calendar-indicator .prev svg,
+.calendar .calendar-indicator .next svg{
+  vertical-align: top;
+}
+
+.calendar .calendar-indicator .prev,
+.calendar .calendar-indicator .next {
+  height: 34px;
+}
+
+.calendar .calendar-indicator .next{
+  order:1;
+  cursor: pointer;
+}
+
+.year-month-list p{
+  display:none
+}
+
+.year-month-list .current{
+  display: block;
+}
+
+
+.calendar .calendar-indicator .next{
+  order:1;
+  cursor: pointer;
+}
+
+.calendar .current-btn{
+  order:-1;
+  padding: 4px 15px;
+  border: 1px solid #ebebeb;
+  border-radius: 18px;
+}
+
 
 
 /* table commen area */
@@ -462,7 +531,7 @@ margin-bottom: 24px;
   color : #fff;
 
   padding: 16px 32px;
-  background:#ef9a9a;
+  background:#f28695;
   border-radius: 0.5rem;
 }
 
@@ -1050,6 +1119,67 @@ footer .footer-wrap{
           </dl>
           </div>
 
+          <div class="calendar">
+            <div class="calendar-indicator">
+              <div class="year-month-list">
+                <p class="">2023.1</p>
+                <p class="">2023.2</p>
+                <p class="">2023.3</p>
+                <p class="">2023.4</p>
+                <p class="">2023.5</p>
+                <p class="">2023.6</p>
+                <p class="">2023.7</p>
+                <p class="">2023.8</p>
+                <p class="">2023.9</p>
+                <p class="">2023.10</p>
+                <p class="">2023.11</p>
+                <p class="current" >2023.12</p>
+                <p class="" >2024.1</p>
+                <p class="" >2024.2</p>
+                <p class="" >2024.3</p>
+                <p class="" >2024.4</p>
+              </div>
+              <button data-direction="prev" class="prev">
+                <span class="hide">이전달</span>
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true" class="CalendarDate_icon_move_arrow__1FNWj"><path d="M1 1l6 6.016L1 13" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button data-direction="next" class="next">
+                <span class="hide">다음달</span>
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true" class="CalendarDate_icon_move_arrow__1FNWj"><path d="M1 1l6 6.016L1 13" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+            <button class="current-btn" data-recent-btn>최근</button>
+          </div>
+          <script>
+            const $calender = document.querySelector(".calendar");
+            const $monthsP = $calender.querySelectorAll("p");
+            const $buttons= $calender.querySelectorAll("[data-direction]");
+            const $recentBtn= $calender.querySelector("[data-recent-btn]");
+
+            console.log($recentBtn);
+
+            $calender.addEventListener("click", (e)=>{
+              const $button = e.target.closest("button");
+
+              e.preventDefault();
+              if(!$button) return;
+
+              const current = $calender.querySelector(".current");
+              const buttonDataset = $button.dataset.direction;
+
+              $monthsP.forEach(p => {p.classList.remove("current")});
+
+              if (buttonDataset === "next" ) {
+                current.nextElementSibling.classList.add("current");
+              } else if (buttonDataset === "prev") {
+                current.previousElementSibling.classList.add("current");
+                }
+
+              if($button.classList.value ==='current-btn')  location.reload();
+
+            })
+
+          </script>
 
         <!-- table area -->
         <div class="table">
@@ -1174,7 +1304,7 @@ footer .footer-wrap{
               <a class="home" href="#=">예매하기</a>
             </div>
           </div>
-          <div class="body">
+          <!-- <div class="body" hidden>
             <div class="away"><span>AWAY</span></div>
             <div class="data"><span>01.01 (월) 16:00</span></div>
             <div class="battle">
@@ -1193,7 +1323,7 @@ footer .footer-wrap{
               <a class="away" href="#=">예매하기</a>
             </div>
           </div>
-          <div class="body">
+          <div class="body" hidden>
             <div class="home"><span>HOME</span></div>
             <div class="data"><span>01.06 (토) 16:00</span></div>
             <div class="battle">
@@ -1211,7 +1341,7 @@ footer .footer-wrap{
             <div class="ticket-buy">
               <a class="home" href="#=">예매하기</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
 
