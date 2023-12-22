@@ -1,39 +1,8 @@
-.tablet-unblock-p, .mobile-unblock{
+
+.tablet-unblock-p,
+.tablet-unblock,
+.mobile-unblock{
   display: none;
-}
-
-.popup{
-  position: fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  min-width: 500px;
-  height: auto;
-  padding:2rem;
-  z-index: 100;
-  background: #fff;
-}
-
-
-.popup .grid-popup-header,
-.popup .grid-popup-body{
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.popup .grid-popup-header{
-  background: #a8a8a8;
-}
-
-.popup-background{
-  position: absolute;
-  top:0;
-  right:0;
-  left:0;
-  bottom:0;
-  background: rgb(0, 0, 0, 0.2);
-  z-index: 10;
 }
 
 
@@ -392,43 +361,14 @@ input::placeholder {
 
 
 
-/* tag */
-
-.tag {
-  position: relative;
-  border-bottom: 1px solid #e6e2e2;
-}
-.tag ul {
-  width: 454px;
-  display: flex;
-  gap: 30px;
-  margin: 0 auto;
-  font-size: 16px;
-}
-
-.tag ul li {
-  width: 130px;
-  padding: 16px 0;
-  text-align: center;
-  color: #999;
-  font-weight: 600;
-}
-
-.tag ul li.on {
-  color: #222;
-  border-bottom: 2px solid #222;
-}
 
 
 
 
-
-
-
-/* Soohan  main area */
+/* main area */
 main{
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .top-banner{
@@ -440,7 +380,7 @@ main{
 
 .top-banner h2{
   color:#fff;
-  font-size: 50px;
+  font-size: 3.8rem;
   font-weight: bold;
   position: absolute;;
   top: 50%;
@@ -466,42 +406,42 @@ main{
   position: relative;
 }
 
-.tab ul::after{
-  content: "";
-  position: absolute;
-  bottom:0;
-  left:0;
-  height:2px;
-  width:130px;
-  background: #000;
-  translate: var(--_left, 0) 0;
-  transition : translate 300ms;
-
-}
-
 .tab ul li{
   text-align: center;
   width:130px;
-  font-size: 16px;
+  font-size: 1.15rem;
   font-weight: 600;
   color : #999999;
   line-height: 57px;
   letter-spacing: -1px;
   white-space: nowrap;
+
 }
 
+.tab ul::after{
+  content:"";
+  position: absolute;
+  bottom:0;
+  left:0;
+  height: 2px;
+  width:130px;
+  background: #222;
+  cursor: none;
+  translate:var(--_left, 146px) 0;
+  transition: translate 300ms;
+}
 
 .tab ul .activated{
   text-align: center;
   width:130px;
+  font-size: 1..15rem;
   font-weight: 600;
-  color:#000
+  color : #000;
+  line-height: 57px;
 
 }
 
  /* main pagination area */
-
-
 article{
   min-width: 1025px;
   width:71.25%;
@@ -527,12 +467,14 @@ article{
 /* player record area */
 
 .content h2{
-font-size: 32px;
+font-size: 2.6rem;
 font-weight: bold;
-margin-top:40px;
 margin-bottom: 24px;
 }
 
+.css-player-tab{
+  margin-bottom:32px;
+}
 .css-player-tab ul{
   display: flex;
   justify-content: center;
@@ -569,19 +511,20 @@ display: block;
   text-align: end;
   padding:6px 0;
   margin-bottom: 30px;
-
 }
 
 
+.css-search-wrap{
+  margin-bottom: 24px;
+}
 
 
-/* search area */
+/* * search area */
 
 form{
   padding: 30px 20px;
   background: #eee;
 }
-
 
 form select{
   height: 38px;
@@ -633,53 +576,14 @@ form button{
 }
 
 
-.search-detail{
-    overflow: hidden;
-  }
-
-  .button-wrap{
-    display: block;
-    width:auto;
-    text-align: center;
-    padding:10px 0;
-    cursor: pointer;
-    border-right:1px solid#eaeaea;
-    border-left:1px solid #eaeaea;
-    border-bottom:1px solid #eaeaea;
-    box-sizing: border-box;
-  }
-  .search-detail button{
-    background: none;
-    border: none;
-  }
-
-  .form-wrap[data-form="false"]{
-    height: 0;
-    transition : height 0.3s ease-in-out;
-  }
-
-  .form-wrap[data-form="true"]{
-    height: 100;
-    transition : height 0.3s ease-in-out;
-  }
-
-  .search-detail p{
-    display: inline-block;
-  }
-
-  .button-wrap .css-o82kp5{
-    transition : transform 450ms;
-  }
-
 /* table area */
 
 /* tab selection area */
 table[data-table="true"]{
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 1.2rem;
   text-align: center;
-  margin-top: 24px;
 }
 
 table[data-table="false"]{
@@ -687,20 +591,14 @@ table[data-table="false"]{
   display:none;
 }
 
-thead th svg{
-  vertical-align: text-top;
-}
-
 table thead th{
-  height:32px;
+  width:13.2%;
   border-left : 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
   border-top: 1px solid #eaeaea;
   background: #f9f9f9;
-  padding:8px 16px
+  padding:16px;
 }
-
-
 
 table thead th:nth-of-type(1){
   width:auto;
@@ -712,26 +610,15 @@ table tbody td{
   background: #fff;
   border-left : 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
-
 }
 
 table tbody td:nth-of-type(1){
   border-left : none;
 }
 
-.content p:nth-of-type(2),
-.content p:nth-of-type(3),
-.content p:nth-of-type(4)
-{
+.content p:nth-of-type(1){
   text-align: left;
-
-}
-
-.content .table-info{
   margin-top: 16px;
-}
-.content .table-info li{
-  padding: 2px 0;
 }
 
 
@@ -754,6 +641,7 @@ footer {
   margin: 0 auto;
   align-items: center;
   gap: 40px;
+  margin: 0 16px;
 }
 
 .kovo_logo img {
@@ -789,6 +677,8 @@ address {
 .term_p {
   margin-top: 20px;
 }
+
+
 
 
 /* 토글 변경 영역 */
@@ -872,6 +762,7 @@ address {
 
 
 
+
 @media screen and (min-width: 1025px) {
   .mobile_menu {
       display: none;
@@ -883,6 +774,8 @@ address {
       margin: 0 auto;
   }
 
+
+
   /* 토글 변경 12.21 */
   .toggle {
     display: none;
@@ -892,24 +785,20 @@ address {
     display: none;
 }
 
+
+
 }
 
 
 
-/* media area */
-
-@media (min-width: 768px) and (max-width: 1024px){
-  .tablet-unblock-p{
-    display: inline-block;
-    font-size :16px;
-    font-weight: 600;
-    padding: 5px 0 ;
-
-    }
-
-  .wrap{
-  padding-bottom: 80px;
-  }
+@media (min-width:768px) and (max-width:1024px){
+.tablet-unblock-p{
+  display: inline-block;
+  font-size :16px;
+  font-weight: 600;
+  padding: 5px 0 ;
+  
+}
 
 
   /* tablet main area */
@@ -929,216 +818,57 @@ address {
   }
 
 
-    article{
-    min-width: auto;
-    width:auto;
-    margin : 0 16px;
+article {
+  margin: auto 16px;
+  min-width: auto;
+  width:auto;
+}
+
+  .content h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top:2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .content > p{
+      font-size :13px;
+    }
+
+
+  /* tablet main area */
+  .top-banner{
+  background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+
+  }
+
+  .top-banner h2{
+  position: unset;
+  padding:62px 0;
+  height:100%;
+  box-sizing: border-box;
+  text-align: center;
+
+  transform: none;
+  }
+
+
+  article{
+  min-width: auto;
+  width:auto;
+  margin : 0 16px;
   }
 
 
   .session-end{
-    margin-top:10px;
+  margin-top:10px;
   }
 
   .content > p{
-    font-size :13px;
+  font-size :13px;
   }
 
 
-
-
-  /* 소현 */
-  body {
-      position: relative;
-  }
-
-  /* 토글 */
-
-  .topmenu_bg {
-      display: none;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 10;
-  }
-
-
-  .toggle_header {
-      background: #2438ef;
-      height: 70px;
-      padding: 16px 16px 24px;
-      color: #fff;
-  }
-  
-  .toggle_header_top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 15px;
-      margin: 0 0 18px;
-  }
-
-  .language {
-      display: flex;
-      gap: 7px;
-  }
-
-  .icon {
-      display: flex;
-      gap: 15px;
-  }
-
-  .toggle_header_bottom {
-      font-size: 20px;
-      font-weight: 700;
-  }
-
-  .toggle_main {
-      background: #fff;
-      padding: 16px;
-      height: 100%;
-  }
-
-  .toggle_main li a {
-      width: 308px;
-      height: 40px;
-      display: flex;
-      font-size: 16px;
-      align-items: center;
-  }
-
-  .toggle_main li p {
-      width: 234px;
-      margin: 0 0 0 16px;
-  }
-
-  .toggle_main img {
-      margin-left: 15px;
-      width: 8px;
-      height: 8px;
-  }
-
-  /* 헤더 */
-
-  .h_full_box {
-      height: 57px;
-  }
-
-  .header_wrap {
-      height: 57px;
-      background: #fff;
-  }
-
-  /* 헤더 로고 부분 */
-
-  .logo_wrap {
-      width: auto;
-      height: 34px;
-      position: absolute;
-      top: 10px;
-      left: 15px;
-  }
-
-  .logo_wrap_img img {
-      width: auto;
-      height: 34px;
-      margin-right: 5px;
-  }
-
-  .logo_wrap span {
-      color: #222;
-      font-size: 1rem;
-  }
-  
-  .logo_wrap_btn img {
-      top: 5px;
-      color: #222;
-  }
-
-  /* gnb */
-
-  .gnb ul, .nav_bg {
-      display: none;
-  }
-
-  /* top menu */
-
-  .top_menu ul {
-      display: none;
-  }
-
-  /* 검색창 */
-
-  .search_wrap {
-      width: 100%;
-      height: 48px;
-      top: 57px;
-      left: 0;
-      padding: 24px 0;
-  }
-
-  .input_wrap {
-      width: 100%;
-      padding: 4px 16px;
-      box-sizing: border-box;
-      margin: 0;
-  }
-
-  input {
-      font-size: 1rem;
-  }
-
-  /* logo_category */
-
-  .logo_category {
-      height: auto;
-      top: 57px;
-  }
-  
-  .logo_cont_wrap {
-      width: 100%;
-      padding: 24px 16px;
-  }
-
-  .hr {
-      width: 100%;
-      margin: 20px 0;
-  }
-
-  /*men*/
-
-  .men_font {
-      font-size: 18px;
-  }
-
-  .men_emb_grop p {
-      display: none;
-  }
-
-  .m_emb img {
-      width: 56px;
-      height: 42px;
-  }
-  
-  /*women*/
-  
-  .women_font {
-      font-size: 18px;
-  }
-  
-  .women_emb_grop p {
-      display: none;
-  }
-
-  .women_emb_grop {
-      margin-bottom: 10px;
-  }
-  
-  .w_emb img {
-      width: 56px;
-      height: 42px;
-  }
 
 
 
@@ -1301,8 +1031,7 @@ input {
 }
 
 
-
-@media  (max-width:768px){
+@media (max-width:768px){
   .mobile-unblock{
     display: block;
   }
@@ -1315,55 +1044,19 @@ input {
     
   }
 
-
-  .wrap{
-    padding-bottom: 80px;
-  }
-
-
-  .search-detail{
-    overflow: hidden;
-  }
-
-  .button-wrap{
-    display: block;
-    width:auto;
-    text-align: center;
-    padding:10px 0;
-    cursor: pointer;
-    border-right:1px solid#eaeaea;
-    border-left:1px solid #eaeaea;
-    border-bottom:1px solid #eaeaea;
-    box-sizing: border-box;
-  }
-  .search-detail button{
-    background: none;
-    border: none;
-  }
-
-  .form-wrap[data-form="false"]{
-    height: 0;
-    transition : height 0.3s ease-in-out;
-  }
-
-  .form-wrap[data-form="true"]{
-    height: 100;
-    transition : height 0.3s ease-in-out;
-  }
-
-  .search-detail p{
-    display: inline-block;
-  }
   
+  .wrap{
+    padding-bottom: 2.5rem;
+  }
 
   .top-banner{
     display: none;
   }
 
+  
 
+    /* table area */
 
-
-    /* tablet main area */
     .top-banner{
       background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
       
@@ -1379,11 +1072,16 @@ input {
       transform: none;
     }
 
+
     .tab ul li {
       font-size: 13px;
       line-height: 55px;
-
   }
+
+  .tab ul .activated {
+    line-height: 55px;
+}
+
 
     .content div[data-pagination]{
       display: none;
@@ -1396,31 +1094,25 @@ input {
       padding-top:30px;
       }
 
-      .content > p{
-      font-size :13px;
-    }
-
-
     article{
       min-width: auto;
       width:auto;
       margin : 0 16px;
     }
 
+        /* table block CSS area */
+  form .tilde{
+    display: block;
+    margin: 20px 0;
+    padding-right: 240px;
+    text-align: center;
+    font-size:large;
+  }
 
-    /* table block CSS area */
-        form .tilde{
-      display: block;
-      margin: 20px 0;
-      padding-right: 240px;
-      text-align: center;
-      font-size:large;
-    }
-
-
-    table th{
-      display: none;
-    }
+  
+  table th{
+display: none;
+}
 
     table tbody td{
       display: grid;
@@ -1443,33 +1135,31 @@ input {
     }
 
     table td:nth-of-type(2):before{
-      content : "선수";
+      content : "팀";
     }
     table td:nth-of-type(3):before{
-      content : "전체팀";
-    }
-    table td:nth-of-type(4):before{
       content : "경기수";
     }
-    table td:nth-of-type(5):before{
+    table td:nth-of-type(4):before{
       content : "세트수";
     }
-    table td:nth-of-type(6):before{
+    table td:nth-of-type(5):before{
       content : "공격";
     }
-    table td:nth-of-type(7):before{
+    table td:nth-of-type(6):before{
       content : "블로킹";
     }
-    table td:nth-of-type(8):before{
+    table td:nth-of-type(7):before{
       content : "서브";
     }
-    table td:nth-of-type(9):before{
+    table td:nth-of-type(8):before{
       content : "득점";
     }
-    
+
     table td::before{
       font-size: 1.2rem;
       font-weight: 600;
+
     }
 
     table svg{
@@ -1482,181 +1172,178 @@ input {
       line-height: 1.5rem;
     }
 
+    .content > p{
+      font-size :13px;
+    }
 
 
 
+  body {
+    position: relative;
+}
+
+/* 토글 변경 12.21 */
+
+  .toggle {
+    display: none;
+}
+
+.toggle_main li a {
+    width: 100%;
+}
+
+.toggle_main li p {
+    width: 100%;
+}
 
 
 
+/* 헤더 */
 
+.h_full_box {
+    height: 57px;
+}
 
-    body {
-      position: relative;
-  }
-  
-  /* 토글 변경 12.21 */
-  
-    .toggle {
-      display: none;
-  }
-  
-  .toggle_main li a {
-      width: 100%;
-  }
-  
-  .toggle_main li p {
-      width: 100%;
-  }
-  
-  
-  
-  /* 헤더 */
-  
-  .h_full_box {
-      height: 57px;
-  }
-  
-  .header_wrap {
-      height: 57px;
-      background: #fff;
-  }
-  
-  /* 헤더 로고 부분 */
-  
-  .logo_wrap {
-      width: auto;
-      height: 34px;
-      position: absolute;
-      top: 10px;
-      left: 15px;
-  }
-  
-  .logo_wrap_img img {
-      width: auto;
-      height: 30px;
-      margin-right: 5px;
-  }
-  
-  .logo_wrap span {
-      color: #222;
-      font-size: 1rem;
-  }
-  
-  /* gnb */
-  
-  .gnb ul, .nav_bg {
-      display: none;
-  }
-  
-  /* top menu */
-  
-  .top_menu ul {
-      display: none;
-  }
-  
-  /* 검색창 */
-  
-  .search_wrap {
-      height: 48px;
-      top: 57px;
-      left: 0;
-      padding: 24px 0;
-  }
-  
-  .input_wrap {
-      width: 100%;
-      padding: 4px 16px;
-      box-sizing: border-box;
-      margin: 0;
-  }
-  
-  input {
-      font-size: 14px;
-  }
-  
-  /* logo_category */
-  
-  .logo_category {
-      height: 668px;
-      top: 57px;
-  }
-  
-  .logo_cont_wrap {
-      width: 100%;
-      padding: 24px 16px;
-  }
-  
-  .hr {
-      width: 100%;
-      margin: 20px 0;
-  }
-  
-  /*men*/
-  
-  .men_font {
-      font-size: 18px;
-  }
-  
-  .men_emb_grop {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-  }
-  
-  .men_emb_grop p {
-      display: none;
-  }
-  
-  .m_emb img {
-      width: 56px;
-      height: 42px;
-  }
-  
-  /*women*/
-  
-  .women_font {
-      font-size: 18px;
-  }
-  
-  .women_emb_grop {
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-      justify-content: center;
-      gap: 15px;
-  }
-  
-  .women_emb_grop p {
-      display: none;
-  }
-  
-  .w_emb img {
-      width: 56px;
-      height: 42px;
-  }
-  
-  footer{
-    margin-top: 44px;;
-  }
-  
-  .term ul{
+.header_wrap {
+    height: 57px;
+    background: #fff;
+}
+
+/* 헤더 로고 부분 */
+
+.logo_wrap {
+    width: auto;
+    height: 34px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+.logo_wrap_img img {
+    width: auto;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.logo_wrap span {
+    color: #222;
+    font-size: 1rem;
+}
+
+/* gnb */
+
+.gnb ul, .nav_bg {
+    display: none;
+}
+
+/* top menu */
+
+.top_menu ul {
+    display: none;
+}
+
+/* 검색창 */
+
+.search_wrap {
+    height: 48px;
+    top: 57px;
+    left: 0;
+    padding: 24px 0;
+}
+
+.input_wrap {
+    width: 100%;
+    padding: 4px 16px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+input {
+    font-size: 14px;
+}
+
+/* logo_category */
+
+.logo_category {
+    height: 668px;
+    top: 57px;
+}
+
+.logo_cont_wrap {
+    width: 100%;
+    padding: 24px 16px;
+}
+
+.hr {
+    width: 100%;
+    margin: 20px 0;
+}
+
+/*men*/
+
+.men_font {
+    font-size: 18px;
+}
+
+.men_emb_grop {
     flex-wrap: wrap;
-  }
+    justify-content: center;
+    gap: 15px;
+}
 
-  .top-banner{
-    display: block;
-    height: 109px;
-    background: #D91833;
-  }
+.men_emb_grop p {
+    display: none;
+}
 
-  .top-banner h2{
-  font-size: 30px;
-  height: auto;
-  padding:0;
-  line-height: 109px;
-  position : unset;
-  transform: none;
+.m_emb img {
+    width: 56px;
+    height: 42px;
+}
 
-  }
+/*women*/
+
+.women_font {
+    font-size: 18px;
+}
+
+.women_emb_grop {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: center;
+    gap: 15px;
+}
+
+.women_emb_grop p {
+    display: none;
+}
+
+.w_emb img {
+    width: 56px;
+    height: 42px;
+}
+
+footer{
+  margin-top: 44px;;
+}
+
+.term ul{
+  flex-wrap: wrap;
+}
+
+.top-banner{
+  display: block;
+  height: 109px;
+  background: #D91833;
+}
+
+.top-banner h2{
+font-size: 30px;
+height: auto;
+padding:0;
+line-height: 109px;;
 
 }
+
+}
+
 
