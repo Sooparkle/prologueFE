@@ -1,0 +1,65 @@
+
+<div class="popup">
+  <h3>김연경</h3>
+  <div class="grid">
+    <div class="grid-popup-header">
+      <div class="grid-popup-session">시즌</div>
+      <div class="grid-popup-team">팀</div>
+      <div class="grid-popup-game">경기수</div>
+      <div class="grid-popup-set">세트수</div>
+      <div class="grid-popup-attack">공격</div>
+      <div class="grid-popup-block">블로킹</div>
+      <div class="grid-popup-sub">서브</div>
+      <div class="grid-popup-gain">득점</div>
+    </div>
+    <div class="grid-popup-body">
+      <div class="grid-popup-session">2022-2023시즌</div>
+      <div class="grid-popup-team">흥국생명</div>
+      <div class="grid-popup-game">12</div>
+      <div class="grid-popup-set">47</div>
+      <div class="grid-popup-attack">47</div>
+      <div class="grid-popup-block">66</div>
+      <div class="grid-popup-sub">32</div>
+      <div class="grid-popup-gain">450</div>
+    </div>
+    <div class="grid-popup-body">
+      <div class="grid-popup-session">2017-2018시즌</div>
+      <div class="grid-popup-team">흥국생명</div>
+      <div class="grid-popup-game">13</div>
+      <div class="grid-popup-set">50</div>
+      <div class="grid-popup-attack">77</div>
+      <div class="grid-popup-block">80</div>
+      <div class="grid-popup-sub">60</div>
+      <div class="grid-popup-gain">875</div>
+    </div>
+  </div>
+  <button type="button">확인</button>
+</div>
+<!-- <div class="popup-background"></div> -->
+
+<script>
+  const $tablePopup = document.querySelector("table");
+  const $pupup =document.querySelector(".popup");
+
+console.log($popup);
+  const pupopOpen = () =>{
+  $tablePopup.addEventListener("click", (e)=>{
+    const clickedSVG = e.target.closest("svg");
+
+
+    console.log(clickedSVG);
+    if(!clickedSVG) return
+    $pupup.classList.add("activated");
+    
+  })
+  $popup.querySelector("button").addEventListener("cilick",()=>{
+    $pupup.classList.remove("activated");
+  })
+
+
+}
+
+  
+</script>
+
+targetTag.setAttribute("class", "popup")
