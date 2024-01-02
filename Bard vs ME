@@ -1,0 +1,38 @@
+const pages = document.querySelectorAll("[data-page-tab]");
+const tabContainer = document.querySelector(".page-tab");
+const tabList = tabContainer.querySelectorAll("li");
+
+tabContainer.addEventListener("click", (e) => {
+  const clickedTab = e.target.closest("li");
+
+  if (clickedTab) {
+    tabList.forEach((li) => li.classList.toggle("activated", li === clickedTab)); // Use toggle for simpler class handling
+    tabUl.style.setProperty("--_left", clickedTab.offsetLeft + "px");
+
+    const activatedPageId = clickedTab.querySelector("a").getAttribute("href"); // Access anchor directly
+    const activatedPage = document.querySelector(activatedPageId);
+
+    pages.forEach((page) => page.hidden = page !== activatedPage); // Use hidden property for brevity
+
+    tableFunction(activatedPageId); // Pass activated page ID directly
+  }
+});
+
+function tableFunction(currentPageId) {
+  const currentPageSelect = document.querySelector(currentPageId);
+  const currentPageTabs = currentPageSelect.querySelectorAll("[data-tab]");
+  const currentPageTables = currentPageSelect.querySelectorAll("[data-table]");
+
+  currentPageSelect.querySelector(".css-player-tab").addEventListener("click", (e) => {
+    const clickedTab = e.target.parentElement;
+    const clickedIndex = Array.from(currentPageTabs).indexOf(clickedTab); // Use Array.from for conversion
+
+    currentPageTabs.forEach((tab) => tab.dataset.tab = false); // Use dataset for attribute manipulation
+    currentPageTabs[clickedIndex].dataset.tab = true;
+
+    currentPageTables.forEach((table) => table.dataset.table = false);
+    currentPageTables[clickedIndex].dataset.table = true;
+  });
+}
+
+tableFunction(tabContainer.querySelector(".activated a").getAttribute("href")); // Initialize tableFunction
