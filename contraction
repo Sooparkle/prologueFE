@@ -295,7 +295,7 @@
     <section class="page-tab">
       <ul>
         <li class="activated"><a href="#stats-player-record">선수 기록</a></li>
-        <li><a href="#stats-team-record">팀 기록</a></li>
+        <li ><a href="#stats-team-record">팀 기록</a></li>
       </ul>
       <div class="css-line js-line"></div>
     </section>
@@ -1706,77 +1706,64 @@
 
   </main>
 
-  <script>
-    const tabFunction = () =>{
-      const content = document.querySelector(".content");
-      const pages = document.querySelectorAll("[data-page-tab]");
-      const tabContainer =document.querySelector(".page-tab");
-      const tabList = tabContainer.querySelectorAll("li");
-      const tabUl = tabContainer.querySelector("ul");
 
-      tabContainer.addEventListener("click", (e)=>{
-        const clickedTab = e.target.closest("li")
+<script>
+  const pages = document.querySelectorAll("[data-page-tab]");
+  const tabContainer = document.querySelector(".page-tab");
+  const tabList = tabContainer.querySelectorAll("li");
+  const tabUl = tabContainer.querySelector("ul");
 
-        e.preventDefault();
-        if(!clickedTab) return;
+  function tabFunction() {
+    tabContainer.addEventListener("click", (e) => {
+      const clickedTab = e.target.closest("li");
 
-        tabList.forEach(li =>{li.classList.remove("activated")});
-        clickedTab.classList.add("activated");
+      e.preventDefault();
+      if (!clickedTab) return;
 
-        tabUl.style.setProperty("--_left", clickedTab.offsetLeft+"px");
+      tabList.forEach((li) => li.classList.remove("activated"));
+      clickedTab.classList.add("activated");
 
-        const activatedPageId = e.target.getAttribute("href");
-        const activatedPage = document.querySelector(activatedPageId);
+      tabUl.style.setProperty("--_left", clickedTab.offsetLeft + "px");
 
+      const activatedPageId = e.target.getAttribute("href");
+      const activatedPage = document.querySelector(activatedPageId);
 
-        pages.forEach((page, index) =>{
-          page.setAttribute("hidden", true);
-        });
-        activatedPage.removeAttribute("hidden");
-
-
-        const selectedTables = activatedPage.querySelectorAll("table");
-
-          selectedTables.forEach(table =>{
-            table.addEventListener("click", ()=>{
-              const tableIndex = [...selectedTables]
-              console.log(tableIndex);
-              
-            })
-
-
-
-        })
-
+      pages.forEach((page, index) => {
+        page.setAttribute("hidden", true);
       });
-      };
+      activatedPage.removeAttribute("hidden");
 
-      tabFunction()
+      // Re-execute tableFunction for the new activated page
+      tableFunction();
+    });
+  }
 
-
-  //   const tableFunction = () =>{
-  //     const main = document.querySelector("main");
-  //     const tabs = document.querySelectorAll("[data-tab]");
-  //     const tables = document.querySelectorAll("[data-table]");
-
-  //     main.addEventListener("click", (e)=>{
-  //       const clicked = e.target
-  //       e.preventDefault();
-
-
-  //       tabs.forEach(tab => tab.setAttribute("data-tab", false));
-  //       tab.setAttribute("data-tab", true);
-
-  //       tables.forEach(table =>{table.setAttribute("data-table", false)});
-  //       tables[index].setAttribute("data-table", true);
-
-  //   });
-
-  // }
-  // tableFunction()
-  </script>
+  function tableFunction() {
+    const currentPageSelectId = document.querySelector(".activated").querySelector("a").getAttribute("href");
+    const currentPageSelect = document.querySelector(currentPageSelectId);
+    const currentPageTables = currentPageSelect.querySelectorAll("[data-table]");
+    const currentPageTabs = currentPageSelect.querySelectorAll("[data-tab]");
 
 
+    currentPageSelect.querySelector(".css-player-tab").addEventListener("click", (e) => {
+      const clicked = e.target.parentElement;
+      e.preventDefault();
+
+      currentPageTabs.forEach((tab) => tab.setAttribute("data-tab", false));
+      clicked.setAttribute("data-tab", true);
+
+      const currentPageTabActivated = currentPageSelect.querySelector(".css-player-tab").querySelector("[data-tab='true']");
+      const currentTabListIndex = [...currentPageTabs].indexOf(currentPageTabActivated);
+
+      currentPageTables.forEach((table) => table.setAttribute("data-table", false));
+      currentPageTables[currentTabListIndex].setAttribute("data-table", true);
+    });
+  }
+
+tabFunction();
+tableFunction();
+
+</script>
 
 
 
