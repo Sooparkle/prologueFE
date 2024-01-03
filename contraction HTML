@@ -90,7 +90,7 @@
     });
     
 
-    navBar.addEventListener("mouseleave", ()=>{
+    headerBar.addEventListener("mouseleave", ()=>{
       // headerBar.style.setProperty("overflow-y",  "hidden" );
       headerBar.style.setProperty("--_transform", "translateY(-163px)");
       headerBar.style.setProperty("transition", "transform 0.4s ease-in-out");
