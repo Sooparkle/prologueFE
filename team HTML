@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STATS</title>
+  <link rel="stylesheet" href="../VolleryBall/css/reset.css">
+  <link rel="stylesheet" href="../VolleryBall/css/team.css">
+  <link rel="stylesheet" href="../VolleryBall/css/redspakles_header.css">
+  <!-- <link rel="stylesheet" href="../VolleryBall/css/done-stats_team_record.css"> -->
+  <link rel="icon" href="/images/rs_logo.png">
+
+</head>
+
+<body>
+  <header>
+    <div class="header-wrap">
+      <div class="logo-wrap">
+        <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
+        <h1>정관장</h1>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" class="ant-tooltip-open css-10i3oi9">
+          <g clip-path="url(#clip0_2327_5794)">
+            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_2327_5794">
+              <rect width="24" height="24" fill="currentColor"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#=">TEAM</a>
+            <dl>
+              <dt><a href="#=">TEAM</a></dt>
+              <dd><a href="#=">Coach</a></dd>
+              <dd><a href="#=">Players</a></dd>
+            </dl>
+          </li>
+          <li><a href="#=">STATS</a>
+            <dl>
+              <dt><a href="#=">STATS</a></dt>
+              <dd><a href="#=">Player</a></dd>
+              <dd><a href="#=">Team</a></dd>
+            </dl>
+          </li>
+          <li><a href="#=">TICKET</a>
+            <dl>
+              <dt><a href="#=">TICKET</a></dt>
+              <dd><a href="#=">Ticket</a></dd>
+              <dd><a href="#=">Package</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="utilities">
+        <div class="login">LOGIN</div>
+        <div class="singup">SIGNUP</div>
+        <div class="language">
+          <select name="" id="">
+            <option value="ko" chcked>KO</option>
+            <option value="En">EN</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const headerBar = document.querySelector("header");
+    const navBar = document.querySelector("nav");
+    const subMenu = document.querySelectorAll("dl");
+
+    navBar.addEventListener("mouseenter", ()=>{
+      headerBar.style.setProperty("overflow-y",  "visible" );
+      headerBar.style.setProperty("--_transform", "translateY(1px)");
+      subMenu.forEach(sub =>{
+        sub.style.setProperty("transition", "opacity 0.8s ease-out");
+        sub.style.setProperty("opacity", "1");
+        sub.style.setProperty("visibility", "visible");
+      });
+    });
+    
+
+    headerBar.addEventListener("mouseleave", ()=>{
+      // headerBar.style.setProperty("overflow-y",  "hidden" );
+      headerBar.style.setProperty("--_transform", "translateY(-163px)");
+      headerBar.style.setProperty("transition", "transform 0.4s ease-in-out");
+      subMenu.forEach(sub =>{
+        sub.style.setProperty("transition", "opacity 0.15s ease-out");
+        sub.style.setProperty("opacity", "0");
+        setTimeout(() => {
+          sub.style.visibility = "hidden";
+        }, 200);
+      });
+
+    });
+  </script>
+
+  <main>
+
+    <!-- player recrod area -->
+
+    <section class="top-banner">
+      <h2>TEAM</h2>
+    </section>
+
+    <section class="page-tab">
+      <ul>
+        <li class="activated"><a href="#team-coach">Coach</a></li>
+        <li ><a href="#team-player">Player</a></li>
+      </ul>
+      <div class="css-line js-line"></div>
+    </section>
+
+
+
+    <div id="team-coach" data-page-tab>
+      <article>
+        <section class="content">
+          <h2>Coach</h2>
+          <div data-pagination>
+            <a class="home" href="#="><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+            <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+            <span>TEAM</span>
+            <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+            <span>Coach</span>
+          </div>
+
+          <div class="css-team-tab">
+            <ul>
+              <li class="" data-tab="true"><a href="#=" >전체</a></li>
+              <li class="" data-tab="false"><a href="#=" >아포짓 스파이커</a></li>
+              <li class="" data-tab="fale"><a href="#=" >아웃사이드 히터</a></li>
+              <li class="" data-tab="fale"><a href="#=" >세터</a></li>
+              <li class="" data-tab="fale"><a href="#=" >미들블로커</a></li>
+              <li class="" data-tab="fale"><a href="#=" >리베로</a></li>
+            </ul>
+          </div>
+
+          <div class="players">
+            <h3>아포짓 스파이커</h3>
+            <div class="player-grid">
+
+              <div class="player-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
+                </div>
+                <p>No.7 <span class="player-name">이예솔</span></p>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
+                </div>
+                <p>No.7 <span class="player-name">이예솔</span></p>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
+                </div>
+                <p>No.7 <span class="player-name">이예솔</span></p>
+                <button type="button">상세보기</button>
+              </div>
+            </div>
+
+            <div class="player-grid">
+              <div class="player-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
+                </div>
+                <p>No.7 <span class="player-name">이예솔</span></p>
+                <button type="button">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </article>
+    </div>
+    
+    <div id="team-player" data-page-tab>
+      <article>
+        <section class="content">
+          <h2>Player</h2>
+          <div data-pagination>
+            <a class="home" href="#="><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+            <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+            <span>TEAM</span>
+            <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
+            <span>Player</span>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+
+      <footer>
+        <div class="footer_wrap">
+            <div class="kovo_logo">
+                <img src="https://kovo.co.kr/assets/footer_logo.0eb2b735.svg" alt="">
+            </div>
+            <div class="footer_detail">
+                <div class="term">
+                    <ul>
+                        <li><a href="#none">ANTIDOPING</a></li>
+                        <li><a href="#none">선수고충처리센터</a></li>
+                        <li><a href="#none">클린센터</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">이용약관</a></li>
+                        <li><a href="#none">이메일무단수집거부</a></li>
+                        <li><a href="#none">오시는 길</a></li>
+                        <li><a href="#none">통합SNS</a></li>
+                    </ul>
+                </div>
+                <address>[03925] 서울특별시 마포구 월드컵북로 402 KGIT센터 11층 한국배구연맹 | TEL : 02-422-0110 | FAX : 02-418-0131
+                </address>
+                <P>Copyright (C) KOREAN VOLLEYBALL FEDERATION. ALL RIGHT RESERVED</P>
+                <P class="term_p">KOVO 및 KOVO 소속 14개 팀로고, 마스코트, 엠블럼과 KOVO 소속 선수의 사진, 초상, 영상, 캐릭터 및 기타 KOVO의 지적재산권등을 무단으로 사용하는
+                    것은 상표법 및 저작권법에 의해 금지됩니다.</P>
+            </div>
+        </div>
+      </footer>
+    
+    </div>
+  </main>
+</body>
+</html>
