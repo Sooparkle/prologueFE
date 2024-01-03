@@ -4,287 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STATS</title>
-  <link rel="stylesheet" href="../VolleryBall/css/reset.css">
-  <link rel="stylesheet" href="../VolleryBall/css/done-stats_player_record.css">
-  <link rel="stylesheet" href="../VolleryBall/css/redspakles_header.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/etc.css">
   <!-- <link rel="stylesheet" href="../VolleryBall/css/done-stats_team_record.css"> -->
   <link rel="icon" href="/images/rs_logo.png">
 
-  <!-- <script  type="text/javascript">
-    $(document).ready(function(){
-        /* 메뉴바 마우스 오버(enter and leave) 이벤트 */
-        // enter
-        $(".gnb").mouseenter(function(){
-            holding = 1;
-            if(holding == 1){
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
-                $(".gnb dl, .nav_bg").css({"display":"block"});
-                $(".search_wrap, .logo_category").css({"display":"none"});
-            }
-        });
-        // leave
-        $(".header_wrap").mouseleave(function(){
-            holding = 0;
-            $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-            $(".header").css({"height":"0", "background":"none"});
-            $(".gnb dl, .nav_bg, .search_wrap, .logo_category").css({"display":"none"});
-        });
 
-        /* 헤더 */
-        let dash = $('.nav_dash');
-        let holding = 0;
-        let active2 = 0;
-        let holding2 = 0;
-
-        /* logo category click*/           
-        $(".logo_wrap_btn").on('click', function (e) {
-            e.preventDefault();
-            let arrow_d = $(".logo_wrap_img img").attr('src');
-            let arrow_u = "/images/arrow_u.png";
-            if (active2 == 0 && holding2 == 0) {
-                holding2 = 1;
-                active2 = 1;
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_u.png");
-                $(".logo_category").css({ "display": "block" });
-                $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
-                $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
-            } else if (active2 == 1) {
-                holding2 = 0;
-                active2 = 0;
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                $(".logo_category").css({ "display": "none" });
-                $(".header").css({ "height": "0", "background": "none" });
-                $(".gnb dl, .nav_bg, .search_wrap").css({ "display": "none" });
-            };
-            console.log(active2);
-        });
-
-        /* emb mouseleave */
-        $(".logo_category").mouseenter(function () {
-            $(".logo_wrap_btn img").attr('src', "../images/arrow_u.png");
-            $(".logo_category").css({ "display": "block" });
-            $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
-            $(".gnb dl").css({ "display": "none" });
-        });
-        $(".logo_category").mouseleave(function () {
-            holding2 = 0;
-            $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-            $(".logo_category").css({ "display": "none" });
-            $(".header").css({ "height": "90px", "background": "none" });
-            console.log(top);
-        });
-
-        /* emb hover*/
-        // let color = ['#5448AA','#0082CA','#ED0404','#292F85','#FF5724','#FDAD17','#0C4DA2','#102A86','#C408A1','#16193E','#D91833','#0B91A7','#0055A5','#DF0024']
-        color1 = ['#5448AA', '#0082CA', '#ED0404', '#292F85', '#FF5724', '#FDAD17', '#0C4DA2'];
-        color2 = ['#102A86', '#C408A1', '#16193E', '#D91833', '#0B91A7', '#0055A5', '#DF0024'];
-        let default_color = "#fff";
-        /* m_emb hover */
-        $(".m_emb").hover(function () {
-            let idx = $(this).parent().index();
-            let border_set = "5px solid " + color1[idx];
-            $(this).css({ border: border_set });
-            // console.log(border_set)
-        }, function () {
-            let border_set = "1px solid " + default_color;
-            $(this).css({ border: border_set });
-        });
-        /* w_emb hover */
-        $(".w_emb").hover(function () {
-            let idx = $(this).parent().index();
-            let border_set = "5px solid " + color2[idx];
-            $(this).css({ border: border_set });
-            // console.log(border_set)
-        }, function () {
-            let border_set = "1px solid " + default_color;
-            $(this).css({ border: border_set });
-        });
-
-
-        /* 토글 메뉴 */
-        // click
-        $(".toggle_button").click(function(){
-            if (window.innerWidth <= 768){
-                $("body").css({"overflow":"hidden"});
-                $(".toggle").fadeIn("");
-                $(".toggle").css({"width":"100%"});
-                $(".toggle").css({"right":"0"});
-                $(".toggle").css({"display":"block"});
-                $(".logo_category, .search_wrap").css({"display":"none"});
-            } else if(window.innerWidth <= 1124){
-                $("header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
-                $(".header_wrap").css({"padding":"0", "background":"#fff" });
-                $("body").css({"overflow":"hidden"});
-                $(".toggle").fadeIn("");
-                $(".toggle").css({"width":"340px"});
-                $(".toggle").css({"right":"0"});
-                $(".topmenu_bg").css({"display":"block"});
-                $(".toggle").css({"display":"block"});
-                $(".logo_category, .search_wrap").css({"display":"none"});
-            };
-        })
-        // close
-        $(".toggle_close").click(function(){
-            if (window.innerWidth <= 768){
-                $("body").css({"overflow":""});
-                $("header").css({"display":"block"});
-                $(".toggle").fadeOut("");
-                $(".toggle").css({"right":"-840px"});
-            } else if(window.innerWidth <= 1124){
-                $(".header_wrap").css({"padding":"0 60px", "background":"#fff" });
-                $("header").css({"height":"0", "display":"block"});
-                $("body").css({"overflow":""});
-                $(".topmenu_bg").css({"display":"none"});
-                $(".toggle").fadeOut("");
-                $(".toggle").css({"right":"-340px"});
-            };
-        })
-
-
-        // body 
-        $("body").mouseleave(function(){
-            if (window.innerWidth <= 768){
-                $(".toggle").css({"width":"0"});
-                $("body").css({"overflow":""});
-                $(".search_wrap, .logo_category").css({"display":"none"});
-            } else {
-                $("header").css({"display":"block"});
-                $(".toggle").css({"width":"0"});                    
-                $("body").css({"overflow":""});
-                $(".topmenu_bg, .search_wrap, .logo_category").css({"display":"none"});
-            }
-        }).resize();
-
-        /* 검색창 */
-        let active = 0;
-        $(".search_button").on('click', function(){
-            if(active == 0){
-                active = 1;
-                $(".header_wrap").css({"background":"rgba(255, 255, 255, 1)" });
-                $(dash).css({"background-color":"#000"});
-                $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
-                $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-                $(".header").css({"height":"100%", "background":"rgba(0,0,0, 0.5)"});
-                $(".search_wrap").css({"display":"block"});
-                $(".gnb dl, .nav_bg, .logo_category").css({"display":"none"});
-            } else if(active == 1){
-                active = 0;
-                $(".header").css({"height":"100%", "background":"none"});
-                $(".gnb dl, .nav_bg, .logo_category, .search_wrap").css({"display":"none"});
-            };
-            console.log(active);
-        });
-
-        /* search mouseleave */
-        $(".search_wrap").mouseenter(function () {
-            $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-            $(".header").css({ "height": "100%", "background": "rgba(0,0,0, 0.5)" });
-            $(".gnb dl, .logo_category").css({ "display": "none" });
-            $(".header_wrap").css({ "background": "#fff" });
-            $(dash).css({"background-color":"#000"});
-            $(".logo_wrap span, .gnb > ul > li > a, .top_menu > ul > li > a").css({"color":"#000"});
-        });
-        $(".search_wrap").mouseleave(function () {
-            $(".logo_wrap_btn img").attr('src', "../images/arrow_d.png");
-            $(".logo_category, .search_wrap, .gnb > dl").css({ "display": "none" });
-            $(".header").css({ "height": "90px", "background": "none" });
-            console.log(active + "검색창");
-        });
-
-        /* 상세보기 */
-        $(".detail_btn").click(function(){
-                $(".person_detail").css({"display":"block"});
-                $("body").css({"overflow":"hidden"});
-                $(".body_bg_2").css({"display":"block"});
-            });
-        // close
-        $(".person_detail > a").click(function(){
-                $(".person_detail").css({"display":"none"});
-                $("body").css({"overflow":""});
-                $(".body_bg_2").css({"display":"none"});
-            });
-
-        let pd_active = 0;
-        $("body_bg_2").on('click', function(){
-            if(pd_active == 0){
-                pd_active = 1;
-                $(".person_detail").css({"display":"block"});
-                $("body").css({"overflow":"hidden"});
-                $(".body_bg_2").css({"display":"block"});
-            } else if(pd_active == 1){
-                pd_active = 0;
-                $(".person_detail").css({"display":"none"});
-                $("body").css({"overflow":""});
-                $(".body_bg_2").css({"display":"none"});
-            }
-        });
-    });
-
-</script> -->
 </head>
 
-<body>
 
+<body>
+  <header>
+    <div class="header-wrap">
+      <div class="logo-wrap">
+        <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
+        <h1>정관장</h1>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" class="ant-tooltip-open css-10i3oi9">
+          <g clip-path="url(#clip0_2327_5794)">
+            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_2327_5794">
+              <rect width="24" height="24" fill="currentColor"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#=">TEAM</a>
+            <dl>
+              <dt><a href="#=">TEAM</a></dt>
+              <dd><a href="#=">Coach</a></dd>
+              <dd><a href="#=">Players</a></dd>
+            </dl>
+          </li>
+          <li><a href="#=">STATS</a>
+            <dl>
+              <dt><a href="#=">STATS</a></dt>
+              <dd><a href="#=">Player</a></dd>
+              <dd><a href="#=">Team</a></dd>
+            </dl>
+          </li>
+          <li><a href="#=">TICKET</a>
+            <dl>
+              <dt><a href="#=">TICKET</a></dt>
+              <dd><a href="#=">Ticket</a></dd>
+              <dd><a href="#=">Package</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="utilities">
+        <div class="login">LOGIN</div>
+        <div class="singup">SIGNUP</div>
+        <div class="language">
+          <select name="" id="">
+            <option value="ko" chcked>KO</option>
+            <option value="En">EN</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <script>
+    const headerBar = document.querySelector("header");
+    const navBar = document.querySelector("nav");
+    const subMenu = document.querySelectorAll("dl");
+
+    navBar.addEventListener("mouseenter", ()=>{
+      headerBar.style.setProperty("overflow-y",  "visible" );
+      headerBar.style.setProperty("--_transform", "translateY(1px)");
+      subMenu.forEach(sub =>{
+        sub.style.setProperty("transition", "opacity 0.8s ease-out");
+        sub.style.setProperty("opacity", "1");
+      });
+    });
+    
+
+    navBar.addEventListener("mouseleave", ()=>{
+      // headerBar.style.setProperty("overflow-y",  "hidden" );
+      headerBar.style.setProperty("--_transform", "translateY(-163px)");
+      headerBar.style.setProperty("transition", "transform 0.4s ease-in-out");
+      subMenu.forEach(sub =>{
+        sub.style.setProperty("transition", "opacity 0.2s ease-out");
+        sub.style.setProperty("opacity", "0");
+      // subMenu.style.setProperty("opacity", "0");
+      });
+
+      // subMenu.style.style.opacity = "1";
+
+      
+
+    });
+
+    
+
+
+
+  </script>
 
   <main>
-    <header>
-      <div class="header-wrap">
-        <div class="logo-wrap">
-          <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
-          <h1>정관장</h1>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" class="ant-tooltip-open css-10i3oi9">
-            <g clip-path="url(#clip0_2327_5794)">
-              <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </g>
-            <defs>
-              <clipPath id="clip0_2327_5794">
-                <rect width="24" height="24" fill="currentColor"></rect>
-              </clipPath>
-            </defs>
-          </svg>
-        </div>
-
-        <nav>
-          <ul>
-            <li>
-              <a href="#=">TEAM</a>
-              <dl>
-                <dt><a href="#=">TEAM</a></dt>
-                <dd><a href="#=">Coach</a></dd>
-                <dd><a href="#=">Players</a></dd>
-              </dl>
-            </li>
-            <li><a href="#=">STATS</a>
-              <dl>
-                <dt><a href="#=">STATS</a></dt>
-                <dd><a href="#=">Player</a></dd>
-                <dd><a href="#=">Team</a></dd>
-              </dl>
-            </li>
-            <li><a href="#=">TICKET</a>
-              <dl>
-                <dt><a href="#=">TICKET</a></dt>
-                <dd><a href="#=">Ticket</a></dd>
-                <dd><a href="#=">Package</a></dd>
-              </dl>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="utilities">
-          <div class="login">LOGIN</div>
-          <div class="singup">SIGNUP</div>
-          <div class="language">
-            <select name="" id="">
-              <option value="ko" chcked>KO</option>
-              <option value="En">EN</option>
-            </select>
-          </div>
-
-        </div>
-      </div>
-    </header>
 
     <!-- player recrod area -->
 
@@ -1706,12 +1532,21 @@
 
   </main>
 
-
-<script>
+  <script>
   const pages = document.querySelectorAll("[data-page-tab]");
   const tabContainer = document.querySelector(".page-tab");
   const tabList = tabContainer.querySelectorAll("li");
   const tabUl = tabContainer.querySelector("ul");
+
+  //최초 디폴트값
+  pages.forEach((page, index) =>{
+    if(index === 0 ){
+
+    } else{
+      page.setAttribute("hidden", true);
+    }
+  })
+
 
   function tabFunction() {
     tabContainer.addEventListener("click", (e) => {
@@ -1728,9 +1563,7 @@
       const activatedPageId = e.target.getAttribute("href");
       const activatedPage = document.querySelector(activatedPageId);
 
-      pages.forEach((page, index) => {
-        page.setAttribute("hidden", true);
-      });
+      pages.forEach(page => page.setAttribute("hidden", true));
       activatedPage.removeAttribute("hidden");
 
       // Re-execute tableFunction for the new activated page
@@ -1763,7 +1596,9 @@
 tabFunction();
 tableFunction();
 
-</script>
+  </script>
+
+
 
 
 
