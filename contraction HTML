@@ -74,6 +74,7 @@
   </header>
 
   <script>
+  <script>
     const headerBar = document.querySelector("header");
     const navBar = document.querySelector("nav");
     const subMenu = document.querySelectorAll("dl");
@@ -84,6 +85,7 @@
       subMenu.forEach(sub =>{
         sub.style.setProperty("transition", "opacity 0.8s ease-out");
         sub.style.setProperty("opacity", "1");
+        sub.style.setProperty("visibility", "visible");
       });
     });
     
@@ -93,21 +95,15 @@
       headerBar.style.setProperty("--_transform", "translateY(-163px)");
       headerBar.style.setProperty("transition", "transform 0.4s ease-in-out");
       subMenu.forEach(sub =>{
-        sub.style.setProperty("transition", "opacity 0.2s ease-out");
+        sub.style.setProperty("transition", "opacity 0.15s ease-out");
         sub.style.setProperty("opacity", "0");
-      // subMenu.style.setProperty("opacity", "0");
+        setTimeout(() => {
+          sub.style.visibility = "hidden";
+        }, 200);
       });
 
-      // subMenu.style.style.opacity = "1";
-
-      
-
     });
-
-    
-
-
-
+  </script>
   </script>
 
   <main>
