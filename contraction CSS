@@ -643,7 +643,6 @@ display: block;
 .content > p{
   text-align: end;
   padding:6px 0;
-  margin-bottom: 30px;
 
 }
 
@@ -1811,3 +1810,5 @@ input {
   }
 
 }
+
+
