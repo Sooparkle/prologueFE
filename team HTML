@@ -606,6 +606,8 @@
         e.preventDefault();
         if(!clicked) return
 
+
+
         $tab.querySelectorAll("li").forEach(tab => { tab.classList.remove('activated') });
         clicked.classList.add('activated');
 
@@ -624,8 +626,13 @@
       }
 
       function idScroll() {
-        const $tabArea = document.querySelector(".css-team-tab");
+        const currentPageSelectId = document.querySelector(".activated").querySelector("a").getAttribute("href");
+        const $currentPageSelect = document.querySelector(currentPageSelectId);
+        
+        const $tabArea = $currentPageSelect.querySelector(".css-team-tab");
         const $contentInTab = $tabArea.querySelectorAll("a");
+
+        console.log($currentPageSelect)
 
         $tabArea.addEventListener("click", (e)=>{
           const clickedTab = e.target.closest("a");
@@ -635,7 +642,7 @@
 
           const selectedTabId =clickedTab.getAttribute("href");
           console.log(selectedTabId);
-          const scrollPosition= document.querySelector(selectedTabId).offsetTop;
+          const scrollPosition= $currentPageSelect.querySelector(selectedTabId).offsetTop;
           console.log(scrollPosition);
 
           window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
