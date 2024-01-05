@@ -11,6 +11,10 @@ svg{
 
 
 /* Soohan  main area */
+[data-page-tab]{
+  padding-bottom : 100px;
+}
+
 main{
   position: relative;
   z-index: 2;
@@ -100,24 +104,24 @@ article{
   position: relative;
 }
 
-.content div[data-pagination]{
+[data-pagination]{
   position: absolute;
   right:0;
   top: 20px;
 }
 
-.content div[data-pagination] svg{
+[data-pagination] svg{
   vertical-align: middle;
 }
 
-.content div[data-pagination] span:nth-of-type(1){
+[data-pagination] span:nth-of-type(1){
   color:#666
 }
 
 
 /* player record area */
 
-.content h2{
+.content-title h2{
 font-size: 32px;
 font-weight: bold;
 margin-top:40px;
@@ -127,7 +131,7 @@ margin-bottom: 24px;
 .css-team-tab{
   margin-bottom: 30px;
 }
-.css-team-tab ul{
+/* .css-team-tab ul{
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -137,34 +141,53 @@ margin-bottom: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.css-team-tab li{
+/* .css-team-tab li{
   width:50%;
   text-align: center;
   background: #eee;
-}
+} */
 
-.css-team-tab li{
+/* .css-team-tab li{
   width:50%;
   text-align: center;
   background: #eee;
+} */
+
+
+.css-team-tab ul{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  width:100%;
+  height: 56px;
+  background: #eee;
+  border-radius: 6px;
+
 }
 
+.css-team-tab li a:hover{
+  font-size: 14px;
+  color : #000;
+  font-weight: 700;
+}
 
-.css-team-tab li[data-tab="true"] {
+/* [data-tab="true"] {
   width:50%;
   text-align: center;
   background: #d91833;
   color:#fff;
 
-}
+} */
 
 
-.css-team-tab li a{
+/* .css-team-tab li a{
 line-height: 56px;
 display: block;
-}
+} */
 
 .content > p{
   text-align: end;
@@ -176,28 +199,108 @@ display: block;
 
 
 /* search area */
+.players {
+  margin-bottom: 60px;
 
-img{
-  width:100%;
 }
+
+
+.players h3{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+}
+
 .player-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap : 2rem;
 }
 
-form{
-  padding: 30px 20px;
-  background: #eee;
+.player-grid .name-sns a:nth-of-type(1){
+  order:2
 }
 
 
-form select{
-  height: 38px;
-  border-radius: 5px;
-  border: 1px solid #e8e8e8;
-  background: #fff;
-  
+.player-grid .img-mask{
+  position: relative;
 }
+
+.player-grid .img-mask{
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  margin-bottom: 10px;;
+}
+
+.player-grid .player-number{
+  position: absolute;
+  top:10px;
+  left:5px;
+  padding: 1px 3px;
+  border: 1px solid #d91833;
+  border-radius: 4px;
+  color: #d91833;
+  font-weight: 700;
+}
+
+.players .name-sns{
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 7fr 1fr 1fr;
+  justify-items: start;
+  gap:1rem;
+  padding : 0 1.5rem;
+}
+
+.player-grid .player-position-wrap p{
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 10px ;
+}
+
+.player-grid .player-position-wrap p span{
+  font-weight: 700;
+}
+
+
+.player-grid .player-sns{
+  display: grid;
+  grid-column-end: auto;
+}
+
+.player-grid .player-position-wrap .name-sns img{
+  display: inline-block;
+  width: 20px;
+  vertical-align: text-bottom;
+}
+
+.player-grid .player-position-wrap button{
+  display: block;
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  padding:8px 0 ;
+  color:#969696;
+  margin-top :10px;
+
+}
+
+.player-grid .player-position-wrap button:hover{
+color :#fff;
+  font-weight: 700;
+  background: #D91833;
+
+}
+
+
+
+
+
+
+
 
 .session-start,
 .session-end{
@@ -210,35 +313,6 @@ form select{
 
 .session-top label{
   font-weight: 600;
-}
-
-form .tilde{
-  margin: 0 20px;
-}
-form .session{
-  width: 250px;
-  margin-right: 10px;
-}
-form .round{
-  width:120px;
-}
-
-form .type{
-  width:120px;
-}
-
-
-form button{
-  color: #fff;
-  background: #d91833;
-  margin-left: 10px;
-  padding: 0 40px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  line-height: 38px;
-  box-sizing:border-box;
-  cursor: pointer;
 }
 
 
@@ -1344,4 +1418,3 @@ input {
   }
 
 }
-
