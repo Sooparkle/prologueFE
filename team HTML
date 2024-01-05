@@ -12,6 +12,8 @@
 
 </head>
 
+
+
 <body>
   <header>
     <div class="header-wrap">
@@ -80,7 +82,7 @@
       headerBar.style.setProperty("overflow-y",  "visible" );
       headerBar.style.setProperty("--_transform", "translateY(1px)");
       subMenu.forEach(sub =>{
-        sub.style.setProperty("transition", "opacity 0.8s ease-out");
+        sub.style.setProperty("transition", "opacity 1.3s ease-out");
         sub.style.setProperty("opacity", "1");
         sub.style.setProperty("visibility", "visible");
       });
@@ -104,7 +106,7 @@
 
   <main>
 
-    <!-- player recrod area -->
+    <!-- player record area -->
 
     <section class="top-banner">
       <h2>TEAM</h2>
@@ -112,7 +114,7 @@
 
     <section class="page-tab">
       <ul>
-        <li class="activated"><a href="#team-coach">Coach</a></li>
+        <li class="activated"><a href="#team-coach">Coach&Stuff</a></li>
         <li ><a href="#team-player">Player</a></li>
       </ul>
       <div class="css-line js-line"></div>
@@ -122,74 +124,125 @@
 
     <div id="team-coach" data-page-tab>
       <article>
-        <section class="content">
-          <h2>Coach</h2>
+        <div class="content-title">
+          <h2>Coach&Stuff</h2>
           <div data-pagination>
             <a class="home" href="#="><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
             <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
             <span>TEAM</span>
             <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
-            <span>Coach</span>
+            <span>Coach&Stuff</span>
           </div>
 
           <div class="css-team-tab">
             <ul>
-              <li class="" data-tab="true"><a href="#=" >전체</a></li>
-              <li class="" data-tab="false"><a href="#=" >아포짓 스파이커</a></li>
-              <li class="" data-tab="fale"><a href="#=" >아웃사이드 히터</a></li>
-              <li class="" data-tab="fale"><a href="#=" >세터</a></li>
-              <li class="" data-tab="fale"><a href="#=" >미들블로커</a></li>
-              <li class="" data-tab="fale"><a href="#=" >리베로</a></li>
+              <li class="" data-tab><a href="#director" >Coach</a></li>
+              <li class="" data-tab><a href="#coach" >Coach</a></li>
+              <li class="" data-tab><a href="#stuff" >Stuff</a></li>
             </ul>
           </div>
 
+
           <div class="players">
-            <h3>아포짓 스파이커</h3>
+            <h3 id="director">감독</h3>
             <div class="player-grid">
 
-              <div class="player-wrap">
+              <div class="player-position-wrap">
                 <div class="img-mask">
-                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/team%2Fstaff%2F14%2Fcoach%2F165%2F%E1%84%80%E1%85%A9%E1%84%92%E1%85%B4%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%80%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A9%E1%86%A8_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="고희진">
+                  <span class="player-number">Director</span>
                 </div>
-                <p>No.7 <span class="player-name">이예솔</span></p>
+                <div class="name-sns">
+                  <p>감독 <span class="player-name">고희진</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>                
+                </div>
                 <button type="button">상세보기</button>
               </div>
 
-              <div class="player-wrap">
-                <div class="img-mask">
-                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
-                </div>
-                <p>No.7 <span class="player-name">이예솔</span></p>
-                <button type="button">상세보기</button>
-              </div>
-
-              <div class="player-wrap">
-                <div class="img-mask">
-                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
-                </div>
-                <p>No.7 <span class="player-name">이예솔</span></p>
-                <button type="button">상세보기</button>
-              </div>
-            </div>
-
-            <div class="player-grid">
-              <div class="player-wrap">
-                <div class="img-mask">
-                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
-                </div>
-                <p>No.7 <span class="player-name">이예솔</span></p>
-                <button type="button">상세보기</button>
-              </div>
             </div>
           </div>
 
-        </section>
+          <div class="players">
+              <h3 id="coach">코치</h3>
+              <div class="player-grid">
+  
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/team%2Fstaff%2F14%2Fcoach%2F166%2F%E1%84%8B%E1%85%B5%E1%84%89%E1%85%AE%E1%86%A8%E1%84%8C%E1%85%A1%20%E1%84%8F%E1%85%A9%E1%84%8E%E1%85%B5_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이숙자">
+                    <span class="player-number">Coach</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>코치 <span class="player-name">이숙자</span></p>
+                    <a href="" target="_blank">
+                      <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" > -->
+                    </a>                
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+  
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/team%2Fstaff%2F14%2Fcoach%2F167%2F%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%AE%20%E1%84%8F%E1%85%A9%E1%84%8E%E1%85%B5_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이강주">
+                    <span class="player-number">Coach</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>코치 <span class="player-name">이강주</span></p>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                    </a>   
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+  
+  
+              </div>
+          </div>
+
+          <div class="players">
+            <h3 id="stuff">스태프</h3>
+            <div class="player-grid">
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/team%2Fstaff%2F14%2Fsupport%2F158%2F%E1%84%89%E1%85%A9%E1%86%BC%E1%84%8E%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%AE%E1%86%A8%20%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A7%E1%86%A8%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="송찬욱">
+                  <span class="player-number">SA</span>
+                </div>
+                <div class="name-sns">
+                  <p>전력분석  <span class="player-name">송찬욱</span></p>
+                  <a href="" target="_blank">
+                    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" > -->
+                  </a>                
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/team%2Fstaff%2F14%2Fsupport%2F160%2F%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A9%E1%84%92%E1%85%B4%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="정소희">
+                  <span class="player-number">Trainer</span>
+                </div>
+                <div class="name-sns">
+                  <p>트레이너<span class="player-name">정소희</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+
+            </div>
+          </div>
+
+        </di>
       </article>
     </div>
     
     <div id="team-player" data-page-tab>
       <article>
-        <section class="content">
+        <div class="content-title">
           <h2>Player</h2>
           <div data-pagination>
             <a class="home" href="#="><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#444"><g id="ic-home"><path id="Vector" d="M16.6719 8.5623L10.4219 2.88261C10.3067 2.77721 10.1562 2.71875 10 2.71875C9.84384 2.71875 9.69334 2.77721 9.57812 2.88261L3.32812 8.5623C3.26523 8.6217 3.21486 8.69308 3.17998 8.77224C3.14509 8.8514 3.1264 8.93674 3.125 9.02324V16.2498C3.125 16.4156 3.19085 16.5745 3.30806 16.6917C3.42527 16.809 3.58424 16.8748 3.75 16.8748H16.25C16.4158 16.8748 16.5747 16.809 16.6919 16.6917C16.8092 16.5745 16.875 16.4156 16.875 16.2498V9.02324C16.8736 8.93674 16.8549 8.8514 16.82 8.77224C16.7851 8.69308 16.7348 8.6217 16.6719 8.5623V8.5623Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
@@ -198,11 +251,402 @@
             <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
             <span>Player</span>
           </div>
-        </section>
+        </div>
+
+        <div class="css-team-tab">
+          <ul>
+            <li class="" data-tab><a href="#spike" >아포짓 스파이커</a></li>
+            <li class="" data-tab><a href="#hitter" >아웃사이드 히터</a></li>
+            <li class="" data-tab><a href="#setter" >세터</a></li>
+            <li class="" data-tab><a href="#blocker" >미들블로커</a></li>
+            <li class="" data-tab><a href="#libero" >리베로</a></li>
+          </ul>
+        </div>
+
+
+          <div class="players">
+            <h3 id="spike">아포짓 스파이커</h3>
+            <div class="player-grid">
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A8%E1%84%89%E1%85%A9%E1%86%AF_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이예솔">
+                  <span class="player-number">No.7</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.7 <span class="player-name">이예솔</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>                
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%86%E1%85%A6%E1%84%80%E1%85%A1_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="메가">
+                  <span class="player-number">No.8</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.8 <span class="player-name">메가</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+            <div class="players">
+              <h3 id="hitter">아웃사이드 히터</h3>
+              <div class="player-grid">
+  
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A9%E1%84%8B%E1%85%A7%E1%86%BC_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이소영">
+                    <span class="player-number">No.1</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>No.1 <span class="player-name">이소영</span></p>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                    </a>                
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+  
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%80%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="김세인">
+                    <span class="player-number">No.4</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>No.4 <span class="player-name">김세인</span></p>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                    </a>   
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+  
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%87%E1%85%A1%E1%86%A8%E1%84%92%E1%85%A8%E1%84%86%E1%85%B5%E1%86%AB_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="박혜민">
+                    <span class="player-number">No.10</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>No.10 <span class="player-name">박혜민</span></p>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                    </a>   
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+  
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%80%E1%85%AA%E1%86%A8%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8B%E1%85%A9%E1%86%A8_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="곽선옥">
+                    <span class="player-number">No.11</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>No.11 <span class="player-name">곽선옥</span></p>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                    </a>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="x(구 트위터)" >
+                    </a>
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8B%E1%85%AE_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이선우">
+                    <span class="player-number">No.15</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>No.15 <span class="player-name">이선우</span></p>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                    </a>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="x(구 트위터)" >
+                    </a>
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A1%E1%84%8B%E1%85%A7%E1%86%AB_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="강다연">
+                    <span class="player-number">No.19</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>No.19<span class="player-name">강다연</span></p>
+                    <a href="" target="_blank">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                    </a>
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>
+
+                <div class="player-position-wrap">
+                  <div class="img-mask">
+                    <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%A1_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="지아">
+                    <span class="player-number">No.77</span>
+                  </div>
+                  <div class="name-sns">
+                    <p>No.77 <span class="player-name">지아</span></p>
+
+                      <a href="" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                      </a>
+                      <a href="" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="x(구 트위터)" >
+                      </a>
+
+                  </div>
+                  <button type="button">상세보기</button>
+                </div>  
+              </div>
+          </div>
+
+          <div class="players">
+            <h3 id="setter">세터</h3>
+            <div class="player-grid">
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%A8%E1%84%85%E1%85%B5%E1%86%B7_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="안예림">
+                  <span class="player-number">No.2</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.2 <span class="player-name">안예림</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>                
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%A7%E1%86%B7%E1%84%92%E1%85%A8%E1%84%89%E1%85%A5%E1%86%AB_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="염혜선">
+                  <span class="player-number">No.3</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.3 <span class="player-name">염혜선</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8E%E1%85%A2%E1%84%82%E1%85%A1_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="김채나">
+                  <span class="player-number">No.14</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.14 <span class="player-name">김채나</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="players">
+            <h3 id="blocker">미들블로커</h3>
+            <div class="player-grid">
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%87%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%8C%E1%85%B5%E1%86%AB_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="박은진">
+                  <span class="player-number">No.6</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.6 <span class="player-name">박은진</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>                
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%92%E1%85%A1%E1%86%AB%E1%84%89%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="한송이">
+                  <span class="player-number">No.12</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.12 <span class="player-name">한송이</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A9%E1%84%8B%E1%85%A7%E1%86%BC_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="정호영">
+                  <span class="player-number">No.17</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.17 <span class="player-name">정호영</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%89%E1%85%AE_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="이지수">
+                  <span class="player-number">No.18</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.18 <span class="player-name">이지수</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="players">
+            <h3 id="libero">리베로</h3>
+            <div class="player-grid">
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%82%E1%85%A9%E1%84%85%E1%85%A1%E1%86%AB_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="노란">
+                  <span class="player-number">No.5</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.5 <span class="player-name">노란</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>                
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%89%E1%85%A5%E1%84%8B%E1%85%B2%E1%84%80%E1%85%A7%E1%86%BC_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="서유경">
+                  <span class="player-number">No.9</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.9 <span class="player-name">서유경</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%AE%E1%84%8C%E1%85%B5_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="정수지">
+                  <span class="player-number">No.13</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.13 <span class="player-name">정수지</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+
+              <div class="player-position-wrap">
+                <div class="img-mask">
+                  <img src="https://kovostoragedev.blob.core.windows.net/kovo-prod/player/female/kgc/shoulder/%E1%84%8E%E1%85%AC%E1%84%92%E1%85%AD%E1%84%89%E1%85%A5_%E1%84%82%E1%85%AE%E1%84%81%E1%85%B5.png" alt="최효서">
+                  <span class="player-number">No.20</span>
+                </div>
+                <div class="name-sns">
+                  <p>No.20 <span class="player-name">최효서</span></p>
+                  <a href="" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
+                  </a>   
+                </div>
+                <button type="button">상세보기</button>
+              </div>
+            </div>
+          </div>
 
       </article>
     </div>
 
+    <script>
+      const $pages = document.querySelectorAll("[data-page-tab]");
+      const $tab = document.querySelector(".page-tab");
+
+      $pages.forEach((page, index) =>{
+        if(index === 0){
+        } else {
+          page.setAttribute("hidden", true);
+        }
+      })
+
+
+      const pageFunc = function () { $tab.addEventListener("click", (e)=>{
+        const clicked = e.target.closest("li");
+        e.preventDefault();
+        if(!clicked) return
+
+        $tab.querySelectorAll("li").forEach(tab => { tab.classList.remove('activated') });
+        clicked.classList.add('activated');
+
+        $tab.style.setProperty("--_left", clicked.offsetLeft+'px');
+
+
+        const currentPageId = e.target.getAttribute( 'href' );
+        const currentPage = document.querySelector(currentPageId)
+
+        $pages.forEach(page =>{page.setAttribute("hidden", true)});
+        currentPage.removeAttribute("hidden")
+
+        idScroll();
+      });
+
+      }
+
+      function idScroll() {
+        const $tabArea = document.querySelector(".css-team-tab");
+        const $contentInTab = $tabArea.querySelectorAll("a");
+
+        $tabArea.addEventListener("click", (e)=>{
+          const clickedTab = e.target.closest("a");
+
+          e.preventDefault();
+          if(!clickedTab) return
+
+          const selectedTabId =clickedTab.getAttribute("href");
+          console.log(selectedTabId);
+          const scrollPosition= document.querySelector(selectedTabId).offsetTop;
+          console.log(scrollPosition);
+
+          window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+        });
+      }
+
+      pageFunc();
+      idScroll();
+      </script>
+    </div>
+  </main>
 
       <footer>
         <div class="footer_wrap">
@@ -231,7 +675,6 @@
         </div>
       </footer>
     
-    </div>
-  </main>
+
 </body>
 </html>
