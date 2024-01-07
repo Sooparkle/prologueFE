@@ -1,0 +1,1704 @@
+.tablet-unblock-p, .mobile-unblock{
+  display: none;
+}
+
+
+
+.tablet-unblock-p, 
+.mobile-unblock,
+.tablet-nav{
+  display: none;
+}
+
+
+
+header{
+  position: relative;
+  z-index: 3;
+  overflow-y: hidden;
+  border-bottom: 1px solid #999;
+
+}
+
+
+/* header background  */
+header::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 162px;
+  background:#fff;
+  transform: var(--_transform);
+  transition : transform 0.4ms ease-in-out
+
+}
+
+.header-wrap{
+  height: 90px;
+  margin: 0 3rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr 3fr 1fr;
+  justify-items: center;
+  align-items: center;
+
+}
+
+.logo-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  z-index: 4;
+  
+}
+
+.logo-wrap h1{
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.logo-wrap > img{
+  width:70px;
+}
+
+
+/* nav area */
+nav {
+  width:100%;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 0 3rem;
+}
+
+
+nav ul li{
+  cursor:pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+nav ul li:hover{
+background:#fff
+}
+
+/* navigation sub maneu area */
+nav ul dl{
+  position: absolute;
+  top:0;
+  padding-top: 18px;
+  margin-top: 18px;
+  z-index: 5;
+
+}
+
+nav ul dl dt{
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+nav ul dl dd{
+  font-size: 1rem;
+  font-weight: 300;
+  padding:5px 0
+}
+
+
+/* utilities area */
+.utilities{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap : 1rem
+}
+
+.utilities> div{
+  position: relative;
+}
+
+.utilities > div:nth-of-type(1)::after,
+.utilities > div:nth-of-type(2)::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 1px;
+  width: 1px;
+  height: 15px;
+  background: #999;
+}
+
+.utilities select{
+  padding:1px 10px;
+  border: 1px solid #999;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+/* main area */
+
+[data-page-tab]{
+  padding-bottom : 100px;
+}
+
+main{
+  position: relative;
+  z-index: 10;
+}
+
+.top-banner{
+  background: url(https://kovo.co.kr/assets/pc_sub_banner_jeong.5be398ba.png) no-repeat;
+  width:100%;
+  height: 199px;
+  position: relative;
+}
+
+.top-banner h2{
+  color:#fff;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;;
+  top: 50%;
+  left:280px;
+  transform: translateY(-50%);
+  
+}
+
+
+
+
+
+
+/* page load tab area */
+
+
+.page-tab{
+  border-bottom: 1px solid #eee;
+}
+
+.page-tab ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  height:fit-content;
+  width: fit-content;
+  margin:0 auto;
+
+  position: relative;
+}
+
+.page-tab ul li{
+  text-align: center;
+  width:140px;
+  min-width: 130px;
+  font-size: 16px;
+  font-weight: 600;
+  color : #666;
+  line-height: 57px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+
+.page-tab ul::after{
+  content:"";
+  position: absolute;
+  bottom:0;
+  left:0;
+  height: 2px;
+  width:140px;
+  background: #222;
+
+  cursor: none;
+  transition:translate 300ms;
+  translate:var(--_left, 0) 0;
+}
+
+
+.page-tab ul .activated{
+  text-align: center;
+  width:140px;
+  font-size: 16px;
+  font-weight: 600;
+  color : #000;
+
+}
+
+.page-tab ul a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+ /* main pagination area */
+ 
+article{
+  min-width: 1025px;
+  width: 71.25%;
+  margin: 50px auto 0;
+  position: relative;
+}
+
+
+.content h2{
+font-size:36px;
+font-weight: bold;
+margin-top: 40px;
+margin-bottom: 24px;
+}
+
+.content .pagination{
+  position: absolute;
+  right:0;
+  top: 20px;
+}
+
+.content .pagination svg{
+  vertical-align: text-top;
+}
+
+.content .pagination svg:nth-of-type(1){
+  vertical-align: middle;
+}
+
+.content .pagination span:nth-of-type(1){
+  color:#666;
+}
+
+
+.content .notice{
+  display: flex;
+  align-items: center;
+  gap:1.5rem;
+  padding : 1.5rem 2rem;
+  background: #f9f9f9;
+  margin-bottom: 42px;
+}
+
+.content .notice dt{
+  font-size : 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.content .notice dd{
+  font-size: 15px;
+  padding:0.15rem;
+}
+
+/* calendar area */
+
+.calendar{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  margin-bottom:30px;
+  
+}
+
+.calendar .calendar-indicator{
+  display: grid;
+  grid-template-columns:1fr 2fr 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.calendar .calendar-indicator .year-month-list {
+  order:1;
+}
+
+.calendar .calendar-indicator .year-month-list p{
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.calendar .calendar-indicator .prev{
+  order:0;
+  transform:  rotate(180deg);
+  cursor: pointer;
+}
+
+.calendar .calendar-indicator .prev svg,
+.calendar .calendar-indicator .next svg{
+  vertical-align: top;
+}
+
+.calendar .calendar-indicator .prev,
+.calendar .calendar-indicator .next {
+  height: 34px;
+}
+
+.calendar .calendar-indicator .next{
+  order:1;
+  cursor: pointer;
+}
+
+.year-month-list p{
+  display:none
+}
+
+.year-month-list .current{
+  display: block;
+}
+
+
+.calendar .calendar-indicator .next{
+  order:1;
+  cursor: pointer;
+}
+
+.calendar .current-btn{
+  order:-1;
+  padding: 10px 15px;
+  border: 1px solid #ebebeb;
+  border-radius: 18px;
+}
+
+
+
+/* table commen area */
+.table > h2{
+  width:0 auto;
+  padding: 5rem 0;
+  font-size: 3rem;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+
+}
+
+.body > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body{
+  border: 1px solid #e5e5e5;
+}
+
+.body .red{
+  color:#000;
+  font-weight: 600;
+}
+
+/* TOP area */
+.table .table-header{
+  display: grid;
+  grid-template-columns: 6% 18% 45% 15% 16%;
+  align-items: center;
+  text-align: center;
+}
+
+.table .table-header{
+  font-size: 16px;
+  font-weight: 600;
+  height: 47px;
+  background: #f9f9f9;
+}
+
+.table .body{
+  display: grid;
+  grid-template-columns: 6% 18% 45% 15% 16%;
+  grid-template-rows: 150px;
+  align-items: center;
+  text-align: center;
+
+  font-size:17px;
+}
+
+.table .type{
+  height: 100%;
+  background: #ebebeb;
+}
+
+.table .away {
+  width:100%;
+  height: 100%;
+  background: #f5f5f5;
+  color : #474747;
+
+}
+
+.body .home {
+  width:100%;
+  height:100%;
+  background: #434343;
+  color : #fff
+}
+
+
+.body .data{
+  font-size : 18px;
+  font-weight: 600;
+
+}
+
+
+.body .battle-left img,
+.body .battle-right img{
+  width:88px;
+  height:76px;
+  object-fit: cover;
+  margin-bottom:10px;
+}
+
+.body .battle {
+  position: relative;
+} 
+
+.body .battle::before,
+.body .battle::after{
+  position: absolute;
+  content:"";
+  width:1px;
+  height:100px;
+  background: #e5e5e5;
+} 
+
+.body .battle::before{
+  left: 0;
+}
+.body .battle::after{
+  right: 0;
+}
+
+.body .versus{
+  display: inline-block;
+  font-size: 44px;
+  font-weight: 600;
+  color:#2223;
+  margin:0 25px;
+}
+
+.body .ticket-buy{
+  position: relative;
+  background: url(https://kovo.co.kr/assets/ticket_bg.04127fdd.svg) no-repeat;
+  background-size : cover;
+  background-position: 0px -18px;
+  height:100%;
+}
+
+.body .ticket-buy::before{
+  position: absolute;
+  left:0;
+  content:"";
+  width:1px;
+  height:100px;
+  background: #e5e5e5;
+}
+
+.body .ticket-buy > .home {
+  width:auto;
+  height:auto;
+  display: inline-block;
+  color : #fff;
+
+  padding: 16px 1.9rem;
+  background:#d91833;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.body .ticket-buy > .home:hover:after,
+.body .ticket-buy > .away:hover:after{
+  position: absolute;
+  border-radius: 4px;
+  width:100px;
+  height: 22px;
+  right:-20px;
+  bottom: -20px;
+  font-size: 13px;
+  box-shadow: 5px 5px 9px 2px grey;
+  padding: 2px 0;
+  box-sizing: border-box;
+}
+
+
+.body .ticket-buy > .home:hover:after {
+  content:" Home 티켓팅.";
+  color:#000;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+
+.body .ticket-buy > .away {
+  width:auto;
+  height:auto;
+  display: inline-block;
+  color : rgb(63, 63, 63);
+  padding: 16px 1.9rem;
+  background:#fff;
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.body .ticket-buy > .away:hover:after {
+  content:" Away 티켓팅.";
+  color: #d91833;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+
+/* sohyun footer */
+
+footer {
+  width: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+  background: rgb(57, 58, 69);
+  /* display: none; */
+}
+
+.footer_wrap {
+  max-width: 1356px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  gap: 40px;
+  margin: 0 16px;
+}
+
+.kovo_logo img {
+  max-width: 160px;
+  height: auto;
+}
+
+.term ul {
+  width: 100%;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.term a {
+  color: #fff;
+  font-size: .9375rem;
+  font-weight: 500;
+}
+
+.footer_detail address, .footer_detail p {
+  color: #ffffff99;
+  font-size: .875rem;
+}
+
+address {
+  margin: 20px 0 0;
+}
+
+.term_p {
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+@media (min-width:768px) and (max-width:1124px){
+.tablet-unblock-p{
+  display: inline-block;
+  font-size :16px;
+  font-weight: 600;
+  padding: 5px 0 ;
+}
+
+
+.header-wrap {
+  height: 90px;
+  margin: 0 3rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+/* tablet main area */
+.top-banner{
+  background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+  
+}
+
+.top-banner h2{
+  position: unset;
+  padding:62px 0;
+  height:100%;
+  box-sizing: border-box;
+  text-align: center;
+  
+  transform: none;
+}
+
+main{
+  overflow-x: hidden;
+}
+
+main::-webkit-scrollbar{
+  display: none;
+}
+
+article{
+  min-width: auto;
+  width:auto;
+  margin : 0 16px;
+}
+
+
+/* table area  */
+
+.body .away span,
+.body .home span{
+  transform : rotate(-90deg);
+}
+
+.body .data{
+  font-size : 16px;
+}
+
+.body .place{
+  font-size: 15px;
+}
+
+.body .versus{
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 600;
+  color:#2223;
+  margin:0 25px;
+}
+
+.body .ticket-buy{
+  background-position: 0 0;
+}
+
+.body .ticket-buy a{
+  padding: 1rem 1.6rem;
+}
+
+
+
+
+  /* 소현 */
+  body {
+    position: relative;
+}
+
+.wrap{
+  padding-bottom: 80px;
+}
+
+
+
+
+/* tablet main area */
+.top-banner{
+  background: #d91833;
+}
+
+.top-banner h2{
+  position: unset;
+  padding:62px 0;
+  height:100%;
+  box-sizing: border-box;
+  text-align: center;
+  
+  transform: none;
+}
+
+
+article{
+  min-width: auto;
+  width:auto;
+  margin : 0 16px;
+}
+.top-banner{
+  display: none;
+}
+
+.tab ul li {
+  font-size: 14px;
+  line-height: 55px;
+}
+
+.tab ul .activated {
+line-height: 55px;
+font-size: 13px;
+}
+
+.content div[data-pagination]{
+  display: none;
+}
+
+.content .notice svg{
+  display: none;
+}
+
+.content .notice dd{
+  font-size: 14px;
+}
+
+
+
+/* TOP area */
+.table .table-header{
+    display: none;
+}
+
+
+.table .body{
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: 6% 18% 45% 15% 16%; */
+  grid-template-rows: 50px 40px 100px 60px 40px;
+  align-items: center;
+  text-align: center;
+
+  font-size:14px;
+  margin: 30px 0;
+  padding-bottom: 10px;
+}
+
+.body .home, .body .away{
+  font-size: 16px;
+}
+
+.body .home{
+  background: #6c6c6c;
+}
+
+.body .battle{
+  margin : 1rem 0;
+}
+
+.body .battle-left img,
+.body .battle-right img{
+  width:80px;
+  height:100%;
+  object-fit: cover;
+  margin-bottom:10px;
+}
+
+.body .battle::before,
+.body .battle::after{
+  display: none;
+} 
+
+.body .ticket-buy::before{
+  display: none;
+}
+
+.body .ticket-buy{
+  width:100%;
+  height:100%;
+}
+
+.body .ticket-buy a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+  height: 100%;
+  color : #fff;
+  padding: 0
+
+}
+
+
+.body .ticket-buy > .home {
+  width:100%;
+  padding: 0.7rem 8rem;
+}
+
+
+
+.body .ticket-buy > .away {
+  width:100%;
+  padding: 0.7rem 8rem;
+}
+
+
+.wrap{
+  padding-bottom:0;
+}
+
+
+body {
+  min-width: 500px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 토글 변경 12.21 */
+
+.toggle {
+  display: none;
+}
+
+.toggle_main li a {
+  width: 100%;
+}
+
+.toggle_main li p {
+  width: 100%;
+}
+
+
+
+/* 헤더 */
+
+.h_full_box {
+  height: 57px;
+}
+
+.header_wrap {
+  height: 57px;
+  background: #fff;
+}
+
+/* 헤더 로고 부분 */
+
+.logo_wrap {
+  width: auto;
+  height: 34px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.logo_wrap_img img {
+  width: auto;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.logo_wrap span {
+  color: #222;
+  font-size: 1rem;
+}
+
+/* gnb */
+
+.gnb ul, .nav_bg {
+  display: none;
+}
+
+/* top menu */
+
+.top_menu ul {
+  display: none;
+}
+
+/* 검색창 */
+
+.search_wrap {
+  height: 48px;
+  top: 57px;
+  left: 0;
+  padding: 24px 0;
+}
+
+.input_wrap {
+  width: 100%;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input {
+  font-size: 14px;
+}
+
+/* logo_category */
+
+.logo_category {
+  height: 668px;
+  top: 57px;
+}
+
+.logo_cont_wrap {
+  width: 100%;
+  padding: 24px 16px;
+}
+
+.hr {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/*men*/
+
+.men_font {
+  font-size: 18px;
+}
+
+.men_emb_grop {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.men_emb_grop p {
+  display: none;
+}
+
+.m_emb img {
+  width: 56px;
+  height: 42px;
+}
+
+/*women*/
+
+.women_font {
+  font-size: 18px;
+}
+
+.women_emb_grop {
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  justify-content: center;
+  gap: 15px;
+}
+
+.women_emb_grop p {
+  display: none;
+}
+
+.w_emb img {
+  width: 56px;
+  height: 42px;
+}
+
+footer{
+margin-top: 44px;;
+}
+
+.kovo_logo img{
+  width:100px;
+}
+
+.footer_wrap{
+  flex-direction: column;
+  align-items: start;
+}
+
+
+.term ul{
+  flex-wrap: wrap;
+}
+
+.top-banner{
+  display: block;
+  height: 109px;
+  background: #D91833;
+}
+
+.top-banner h2{
+font-size: 30px;
+height: auto;
+padding:0;
+line-height: 109px;;
+
+}
+
+.tab{
+  border-bottom: 1px solid #eee;
+  overflow-x: scroll;
+}
+
+.tab::-webkit-scrollbar{
+  height:10px;
+  background: #fff;
+}
+
+.tab::-webkit-scrollbar-thumb{
+  background:#e5e5e5;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+/* membership area */
+
+main{
+  position: relative;
+  z-index: 2;
+}
+
+.top-banner{
+  background: url(https://kovo.co.kr/assets/pc_sub_banner_jeong.5be398ba.png) no-repeat;
+  width:100%;
+  height: 199px;
+  position: relative;
+}
+
+.top-banner h2{
+  color:#fff;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left:280px;
+  transform: translateY(-50%);
+  
+}
+
+
+
+
+
+ /* main pagination area */
+article{
+  min-width: 1025px;
+  width: 71.25%;
+  margin: 50px auto 0;
+  position: relative;
+}
+
+
+.content h2{
+font-size: 36px;
+font-weight: bold;
+margin-bottom: 24px;
+}
+
+
+
+.content .pagination{
+  position: absolute;
+  right:0;
+  top: 20px;
+}
+
+.content .pagination svg{
+  vertical-align: text-top;
+}
+
+.content .pagination svg:nth-of-type(1){
+  vertical-align: middle;
+}
+
+.content .pagination span:nth-of-type(1){
+  color:#666;
+}
+
+.content > p{
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+
+
+
+
+
+/* main content area */
+.package-wrap{
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap:0.7rem;
+  
+}
+
+.package-item{
+  border: 1px solid #e5e5e5;
+  padding: 0 1.5rem;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.package-item p{
+  width:260px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.package-item .button-wrap{
+  display: flex;
+  flex-direction: column;
+  gap:1.5rem;
+  position: relative;
+  
+}
+
+.package-item .button-wrap img{
+width:100%;
+position:absolute;
+right:-20px;
+z-index: -1;
+  
+}
+
+
+.package-item .button-wrap button{
+  border: none;
+  background: none;
+  padding: 0 18px;
+  height: 55px;
+  font-size: 16px;
+  border-radius: 6px;
+  width: 160px;
+  font-weight: 600;
+}
+
+.package-item .button-wrap a{
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  border : 1px solid #8c8c8c;
+  cursor: pointer;
+  margin-top:10px;
+  font-size: 16px;
+}
+
+.package-item .button-wrap a:nth-of-type(2){
+  background: #d91833;
+  color:#fff;
+
+}
+
+.package-item .button-wrap a:nth-of-type(1){
+  background: #fff;
+  color:#222222;
+}
+
+
+
+
+
+/* 소현  */
+/* footer */
+
+footer {
+  width: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+  background: rgb(57, 58, 69);
+  /* display: none; */
+}
+
+.footer_wrap {
+  max-width: 1124px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 16px;
+  align-items: center;
+  gap: 40px;
+}
+
+.kovo_logo img {
+  max-width: 160px;
+  height: auto;
+}
+
+.term ul {
+  width: 100%;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.term a {
+  color: #fff;
+  font-size: .9375rem;
+  font-weight: 500;
+}
+
+.footer_detail address, .footer_detail p {
+  color: #ffffff99;
+  font-size: .875rem;
+}
+
+
+address {
+  margin: 20px 0 0;
+}
+
+.term_p {
+  margin-top: 20px;
+}
+}
+
+
+
+
+
+
+@media (min-width:768px) and (max-width:1124px){
+
+
+/* tablet main area */
+.top-banner{
+  background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
+  
+}
+
+.top-banner h2{
+  position: unset;
+  padding:62px 0;
+  height:100%;
+  box-sizing: border-box;
+  text-align: center;
+  
+  transform: none;
+}
+
+main{
+  overflow-x: hidden;
+}
+
+main::-webkit-scrollbar{
+  display: none;
+}
+
+.content h2{
+  margin-top: 40px;
+  font-size: 32px;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.package-item p {
+  font-size: 18px;
+}
+
+article{
+  min-width: auto;
+  width:auto;
+  margin : 0 16px;
+}
+
+.wrap{
+  padding-bottom: 0px;
+}
+
+
+
+
+
+
+
+/* 소현 */
+body {
+  position: relative;
+}
+
+.wrap{
+padding-bottom: 80px;
+}
+
+/* 토글 변경 영역 12.21 */
+
+  .topmenu_bg {
+    display: none;
+}
+
+
+.toggle {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: 340px;
+  height: 880px;
+  z-index: 500;
+  transition: all .4s ease-in-out;
+}
+
+
+
+/* 헤더 */
+
+.h_full_box {
+  height: 57px;
+}
+
+.header_wrap {
+  height: 57px;
+  background: #fff;
+}
+
+/* 헤더 로고 부분 */
+
+.logo_wrap {
+  width: auto;
+  height: 34px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.logo_wrap_img img {
+  width: auto;
+  height: 34px;
+  margin-right: 5px;
+}
+
+.logo_wrap span {
+  color: #222;
+  font-size: 1rem;
+}
+
+.logo_wrap_btn img {
+  top: 5px;
+  color: #222;
+}
+
+/* gnb */
+
+.gnb ul, .nav_bg {
+  display: none;
+}
+
+/* top menu */
+
+.top_menu ul {
+  display: none;
+}
+
+/* 검색창 */
+
+.search_wrap {
+  width: 100%;
+  height: 48px;
+  top: 57px;
+  left: 0;
+  padding: 24px 0;
+}
+
+.input_wrap {
+  width: 100%;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input {
+  font-size: 1rem;
+}
+
+/* logo_category */
+
+.logo_category {
+  height: auto;
+  top: 57px;
+}
+
+.logo_cont_wrap {
+  width: 100%;
+  padding: 24px 16px;
+}
+
+.hr {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/*men*/
+
+.men_font {
+  font-size: 18px;
+}
+
+.men_emb_grop p {
+  display: none;
+}
+
+.m_emb img {
+  width: 56px;
+  height: 42px;
+}
+
+/*women*/
+
+.women_font {
+  font-size: 18px;
+}
+
+.women_emb_grop p {
+  display: none;
+}
+
+.women_emb_grop {
+  margin-bottom: 10px;
+}
+
+.w_emb img {
+  width: 56px;
+  height: 42px;
+}
+
+.term ul{
+  flex-wrap: wrap;
+}
+
+
+.kovo_logo img{
+  width:100px;
+}
+
+
+.mobile_menu {
+  display: block;
+}
+
+}
+
+
+
+@media  (max-width:768px){
+  .mobile_menu {
+    display: block;
+  }
+
+  /* tablet main area */
+.top-banner h2{
+  position: unset;
+  padding:62px 0;
+  height:100%;
+  box-sizing: border-box;
+  text-align: center;
+  
+  transform: none;
+}
+
+
+article{
+  min-width: auto;
+  width:auto;
+  margin : 0 16px;
+}
+.top-banner{
+  display: none;
+}
+
+.tab ul li {
+  font-size: 14px;
+  line-height: 55px;
+}
+
+.tab ul .activated {
+  line-height: 55px;
+  font-size: 13px;
+  }
+  
+.content div[data-pagination]{
+  display: none;
+}
+
+.content h2{
+  font-size:24px;
+  padding-top: 30px;
+  margin-bottom: 8px;
+}
+
+.content h3{
+  font-size: 18px;
+}
+
+.content > p{
+  font-size:18px;
+
+}
+
+.package-item p{
+  text-align: center;
+}
+
+.package-wrap{
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0,1fr));
+  gap:0.7rem;
+  position: relative;
+  
+}
+
+
+.package-item{
+  flex-direction: column;
+  justify-content: start;
+  padding: 1rem;
+  height:auto;
+  margin-bottom: 20px;
+  position: unset;
+}
+
+
+.package-item .button-wrap img{
+  height: 126px;
+  width:auto;
+  position:absolute;
+  right:-14px;
+  bottom:-16px;
+  z-index: -1;
+  
+}
+
+
+.package-item .button-wrap{
+  flex-direction: unset;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  width:100%;
+}
+
+.package-item .button-wrap button{
+  padding: 0px 16px;
+  height: 40px ;
+  font-size: 14px;
+  border-radius: 4px;
+  width: 100%;
+
+}
+
+
+.wrap{
+  padding-bottom: 0px;
+}
+
+body {
+  position: relative;
+}
+
+/* 토글 변경 12.21 */
+
+.toggle {
+  display: none;
+}
+
+.toggle_main li a {
+  width: 100%;
+}
+
+.toggle_main li p {
+  width: 100%;
+}
+
+
+
+/* 헤더 */
+
+.h_full_box {
+  height: 57px;
+}
+
+.header_wrap {
+  height: 57px;
+  background: #fff;
+}
+
+/* 헤더 로고 부분 */
+
+.logo_wrap {
+  width: auto;
+  height: 34px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+
+
+/* top menu */
+
+.top_menu ul {
+  display: none;
+}
+
+/* 검색창 */
+
+.search_wrap {
+  height: 48px;
+  top: 57px;
+  left: 0;
+  padding: 24px 0;
+}
+
+.input_wrap {
+  width: 100%;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input {
+  font-size: 14px;
+}
+
+/
+
+footer{
+margin-top: 44px;;
+}
+
+.kovo_logo img{
+  width:100px;
+}
+
+.footer_wrap{
+  flex-direction: column;
+  align-items: start;
+}
+
+.term ul{
+  flex-wrap: wrap;
+}
+
+.top-banner{
+  display: block;
+  height: 109px;
+  background: #D91833;
+}
+
+.top-banner h2{
+  font-size: 30px;
+  height: auto;
+  padding:0;
+  line-height: 109px;
+  position : unset;
+  transform: none;
+  text-align: center;
+
+  }
+
+  .tab{
+    border-bottom: 1px solid #eee;
+    overflow-x: scroll;
+  }
+  
+  .tab::-webkit-scrollbar{
+    height:10px;
+    background: #fff;
+  }
+  
+  .tab::-webkit-scrollbar-thumb{
+    background:#e5e5e5;
+    border-radius: 10px;
+  }
+
+}
