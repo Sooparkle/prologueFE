@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../VolleryBall/css/reset.css">
   <link rel="stylesheet" href="../VolleryBall/css/team.css">
   <link rel="stylesheet" href="../VolleryBall/css/redspakles_header.css">
-  <!-- <link rel="stylesheet" href="../VolleryBall/css/done-stats_team_record.css"> -->
   <link rel="icon" href="/images/rs_logo.png">
 
 </head>
@@ -19,8 +18,8 @@
     <div class="header-wrap">
       <div class="logo-wrap">
         <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
-        <h1>정관장</h1>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" class="ant-tooltip-open css-10i3oi9">
+        <h1 class="mobile-block">정관장</h1>
+        <svg class="mobile-block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" class="ant-tooltip-open css-10i3oi9">
           <g clip-path="url(#clip0_2327_5794)">
             <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </g>
@@ -30,6 +29,18 @@
             </clipPath>
           </defs>
         </svg>
+      </div>
+
+      <div class="tablet-nav">
+        <a href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-ticket-wh-md" clip-path="url(#clip0_2327_5801)"><path id="Vector" d="M9 5.25V18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M2.25 15.6741C2.25018 15.5013 2.30998 15.3339 2.4193 15.2002C2.52862 15.0665 2.68075 14.9745 2.85 14.94C3.52817 14.8023 4.13788 14.4344 4.57583 13.8986C5.01377 13.3627 5.25301 12.692 5.25301 12C5.25301 11.308 5.01377 10.6373 4.57583 10.1014C4.13788 9.56564 3.52817 9.19771 2.85 9.06C2.68075 9.02545 2.52862 8.93354 2.4193 8.7998C2.30998 8.66605 2.25018 8.49867 2.25 8.32594V5C2.25 4.80109 2.32902 4.61032 2.46967 4.46967C2.61032 4.32902 2.80109 4.25 3 4.25H21C21.1989 4.25 21.3897 4.32902 21.5303 4.46967C21.671 4.61032 21.75 4.80109 21.75 5V8.32594C21.7498 8.49867 21.69 8.66605 21.5807 8.7998C21.4714 8.93354 21.3192 9.02545 21.15 9.06C20.4718 9.19771 19.8621 9.56564 19.4242 10.1014C18.9862 10.6373 18.747 11.308 18.747 12C18.747 12.692 18.9862 13.3627 19.4242 13.8986C19.8621 14.4344 20.4718 14.8023 21.15 14.94C21.3192 14.9745 21.4714 15.0665 21.5807 15.2002C21.69 15.3339 21.7498 15.5013 21.75 15.6741V19C21.75 19.1989 21.671 19.3897 21.5303 19.5303C21.3897 19.671 21.1989 19.75 21 19.75H12H3C2.80109 19.75 2.61032 19.671 2.46967 19.5303C2.32902 19.3897 2.25 19.1989 2.25 19V15.6741Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5801"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+        </a>
+        <button type="button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-srach-wh-md" clip-path="url(#clip0_2327_5817)"><path id="Vector" d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M15.8035 15.8034L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2327_5817"><rect width="24" height="24" fill="currentColor"></rect></clipPath></defs></svg>
+        </button>
+        <button>
+          <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" color="#222"><g id="ic-menu-wh-md" clip-path="url(#clip0_2413_54173)"><path id="Vector" d="M3.75 12.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_2" d="M3.75 6.78516H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path id="Vector_3" d="M3.75 18.7852H20.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2413_54173"><rect width="24" height="24" fill="currentColor" transform="translate(0 0.785156)"></rect></clipPath></defs></svg>
+        </button>
       </div>
 
       <nav>
@@ -156,7 +167,8 @@
                   <p>감독 <span class="player-name">고희진</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>                
+                  </a>
+                  <a href="" target="_blank"></a>             
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -177,7 +189,8 @@
                     <p>코치 <span class="player-name">이숙자</span></p>
                     <a href="" target="_blank">
                       <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" > -->
-                    </a>                
+                    </a>
+                    <a href="" target="_blank"></a>           
                   </div>
                   <button type="button">상세보기</button>
                 </div>
@@ -191,7 +204,8 @@
                     <p>코치 <span class="player-name">이강주</span></p>
                     <a href="" target="_blank">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                    </a>   
+                    </a>
+                    <a href="" target="_blank"></a> 
                   </div>
                   <button type="button">상세보기</button>
                 </div>
@@ -213,7 +227,8 @@
                   <p>전력분석  <span class="player-name">송찬욱</span></p>
                   <a href="" target="_blank">
                     <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" > -->
-                  </a>                
+                  </a>
+                  <a href="" target="_blank"></a>             
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -227,7 +242,8 @@
                   <p>트레이너<span class="player-name">정소희</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a> 
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -277,7 +293,8 @@
                   <p>No.7 <span class="player-name">이예솔</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>                
+                  </a>
+                  <a href="" target="_blank"></a>            
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -291,7 +308,8 @@
                   <p>No.8 <span class="player-name">메가</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a>
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -311,7 +329,8 @@
                     <p>No.1 <span class="player-name">이소영</span></p>
                     <a href="" target="_blank">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                    </a>                
+                    </a>
+                    <a href="" target="_blank"></a>               
                   </div>
                   <button type="button">상세보기</button>
                 </div>
@@ -325,7 +344,8 @@
                     <p>No.4 <span class="player-name">김세인</span></p>
                     <a href="" target="_blank">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                    </a>   
+                    </a>
+                    <a href="" target="_blank"></a>
                   </div>
                   <button type="button">상세보기</button>
                 </div>
@@ -339,7 +359,8 @@
                     <p>No.10 <span class="player-name">박혜민</span></p>
                     <a href="" target="_blank">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                    </a>   
+                    </a>
+                    <a href="" target="_blank"></a>
                   </div>
                   <button type="button">상세보기</button>
                 </div>
@@ -388,6 +409,7 @@
                     <a href="" target="_blank">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
                     </a>
+                    <a href="" target="_blank"></a>
                   </div>
                   <button type="button">상세보기</button>
                 </div>
@@ -426,7 +448,8 @@
                   <p>No.2 <span class="player-name">안예림</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>                
+                  </a>
+                  <a href="" target="_blank"></a>              
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -440,7 +463,8 @@
                   <p>No.3 <span class="player-name">염혜선</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a> 
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -454,7 +478,8 @@
                   <p>No.14 <span class="player-name">김채나</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a>
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -475,7 +500,8 @@
                   <p>No.6 <span class="player-name">박은진</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>                
+                  </a>
+                  <a href="" target="_blank"></a>               
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -489,7 +515,8 @@
                   <p>No.12 <span class="player-name">한송이</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a>
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -503,7 +530,8 @@
                   <p>No.17 <span class="player-name">정호영</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a> 
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -517,7 +545,8 @@
                   <p>No.18 <span class="player-name">이지수</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a>  
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -537,7 +566,8 @@
                   <p>No.5 <span class="player-name">노란</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>                
+                  </a>
+                  <a href="" target="_blank"></a>               
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -551,7 +581,8 @@
                   <p>No.9 <span class="player-name">서유경</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a> 
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -565,7 +596,8 @@
                   <p>No.13 <span class="player-name">정수지</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a>
                 </div>
                 <button type="button">상세보기</button>
               </div>
@@ -579,7 +611,8 @@
                   <p>No.20 <span class="player-name">최효서</span></p>
                   <a href="" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="인스타그램" >
-                  </a>   
+                  </a>
+                  <a href="" target="_blank"></a> 
                 </div>
                 <button type="button">상세보기</button>
               </div>
