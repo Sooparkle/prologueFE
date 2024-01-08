@@ -1,0 +1,312 @@
+.tablet-unblock-p, .mobile-unblock{
+  display: none;
+}
+
+.tablet-unblock-p, 
+.mobile-unblock,
+.tablet-nav{
+  display: none;
+}
+
+
+
+header{
+  position: relative;
+  z-index: 3;
+  overflow-y: hidden;
+  border-bottom: 1px solid #999;
+  /* transform: var(--_transform-fade);
+  transition: transform 0.4s ease-in-out; */
+  
+}
+
+
+/* header background  */
+header::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 162px;
+  transform: var(--_transform);
+  /* transform: translateY(-163px); */
+  transition: transform 0.4s ease-in-out;
+  background: #fff;
+  /* box-shadow: 3px 8px 8px 3px rgb(128, 128, 128, .4); */
+}
+
+.header-wrap{
+  width: auto;
+  height: 90px;
+  margin: 0 3rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr 3fr 1fr;
+  justify-items: center;
+  align-items: center;
+
+}
+
+.logo-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  z-index: 5;
+  
+}
+
+.logo-wrap h1{
+  font-size: 1.1rem;
+}
+
+.logo-wrap > img{
+  width:70px;
+}
+
+
+/* nav area */
+nav {
+  width:100%;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 0 3rem;
+}
+
+nav ul li{
+  cursor:pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  width:100%;
+  text-align: center;
+  z-index: 5;
+
+}
+nav ul li >  a{
+  padding: 30px 0;
+  display: block;
+  width:100%;
+    }
+
+nav ul li  a{
+display: block;
+width:100%;
+  }
+  
+nav ul li a:hover{
+color:#d91833;
+font-weight: 700;
+}
+
+/* navigation sub maneu area */
+nav ul dl{
+  position: absolute;
+  top:0;
+  width:100%;
+  height:180px;
+  margin-top: 82px;
+  padding-top:10px;
+  z-index: 5;
+  
+
+}
+
+nav ul dl dt{
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+nav ul dl dd{
+  font-size: 1rem;
+  font-weight: 300;
+  padding:5px 0
+}
+
+
+/* utilities area */
+.utilities{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap : 1rem;
+  z-index: 5;
+}
+
+.utilities> div{
+  position: relative;
+}
+
+.utilities > div:nth-of-type(1)::after,
+.utilities > div:nth-of-type(2)::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 1px;
+  height: 15px;
+  background: #999;
+}
+
+.utilities select{
+  padding:1px 10px;
+  border: 1px solid #999;
+  border-radius: 8px;
+}
+
+
+
+/*  footer */
+
+footer {
+  width: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+  background: rgb(57, 58, 69);
+  /* display: none; */
+}
+
+.footer_wrap {
+  max-width: 1356px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  gap: 40px;
+  margin: 0 16px;
+  /* white-space: nowrap; */
+}
+
+.kovo_logo img {
+  max-width: 160px;
+  height: auto;
+}
+
+.term ul {
+  width: 100%;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.term a {
+  color: #fff;
+  font-size: .9375rem;
+  font-weight: 500;
+}
+
+.footer_detail address, .footer_detail p {
+  color: #ffffff99;
+  font-size: .875rem;
+}
+
+address {
+  margin: 20px 0 0;
+}
+
+.term_p {
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+@media (min-width:768px) and (max-width:1124px){
+  .header-wrap {
+    height: 90px;
+    margin: 0 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .utilities,
+  nav{
+    display: none;
+  }
+  
+
+.tablet-nav{
+  display: block;
+  z-index: 4;
+}
+
+}
+
+
+
+
+
+@media  (max-width:768px){
+  .mobile_menu {
+    display: block;
+  }
+  .utilities,
+  .mobile-block,
+  nav{
+    display: none;
+  }
+
+  .tablet-nav{
+    display: block;
+    z-index: 4;
+  }
+
+  .header-wrap {
+    height: 90px;
+    margin: 0 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+
+
+  /* footer */
+
+  footer{
+    margin-top: 44px;;
+  }
+  
+  .kovo_logo img{
+    width:100px;
+  }
+  
+  .term ul{
+    flex-wrap: wrap;
+  }
+  
+  .footer_wrap{
+    flex-direction: column;
+    align-items: start;
+    margin : 0 16px;
+  }
+  
+
+  .top-banner{
+    display: block;
+    height: 109px;
+    background: #D91833;
+  }
+
+  .top-banner h2{
+  font-size: 30px;
+  height: auto;
+  padding:0;
+  line-height: 109px;
+  position : unset;
+  transform: none;
+
+  }
+}
+
+
