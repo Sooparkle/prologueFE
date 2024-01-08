@@ -1,0 +1,925 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* {
+font-family: 'Nanum Gothic', sans-serif;
+}
+
+header{
+  position: relative;
+  z-index: 3;
+}
+
+.top_menu{
+  position: relative;
+  min-width: 1200px;
+  height:40px;
+  background:#28292D;
+}
+
+.top_menu{
+  display: flex;
+}
+
+.top_menu ul a{
+  padding:0 45px 0 25px;
+  color:#898989;
+  font-size:12px;
+  font-weight: 600;
+  font-family: "Nanum Gothic Bold";
+  background: url(https://www.kgcsports.com/images/common/ico_arr_g.png) no-repeat 80% 50%;
+}
+
+.top_menu .top_logo{
+  display: block;
+  background: url(https://www.kgcsports.com/images/logo/global_logo.gif) no-repeat;
+  width:131px;
+  height: 40px;
+  padding: 0;
+  text-indent: -9999px;
+}
+
+.top_menu ul{
+  display: flex;
+  align-items: center;
+}
+
+.top_menu li{
+border-left: 1px solid #4F5053;
+line-height: 40px;
+vertical-align: top;
+}
+
+.top_menu li:nth-last-of-type(1){
+  border-right: 1px solid #4F5053;
+
+}
+
+.top_menu li:nth-of-type(3){
+  border-left: none;
+
+}
+.top_menu .actived{
+  padding:0 45px 0 25px;
+  color:#E51937;
+  font-size:12px;
+  font-weight: bold;
+  background: url(https://www.kgcsports.com/images/common/ico_arr_r.png) no-repeat 80% 50%;
+}
+
+.top_menu .current{
+  line-height: 40px;
+  background: #fff;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  vertical-align: top;
+}
+
+
+/* gnb area */
+.gnb_wrap{
+  height: 77px;
+  border-bottom: 5px solid #D11732;
+  position: relative;
+
+}
+.gnb{ 
+  min-width: 1200px;
+  width:1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+
+.gnb h1{
+  display: block;
+  width:247px;
+  height:59px;
+  background: url(https://www.kgcsports.com/images/logo/logo_volleyball.png?ver=2.0) no-repeat;
+  text-indent: -9999px;
+}
+
+.gnb .nav > ul{
+  display: flex;
+  gap: 50px;
+
+}
+
+
+.gnb .nav li a {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+
+
+.gnb .nav li  > div{
+  position: absolute;
+  top:90px;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 300ms .2s ease ;
+
+
+
+}
+
+.gnb .nav li  > div[data-nav-sub="true"]{
+  opacity: 0;
+  transition: opacity 300ms 0.1s ease ;
+
+}
+
+
+.gnb .nav li  > div  li{
+width:190px;
+line-height:30px;
+
+}
+
+.gnb .nav li  > div a{
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: -1px;
+  
+}
+
+.gnb .nav li  > div a:hover{
+  color: #d61733;
+  text-decoration: underline;
+}
+
+.gnb .nav li  > div h3{
+  margin-bottom: 12px;  
+}
+
+.gnb .nav li .col-game{
+  left:300px;
+}
+
+.gnb .nav li .col-player{
+  left:490px;
+}
+
+.gnb .nav li .col-community{
+  left:680px;
+}
+
+.gnb .nav li .col-media{
+  left:870px;
+}
+
+
+.gnb_wrap .nav-cancel{
+  position:absolute;
+  right:0;
+  height:0;
+  bottom: -245px;
+  z-index: 10;
+  opacity: 1;
+  /* transition: opacity 300ms 0.1s ease ; */
+
+  transition-delay: 900ms;
+  transition-property: opacity;
+
+
+}
+
+.gnb .nav-cancel[data-nav-btn="true"] {
+opacity: 0;
+transition: opacity 100ms  ease ;
+/* transition-delay: 50ms;
+transition-property: opacity; */
+
+}
+
+
+
+.gnb_wrap .nav_bg{
+  width:100%;
+  height:280px;
+  position: absolute;
+  top:77px;
+  background: #fff;
+  border-top:1px solid #D11732;
+  border-bottom:5px solid #D11732;
+  transition: height 1000ms ;
+
+}
+
+.gnb_wrap .nav_bg[data-nav-bg="true"] {
+  width:100%;
+  height:0;
+  position: absolute;
+  bottom:-285px;
+  background: #fff;
+  border-top:1px solid #D11732;
+  border-bottom:5px solid #D11732;
+  transition: height 1000ms ;
+}
+
+
+
+/* 
+.gnb .nav  li > div{
+  position: absolute;
+  top: 72px;
+  left:0;
+  z-index:100;
+  padding-top:30px;
+
+}
+
+.gnb_wrap .nav >  a{
+  position:absolute;
+  bottom:-310px;
+  right:0;
+  z-index:100;
+}
+
+.gnb .nav  li > div > h3{
+  margin-bottom: 5px;
+}
+
+.gnb .nav  li  div  ul li{
+  width:190px;
+  height:30px ;
+}
+
+.gnb .nav  li  div  ul li a{
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: -1px;
+  cursor: pointer;
+  
+}
+
+
+.gnb .nav  li  div  ul li a:hover{
+  color: #d61733;
+  text-decoration: underline;
+}
+
+
+.gnb .nav  li .col-game{
+  left:160px;
+}
+
+.gnb .nav  li .col-player{
+  left:350px;
+}
+
+.gnb .nav  li .col-community{
+  left:540px;
+}
+
+.gnb .nav  li .col-media{
+  left:730px;
+}
+
+
+.gnb_wrap .nav_bg{
+  width:100%;
+  height:309px;
+  position: absolute;
+  top: 77px;
+  left:0;
+  z-index:10px;
+  background: #fff;
+  border-bottom: 5px solid #D11732;
+  border-top: 1px solid #D11732;
+} */
+
+
+
+/* utility area */
+.utility{
+  position:absolute;
+  top:0;
+  right:0;
+
+}
+
+.utility ul{
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+}
+
+.utility ul li{
+  border-left: 1px solid #4F5053;
+  line-height: 40px;
+  vertical-align: top;
+  font-size: 0.7rem;
+  color : #fff;
+  letter-spacing: -1px;
+
+}
+
+.utility ul li:nth-of-type(1), .utility ul li:nth-of-type(2) {
+  color : #c2c2c2;
+  background: #3E3F42;;
+}
+
+.utility ul a{
+  padding:0 15px;
+}
+
+
+/* main area */
+.main{
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main_content{
+  background: url(https://www.kgcsports.com/images/volleyball/main_2019/bg_visual_volly_2023.jpg) no-repeat;
+  height: 1033px;
+  padding :20px 0;
+  box-sizing: border-box;
+  position: relative;
+} 
+
+.the_red_force{
+  display: block;
+  width:535px;
+  height:100px;
+  margin:0 auto;
+}
+
+
+/* iframe area */
+.main_content .iframe_wrap{
+  width:1100px;
+  height: 606px;
+  margin: 0 auto;
+}
+
+.main_content .iframe_wrap > iframe{
+  position: absolute;
+  width:100%;
+  height:100%;
+  z-index: 10;
+  position: relative;
+}
+
+.main_content .player{
+  position:absolute;
+  top:0;
+  left: 50%;
+  transform: translate(-50%, 18%);
+
+}
+
+
+.main_content .player_wrap ul li{
+  display: flex;
+  justify-content:space-between ;
+  max-width: 1624px;
+  width: 1624px;
+}
+
+.main_content ul li a{
+  width:314px;
+}
+
+.main_content ul li img{
+  width:100%
+}
+
+.main_content .match_score_wrap{
+  background: #0d1627;
+  margin-top: 56px;
+  position: relative;
+
+}
+
+.main_content .match_score{ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width:100%;
+  height:251px;
+  margin: 0 auto;
+}
+
+.match_score > div{
+  width: 314px;
+  height: 181px;
+  padding:15px 0px;
+  box-sizing: border-box;
+  color:#fff;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.match_score .match_top {
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  padding-bottom: 15px;
+}
+
+.match_score .last_match, .match_score .next_match{
+  display: flex;
+  flex-flow: column;
+}
+
+
+.match_score  h3{
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  width:68%
+}
+
+.match_score .match_top > span {
+  /* margin-left: 70px; */
+}
+
+.match_score .team_ranking .match_top > span {
+  margin-left: 46px;
+  color:#cc1431;
+}
+
+.match_score .match_mid, .match_score  .team_ranking .score{
+  margin:0 auto;
+  padding: 15px 0 10px;
+
+}
+
+.match_score .match_mid img {
+  width : 90px;
+  object-fit: cover;
+}
+
+.match_score .match_mid .score > em{
+  display: inline-block;
+  font-size: 1rem;
+  font-style : normal;
+  font-weight: 600;
+  color : #999
+}
+
+.match_score .match_mid .score .vs{
+  color : #fff
+}
+
+.match_score .match_mid  .colon::before {
+  content: ":";
+  display: inline-block;
+  padding: 0 11px 0 7px;
+  color : #999
+}
+
+.match_score .match_mid > a{
+  display: block;
+  width: 130px;
+  font-size: 0.9rem;
+  letter-spacing: -1px;
+  margin: 13px auto 0;
+  padding: 9px 0;
+  background:#cc1431;
+  text-align: center;
+}
+
+.match_score .team_ranking .score{
+  height: 112px;
+  overflow:auto;
+}
+
+
+/* scroller bar control area */
+.match_score .team_ranking .score::-webkit-scrollbar{
+  width:10px;
+}
+
+.match_score .team_ranking .score::-webkit-scrollbar-thumb{
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.match_score .team_ranking .score::-webkit-scrollbar-track{
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.match_score .team_ranking .score li{
+  padding: 5px;
+  font-size: 0.9rem;
+
+}
+
+.match_score .team_ranking .score li > span:nth-of-type(1){
+  display: inline-block;
+  width:30px;
+}
+
+.match_score .team_ranking .score li > span:nth-of-type(2){
+  display: inline-block;
+  width:150px;
+}
+
+.match_score .team_ranking .score li > span:nth-of-type(3){
+  color : #999;
+}
+
+
+/* Red Sparks News area */
+.notice{
+  padding :45px 0 70px 0;
+  position: relative;
+  max-width: 1200px;
+  width:100%;
+  height:350px;
+  margin:0 auto;
+}
+
+.notice h2{
+  font-size: 1.8rem;
+  margin-bottom:25px;
+  color :#000;
+}
+
+.notice h2 > span {
+  color : #e0002a;
+}
+
+.notice .content_wrap{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.notice .board{
+  position:relative;
+  left:350px;
+}
+
+.notice .board .big img{
+  position:absolute;
+  left: -350px;
+}
+
+.notice .board .big a{
+  display: block;
+  width :410px;
+  height: 100%;
+}
+
+
+.notice .board .big h3{
+  height:70px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.notice .board .big p{
+  width:100%;
+  margin: 20px 0 54px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical
+}
+
+.notice .board .small{
+  display: inline-block;
+}
+
+
+.notice .small img{
+  width:96px;
+  height:87px;
+}
+
+.notice .small img:hover{
+  border: 2px solid #511128 ;
+}
+
+.notice .small ul a{
+  width:410px;
+
+}
+
+.notice .small .selected{
+  border: 2px solid #511128 ;
+
+}
+
+.notice .board > a{
+  position: absolute;
+  top: -50px;
+  right: 0;
+  text-underline-offset: 5px;
+  text-decoration: underline;
+  letter-spacing: -0.5px;
+}
+
+.notice > a{
+  display: block;
+  width: 400px;
+  height: 280px;
+}
+
+
+/* media area */
+.media{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding:14px 0 40px 0;
+  position: relative;
+}
+
+.media > h2{
+  font-size: 1.8rem;
+  margin-bottom:25px;
+  color :#000;
+}
+
+.media > h2 > span {
+  color : #e0002a;
+}
+
+
+.media .m_list_wrap{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 294px;
+  gap:6px;
+  overflow-x:auto;
+  scroll-snap-type: x mandatory ;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+
+
+.media .m_list_wrap::-webkit-scrollbar{
+  display: none;
+  
+}
+
+.media .m_list_wrap li{
+  width:100%;
+  height: 359px;
+  background: #f6f6f6;
+  margin-bottom: 30px;
+  scroll-snap-align: start;
+
+}
+
+.media .m_list_wrap .info_wrap{
+  padding :28px 28px 32px;
+}
+
+.media .m_list_wrap img{
+  width:100%;
+  object-fit: cover;
+}
+
+.media .m_list_wrap .info_wrap strong{
+  display: block;
+  color : #e0002a;
+  margin-bottom: 8px;
+}
+
+.media .m_list_wrap .info_wrap p{
+  font-size: 0.9rem;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color:#000;
+}
+
+
+
+.media  .prev_btn {
+  position: absolute;
+  top:50%;
+  left:0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  margin-right: 5px;
+  background: #5e5e5e;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  
+}
+
+.media .prev_btn::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 0;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  -webkit-transform: translate(-30%, -50%) rotate(225deg);
+  transform: translate(-30%, -50%) rotate(225deg);
+}
+
+
+.media  .next_btn {
+  position: absolute;
+  top:50%;
+  right:-50px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  margin-right: 5px;
+  background: #5e5e5e;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  
+}
+
+
+.media .next_btn::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  border-width: 0;
+  border-style: solid;
+  border-color: #fff;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  -webkit-transform: translate(-75%, -50%) rotate(45deg);
+  transform: translate(-75%, -50%) rotate(45deg);
+}
+
+
+/* red Sparks SNS area */
+.sns {
+  height: 307px;
+  background: #fafafa;
+  padding: 42px 0;
+}
+
+.sns .sns_wrap{
+  max-width: 1200px;
+  width:100%;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+.sns .title_wrap{
+  position: absolute;
+  top:-60px;
+  left: 0;
+}
+
+.sns h2{
+  font-size: 1.8rem;
+  color :#000;
+}
+
+.sns h2 > span {
+  color : #e0002a;
+}
+
+.sns ul{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(1fr, 240px);
+}
+
+.sns ul li img{
+  margin-bottom: 20px;
+
+}
+
+.sns ul li p{
+  padding-right: 25px;
+  line-height: 24px;
+
+}
+
+
+
+/* social media area */
+.social_media{
+  height: 138px;
+  margin: 40px 0 80px;
+}
+.social_media .social_media_wrap{
+  max-width: 1200px;
+  width: 100%;
+  margin : 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(1fr, 240px);
+  grid-auto-rows: 138px;
+  box-sizing: border-box;
+}
+
+
+
+.social_media .facebook, .social_media .instagram, .social_media .naver_post, .social_media .naver_TV {
+  border-right: 1px solid #dadada;
+
+}
+
+.social_media .social_media_wrap img{
+  display: block;
+  margin: 0 auto 20px;
+  width: 80px;
+  height: 80px;
+
+}
+
+.social_media .social_media_wrap p{
+  text-align: center;
+  font-size: 1.2rem;
+
+}
+
+
+/* footer area */
+.footer{
+  background: #555555;
+}
+.footer_top{ 
+  background: #4b4b4b;
+}
+
+.footer ul{
+  max-width: 1200px;
+  width:100%;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  color:#fff;
+}
+
+.footer ul li{
+  padding: 17px 28px;
+  position: relative;
+  color:#ccc;
+
+}
+
+.footer ul .border1{
+font-weight: 600;
+color: #fdd000;
+}
+
+.footer ul .border1::after,
+.footer ul .border2::after{
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 1px;
+  height: 9px;
+  background: #858585;
+  content: "";
+
+}
+
+.footer address{
+  max-width: 1200px;
+  width:100%;
+  margin: 0 auto;
+  text-align: center;
+  padding :34px 0 38px;
+  color : #e1e1e1;
+  font-style: normal;
+
+}
+
+.footer address p{
+  padding-bottom: 8px;
+}
+
+.footer address .copyright{
+  padding: 20px 0 0 0;
+  color : #aaa;
+  font-weight: 600;
+}
