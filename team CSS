@@ -1,8 +1,11 @@
-
+.tablet-unblock-p, .mobile-unblock{
+  display: none;
+}
 
 svg{
   cursor: pointer;
 }
+
 
 
 
@@ -103,7 +106,7 @@ article{
 
 [data-pagination]{
   position: absolute;
-  right:-16px;
+  right:0;
   top: 20px;
 }
 
@@ -128,7 +131,29 @@ margin-bottom: 24px;
 .css-team-tab{
   margin-bottom: 30px;
 }
+/* .css-team-tab ul{
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
+
+.css-team-tab ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .css-team-tab li{
+  width:50%;
+  text-align: center;
+  background: #eee;
+} */
+
+/* .css-team-tab li{
+  width:50%;
+  text-align: center;
+  background: #eee;
+} */
 
 
 .css-team-tab ul{
@@ -189,8 +214,7 @@ display: block;
 
 .player-grid{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap : 2rem;
 }
 
@@ -199,13 +223,11 @@ display: block;
 }
 
 
-.player-grid .img-mask img{
-  width:100%;
-
+.player-grid .img-mask{
+  position: relative;
 }
 
 .player-grid .img-mask{
-  position: relative;
   border: 1px solid #eaeaea;
   border-radius: 12px;
   margin-bottom: 10px;;
@@ -549,7 +571,22 @@ display: none;
 
 /* media area */
 
+@media (min-width: 768px) and (max-width: 1124px){
+.tablet-unblock-p{
+display: inline-block;
+font-size :16px;
+font-weight: 600;
+padding: 5px 0 ;
 
+}
+
+.mobile_menu {
+  display: block;
+}
+
+.wrap{
+padding-bottom: 80px;
+}
 
 
 /* tablet main area */
@@ -1345,39 +1382,5 @@ input {
       height: 42px;
   }
   
-  footer{
-    margin-top: 44px;;
-  }
-  
-  .kovo_logo img{
-    width:100px;
-  }
-  
-  .term ul{
-    flex-wrap: wrap;
-  }
-  
-  .footer_wrap{
-    flex-direction: column;
-    align-items: start;
-    margin : 0 16px;
-  }
-  
-
-  .top-banner{
-    display: block;
-    height: 109px;
-    background: #D91833;
-  }
-
-  .top-banner h2{
-  font-size: 30px;
-  height: auto;
-  padding:0;
-  line-height: 109px;
-  position : unset;
-  transform: none;
-
-  }
 
 }
