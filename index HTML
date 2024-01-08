@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정관장 레드스파크스</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+  <header>
+    <div class="top_menu">
+      <h2 class="screen_out">상단메뉴</h2>
+      <a href="" class="top_logo">정관장스포츠단</a>
+      <ul>
+        <li><a href="">BASKETBALL</a></li>
+        <li class="current"><a href="" class="actived">VOLLEYBALL</a></li>
+        <li><a href="">TABLE TENNIE</a></li>
+        <li><a href="">BADMINTON</a></li>
+      </ul>
+    </div>
+
+    <div class="gnb_wrap">
+      <div class="gnb">
+        <h1>정관장 레드스파크 프로배구단</h1>
+          <a href="" class="logo"></a>
+        </h1>
+        <div class="nav">
+          <h2 class="screen_out">주요메뉴</h2>
+          <ul>
+            <li><a href="">GAME</a>
+              <div class="sub_menu">
+                <h3>GAME</h3>
+                <ul>
+                  <li><a href="">경기일정및결과</a></li>
+                  <li><a href="">기록실</a></li>
+                  <li><a href="">홈구장안내</a></li>
+                  <li><a href="">티켓안내</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="">PLAYER</a>
+              <div class="col-player">
+                <h3>PLAYER</h3>
+                <ul>
+                  <li><a href="">코칭스텝</a></li>
+                  <li><a href="">선수</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="">COMMUNITY</a>
+              <div class="col-community">
+                <h3>COMMUNITY</h3>
+                <ul>
+                  <li><a href="">자유게시판</a></li>
+                  <li><a href="">Q&A게시판</a></li>
+                  <li><a href="">스폰서사이트</a></li>
+                  <li><a href="">관련사이트</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="">MEDIA</a>
+              <div class="col-media">
+                <h3>MEDIA</h3>
+                <ul>
+                  <li><a href="">구단뉴스</a></li>
+                  <li><a href="">언론뉴스</a></li>
+                  <li><a href="">동영상갤러리</a></li>
+                  <li><a href="">포토갤러리</a></li>
+                  <li><a href="">응원가</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="utility">
+      <h2 class="screen_out">유틸리티</h2>
+      <ul>
+        <li><a href="">로그인</a></li>
+        <li><a href="">회원가입</a></li>
+        <li><a href="">전체메뉴</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="main_content">
+      <h2 class="screen_out">메인 콘텐츠</h2>
+      <div class="red_force_wrap">
+        <img class="the_red_force" src="https://www.kgcsports.com/images/volleyball/main_2019/head_tit_2324.png?ver=1.1" alt="">    </div>
+      <div class="iframe_wrap">
+        <iframe src="https://tv.naver.com/embed/42363147?autoPlay=false" frameborder="no" scrolling="no" marginwidth="0" marginheight="0" width="544" height="306" allow=""></iframe>
+      </div>
+      <div class="player" data-carousel>
+				<div class="controller">
+					<button class="prev_btn" data-carousel-button="prev"></button>
+					<button class="next_btn" data-carousel-button="next"></button>
+					<button class="play_btn" data-carousel-button="play"></button>
+					<button class="stop_btn" data-carousel-button="stop"></button>
+				</div>
+        <div class="player_wrap">
+          <ul data-sliders>
+            <li class="player" data-active>
+              <a href=""><img src="https://www.kgcsports.com/images/volleyball/main2324/m_player_list_t11.png?ver=3.1" alt=""></a>
+              <a href=""><img src="https://www.kgcsports.com/images/volleyball/main2324/m_player_list_fa01.png?ver=3.1" alt=""></a>
+            </li>
+            <!-- <liclass="player">
+              <a href=""><img src="https://www.kgcsports.com/images/volleyball/main2324/m_player_list_fa11.png?ver=3.1" alt=""></a>
+              <a href=""><img src="https://www.kgcsports.com/images/volleyball/main2324/m_player_list_n191.png?ver=3.1" alt=""></a>
+            </li>
+            <li class="player">
+              <a href=""><img src="https://www.kgcsports.com/images/volleyball/main2324/m_player_list_t11.png?ver=3.1" alt=""></a>
+              <a href=""><img src="https://www.kgcsports.com/images/volleyball/main2324/m_player_list_fa01.png?ver=3.1" alt=""></a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="match_score_wrap">
+        <div class="match_score">
+          
+          <div class="last_match">
+            <div class="match_top">
+              <h3>Last Match</h3>
+              <span class="date">2023.11.05 광주</span>
+            </div>
+            
+            <div class="match_mid">
+              <div class="score">
+                <img src="https://www.kgcsports.com/images/volleyball/logo_2007.png" alt="">
+                <em>0</em>
+                <em class="colon">3</em>
+                <img src="https://www.kgcsports.com/images/volleyball/main2324/logo_2003.png?ver=1.0" alt="">
+              </div>
+              <a href="">경기기록</a>
+            </div>
+          </div>
+          
+
+          <div class="next_match">
+            <div class="match_top">
+              <h3>Next Match</h3>
+              <span class="date">2023.11.05 광주</span>
+            </div>
+            
+            <div class="match_mid">
+              <div class="score">
+                <img src="https://www.kgcsports.com/images/volleyball/logo_2001.png" alt="">
+                <em class="vs">VS</em>
+                <img src="https://www.kgcsports.com/images/volleyball/main2324/logo_2003.png?ver=1.0" alt="">
+              </div>
+              
+              <a href="">경기기록</a>
+            </div>
+          </div>
+
+          <div class="team_ranking">
+            <div class="match_top">
+              <h3>Team Ranking</h3>
+              <span class="date">현재3위</span>
+            </div>
+            <ul class="score">
+              <li>
+                <span>1</span>
+                <span>흥국생명</span>
+                <span>5승 1패</span>
+              </li>
+              <li>
+                <span>2</span>
+                <span>GS칼텍스</span>
+                <span>4승 1패</span>
+              </li>
+              <li>
+                <span>3</span>
+                <span>정관장</span>
+                <span>4승 2패</span>
+              </li>
+              <li>
+                <span>4</span>
+                <span>현대건설</span>
+                <span>3승 3패</span>
+              </li>
+              <li>
+                <span>5</span>
+                <span>IBK기업은행</span>
+                <span>2승 4패</span>
+              </li>
+              <li>
+                <span>6</span>
+                <span>한국도로공사</span>
+                <span>1승 4패</span>
+              </li>
+              <li>
+                <span>7</span>
+                <span>패퍼저축은행</span>
+                <span>1승 5패</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice">
+      <h2><span>Red Sparks</span> NEWS</h2>
+      <div class="content_wrap">
+        <div class="board">
+          <div class="big">
+            <a href="">
+              <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5505" alt="">
+              <h3>연속득점 성공한 이선우</h3>
+              <p>2세트에서 14점 15점 아기 사자의 연속 득점!#정관장#레드스파크스#정관장레드스파크스배구단#배구#배구단#여자배구 #여배#스케쳐스#SKECHERS#redsparks#이선우#정관장여자배구 https://tv.naver.com/v/42365400
+              </p>
+            </a>
+          </div>
+          <ul>
+            <li class="small selected">
+              <a href="">
+                <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5505" alt="">
+              </a>
+            </li>
+            <li class="small">
+              <a href="">
+                <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5504" alt="">
+                </p>
+              </a>
+            </li>
+            <li class="small">
+              <a href="">
+                <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5503" alt="">
+              </a>
+            </li>
+            <li class="small">
+              <a href="">
+                <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5502" alt="">
+              </a>
+            </li>
+          </ul>
+          <a href="">더보기</a>
+          <!-- <ul class="small">
+            <li >
+              <a href="">
+                <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5504" alt="">
+                <p>2세트에서 14점 15점 아기 사자의 연속 득점!#정관장#레드스파크스#정관장레드스파크스배구단#배구#배구단#여자배구 #여배#스케쳐스#SKECHERS#redsparks#이선우 https://tv.naver.com/v/42365400
+                </p>
+              </a>
+            </li>
+            <li >
+              <a href="">
+                <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5503" alt="">
+                <h3>연송득점 성공한 이선우</h3>
+                <p>2세트에서 14점 15점 아기 사자의 연속 득점!#정관장#레드스파크스#정관장레드스파크스배구단#배구#배구단#여자배구 #여배#스케쳐스#SKECHERS#redsparks#이선우 https://tv.naver.com/v/42365400
+                </p>
+              </a>
+            </li>
+            <li >
+              <a href="">
+                <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfaXM=&no=5502" alt="">
+                <h3>연송득점 성공한 이선우</h3>
+                <p>2세트에서 14점 15점 아기 사자의 연속 득점!#정관장#레드스파크스#정관장레드스파크스배구단#배구#배구단#여자배구 #여배#스케쳐스#SKECHERS#redsparks#이선우 https://tv.naver.com/v/42365400
+                </p>
+              </a>
+            </li>
+          </ul> -->
+        </div>
+        <a href="">
+          <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=YWxpbXBhbg==&no=297" alt="">
+        </a>
+        
+      </div>
+    </section>
+
+    <section class="media">
+      <h2><span>Red Sparks</span> MEDIA</h2>
+			<div class="container">
+				<ul class="m_list_wrap">
+					<li class="card">
+						<a href="">
+							<img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfYW5yb25fcGxheQ==&no=11525" alt="">
+							<div class="info_wrap">
+								<strong>언론뉴스</strong>
+								<p>드디어 7개월 만에 코트 밟았다…'캡틴' 이소영의 설레는 미소[곽경훈의 현장]</p>
+							</div>
+						</a>
+					</li>
+					<li class="card">
+						<a href="">
+							<img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfYW5yb25fcGxheQ==&no=11524" alt="">
+							<div class="info_wrap">
+								<strong>언론뉴스</strong>
+								<p>'히잡 속 흐르는 땀방울' 김연경 제친 1라운드 MVP 메가...배구에 진심인 오뚝이</p>
+						</div>
+						</a>
+					</li>
+					<li class="card">
+						<a href="">
+							<img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfYW5yb25fcGxheQ==&no=11523" alt="">
+							<div class="info_wrap">
+								<strong>언론뉴스</strong>
+								<p>1세트에만 범실 12개 “맥 끊는 범실이...”4세트는 ‘와르르’ 고희진 감독의 한숨 [현장인터뷰]</p>
+							</div>
+							</a>
+					</li>
+					<li class="card">
+						<a href="">
+							<img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfYW5yb25fcGxheQ==&no=11522" alt="">
+							<div class="info_wrap">
+								<strong>언론뉴스</strong>
+								<p>히잡 쓰고 스파이크 펑펑…공격성공률 1위 메가, 인니팬 끌어온다</p>
+							</div>
+							</a>
+					</li>
+					<li class="card">
+						<a href="">
+							<img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfYW5yb25fcGxheQ==&no=11525" alt="">
+							<div class="info_wrap">
+								<strong>언론뉴스</strong>
+								<p>드디어 7개월 만에 코트 밟았다…'캡틴' 이소영의 설레는 미소[곽경훈의 현장]</p>
+							</div>
+						</a>
+					</li>
+					<li class="card">
+						<a href="">
+							<img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=a2l0ZXNfYW5yb25fcGxheQ==&no=11524" alt="">
+							<div class="info_wrap">
+								<strong>언론뉴스</strong>
+								<p>'히잡 속 흐르는 땀방울' 김연경 제친 1라운드 MVP 메가...배구에 진심인 오뚝이</p>
+						</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+				<button id="prev" class="prev_btn"></button>
+				<button id="next" class="next_btn"></button>
+			</div>
+      <script>
+        const listWrap = document.querySelector(".m_list_wrap");
+        const $buttons = document.querySelectorAll(".media button");
+        const  firstCardWidth = listWrap.querySelector("li").offsetWidth;
+
+        console.log(listWrap);
+        $buttons.forEach(btn =>{
+          btn.addEventListener("click", ()=>{
+            listWrap.scrollLeft += btn.id === "next" ? firstCardWidth: -firstCardWidth;
+          });
+        });
+
+
+
+
+      </script>
+    </section>
+
+    <section class="sns">
+        <div class="sns_wrap">
+        <div class="title_wrap">
+          <h2><span>Red Sparks</span> SNS</h2>
+        </div>
+        <ul>
+          <li>
+            <a href="">
+              <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=bWFpbl9zbnM=&no=1594" alt="">
+              <p>정관장 레드스파크스 2023-24시즌 V리그 2라운드 일정표</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=bWFpbl9zbnM=&no=1593" alt="">
+              <p>2023-2024 도드람 V리그 1ROUND</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=bWFpbl9zbnM=&no=1592" alt="">
+              <p>새로운 서브 장착하고 돌아온, 지아의 성장 드라마 [1R | VS 현대건설]</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=bWFpbl9zbnM=&no=1591" alt="">
+              <p>정관장 서브 장인들</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://www.kgcsports.com/09_public/es_func/attach_file_view.php?a_no=1&t_name=bWFpbl9zbnM=&no=1590" alt="">
+              <p>끝나자 마자 흘린 감격의 눈물 짜릿한 리버스 스윕</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="social_media">
+      <div class="social_media_wrap">
+        <div class="facebook">
+          <a href="">
+            <img src="https://www.kgcsports.com/images/basketball/main_2019/sns_facebook.png" alt="페이스북 바로가기">
+            <p>Facebook</p>
+          </a>
+        </div>
+        <div class="instagram">
+          <a href="">
+            <img src="https://www.kgcsports.com/images/basketball/main_2019/sns_insta.png" alt="인스타그램 바로가기">
+            <p>Instagram</p>
+          </a>
+        </div>
+        <div class="naver_post">
+          <a href="">
+            <img src="https://www.kgcsports.com/images/basketball/main_2019/sns_naver.png" alt="네이버 바로가기">
+            <p>Naver Post</p>
+          </a>
+        </div>
+        <div class="naver_TV">
+          <a href="">
+            <img src="https://www.kgcsports.com/images/basketball/main_2019/sns_navertv.png" alt="네이버TV 바로가기">
+            <p>Naver TV</p>
+          </a>
+        </div>
+        <div class="youtube">
+          <a href="">
+            <img src="https://www.kgcsports.com/images/basketball/main_2019/sns_youtube.png" alt="유튜브 바로가기">
+            <p>Youtube</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer_top">
+      <h2 class="screen_out">법적고지</h2>
+      <ul>
+        <li><a href="" class="border1">개인정보처리방침</a></li>
+        <li><a href="" class="border2">이용약관</a></li>
+        <li><a href="">이메일무단수집거부</a></li>
+      </ul>
+    </div>
+    <address>
+      <p>정관장 스포츠단 | 경기도 안양시 동안구 평촌대로 389 안양체육관 1층</p>
+      <p>농구단 : 031-478-6614  |  배구단: 031-478-6618  |  FAX: 031-478-6655</p>
+      <p class="copyright">COPYRIGHT(C) 2023 정관장 스포츠단. ALL RIGHTS RESERVED.</p>
+    </address>
+  </footer>
+</body>
+</html>
