@@ -238,6 +238,18 @@ address {
   z-index: 4;
 }
 
+.tablet-unblock-p{
+  display: inline-block;
+  font-size :16px;
+  font-weight: 600;
+  padding: 5px 0 ;
+  
+  }
+  
+  .mobile_menu {
+    display: block;
+  }
+
 }
 
 
@@ -271,10 +283,32 @@ address {
 
 
 
+  .mobile-unblock{
+    display: block;
+  }
+
+  .mobile-unblock-p{
+    font-size :16px;
+    font-weight: 600;
+    padding: 5px 0;
+    display: block;
+    
+  }
+
+
+
+  .mobile_menu {
+    display: block;
+  }
+
+
+
+
+
   /* footer */
 
   footer{
-    margin-top: 44px;;
+    margin-top: 44px;
   }
   
   .kovo_logo img{
@@ -308,5 +342,4 @@ address {
 
   }
 }
-
 
