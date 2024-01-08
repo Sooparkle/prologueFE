@@ -1,17 +1,3 @@
-.tablet-unblock-p, .mobile-unblock{
-  display: none;
-}
-
-
-
-.tablet-unblock-p, 
-.mobile-unblock,
-.tablet-nav{
-  display: none;
-}
-
-
-
 header{
   position: relative;
   z-index: 3;
@@ -254,7 +240,6 @@ article{
 .content h2{
 font-size:36px;
 font-weight: bold;
-margin-top: 40px;
 margin-bottom: 24px;
 }
 
@@ -367,9 +352,8 @@ margin-bottom: 24px;
 
 
 
-/* table commen area */
+/* table common area */
 .table > h2{
-  width:0 auto;
   padding: 5rem 0;
   font-size: 3rem;
   text-align: center;
@@ -556,55 +540,210 @@ margin-bottom: 24px;
 }
 
 
-/* sohyun footer */
 
-footer {
-  width: 100%;
-  padding: 50px 0;
-  box-sizing: border-box;
-  background: rgb(57, 58, 69);
-  /* display: none; */
+
+
+/* package area */
+
+/* main content area */
+.main-content .package-wrap{
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap:0.7rem;
+  
 }
 
-.footer_wrap {
-  max-width: 1356px;
+.main-content .package-item{
+  border: 1px solid #e5e5e5;
+  padding: 0 1.5rem;
+  height: 200px;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
   align-items: center;
-  gap: 40px;
-  margin: 0 16px;
 }
 
-.kovo_logo img {
-  max-width: 160px;
-  height: auto;
+
+.main-content .package-item p{
+  width:260px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-.term ul {
-  width: 100%;
-  display: inline-flex;
-  gap: 10px;
+.main-content .package-item .button-wrap{
+  display: flex;
+  flex-direction: column;
+  gap:1.5rem;
+  position: relative;
+  
 }
 
-.term a {
-  color: #fff;
-  font-size: .9375rem;
-  font-weight: 500;
+.main-content .package-item .button-wrap img{
+width:100%;
+position:absolute;
+right:-20px;
+z-index: -1;
+  
 }
 
-.footer_detail address, .footer_detail p {
-  color: #ffffff99;
-  font-size: .875rem;
+
+.main-content .package-item .button-wrap button{
+  border: none;
+  background: none;
+  padding: 0 18px;
+  height: 55px;
+  font-size: 16px;
+  border-radius: 6px;
+  width: 160px;
+  font-weight: 600;
 }
 
-address {
-  margin: 20px 0 0;
+.main-content .package-item .button-wrap a{
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  border : 1px solid #8c8c8c;
+  cursor: pointer;
+  margin-top:10px;
+  font-size: 16px;
 }
 
-.term_p {
-  margin-top: 20px;
+.main-content .package-item .button-wrap a:nth-of-type(2){
+  background: #d91833;
+  color:#fff;
+
 }
+
+.main-content .package-item .button-wrap a:nth-of-type(1){
+  background: #fff;
+  color:#222222;
+}
+
+
+
+
+.content > p{
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+/* mobile area */
+
+.main-content .img{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* main content area */
+.mobile-unblock{
+  display: none;
+}
+
+.main-content img{
+  height: 100%;
+}
+
+
+.main-content table{
+  width:100%;
+  border-collapse: collapse;
+}
+
+.main-content table, th, td{
+  border: 1px solid #eaeaea;
+}
+
+
+
+.main-content{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap:2.5rem;
+  font-size: 1.15rem;
+}
+
+.main-content > img{
+  margin-bottom: 2.5rem;
+}
+
+.content-box  table th,
+.content-box  table td{
+  text-align: center;
+  padding: 16px 0 ;
+}
+
+.content-box:nth-of-type(2) > div,
+.content-box:nth-of-type(6) > div{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding:4px 0;
+  
+}
+
+.content-box:nth-of-type(4) .indent{
+  margin-left:10px;
+}
+
+.content-box:nth-of-type(4) .indent:nth-last-of-type(4),
+.content-box:nth-of-type(4) .indent:nth-last-of-type(7){
+  margin-bottom: 4px;
+}
+
+.content-box h3,
+.content-box h4{
+  font-size:22px;
+  margin-bottom:1rem;
+}
+
+
+.content-box > p{
+  margin-top:1rem;
+  margin-bottom: 2.5rem;
+}
+
+.content-box .red{
+  color : red;
+}
+
+.content-box thead{
+  background: #f9f9f9;
+}
+
+.content-box ul{
+  margin-top:2rem;
+}
+
+
+.content-box:nth-of-type(3) .first{
+  color : #000;
+
+}
+
+.content-box:nth-of-type(4) .indent{
+  margin-left:10px;
+}
+
+.content-box:nth-of-type(4) .indent:nth-last-of-type(3),
+.content-box:nth-of-type(4) .indent:nth-last-of-type(6){
+  margin-bottom: 4px;
+}
+
+
+
+.content-box .first{
+  font-weight: 600;
+
+}
+
+
+
 
 
 
@@ -614,6 +753,8 @@ address {
 
 
 @media (min-width:768px) and (max-width:1124px){
+
+
 .tablet-unblock-p{
   display: inline-block;
   font-size :16px;
@@ -622,15 +763,7 @@ address {
 }
 
 
-.header-wrap {
-  height: 90px;
-  margin: 0 3rem;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  justify-items: center;
-  align-items: center;
-}
+
 
 /* tablet main area */
 .top-banner{
@@ -663,36 +796,6 @@ article{
 }
 
 
-/* table area  */
-
-.body .away span,
-.body .home span{
-  transform : rotate(-90deg);
-}
-
-.body .data{
-  font-size : 16px;
-}
-
-.body .place{
-  font-size: 15px;
-}
-
-.body .versus{
-  display: inline-block;
-  font-size: 35px;
-  font-weight: 600;
-  color:#2223;
-  margin:0 25px;
-}
-
-.body .ticket-buy{
-  background-position: 0 0;
-}
-
-.body .ticket-buy a{
-  padding: 1rem 1.6rem;
-}
 
 
 
@@ -757,83 +860,6 @@ font-size: 13px;
 }
 
 
-
-/* TOP area */
-.table .table-header{
-    display: none;
-}
-
-
-.table .body{
-  display: grid;
-  grid-template-columns: 1fr;
-  /* grid-template-rows: 6% 18% 45% 15% 16%; */
-  grid-template-rows: 50px 40px 100px 60px 40px;
-  align-items: center;
-  text-align: center;
-
-  font-size:14px;
-  margin: 30px 0;
-  padding-bottom: 10px;
-}
-
-.body .home, .body .away{
-  font-size: 16px;
-}
-
-.body .home{
-  background: #6c6c6c;
-}
-
-.body .battle{
-  margin : 1rem 0;
-}
-
-.body .battle-left img,
-.body .battle-right img{
-  width:80px;
-  height:100%;
-  object-fit: cover;
-  margin-bottom:10px;
-}
-
-.body .battle::before,
-.body .battle::after{
-  display: none;
-} 
-
-.body .ticket-buy::before{
-  display: none;
-}
-
-.body .ticket-buy{
-  width:100%;
-  height:100%;
-}
-
-.body .ticket-buy a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:90%;
-  height: 100%;
-  color : #fff;
-  padding: 0
-
-}
-
-
-.body .ticket-buy > .home {
-  width:100%;
-  padding: 0.7rem 8rem;
-}
-
-
-
-.body .ticket-buy > .away {
-  width:100%;
-  padding: 0.7rem 8rem;
-}
 
 
 .wrap{
@@ -1048,7 +1074,7 @@ main{
 }
 
 .top-banner{
-  background: url(https://kovo.co.kr/assets/pc_sub_banner_jeong.5be398ba.png) no-repeat;
+  background: #d91833;
   width:100%;
   height: 199px;
   position: relative;
@@ -1115,149 +1141,15 @@ margin-bottom: 24px;
 
 
 
-/* main content area */
-.package-wrap{
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap:0.7rem;
-  
-}
-
-.package-item{
-  border: 1px solid #e5e5e5;
-  padding: 0 1.5rem;
-  height: 200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-.package-item p{
-  width:260px;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.package-item .button-wrap{
-  display: flex;
-  flex-direction: column;
-  gap:1.5rem;
-  position: relative;
-  
-}
-
-.package-item .button-wrap img{
-width:100%;
-position:absolute;
-right:-20px;
-z-index: -1;
-  
-}
-
-
-.package-item .button-wrap button{
-  border: none;
-  background: none;
-  padding: 0 18px;
-  height: 55px;
-  font-size: 16px;
-  border-radius: 6px;
-  width: 160px;
-  font-weight: 600;
-}
-
-.package-item .button-wrap a{
-  display: inline-block;
-  padding: 0.7rem 2rem;
-  text-align: center;
-  border-radius: 8px;
-  border : 1px solid #8c8c8c;
-  cursor: pointer;
-  margin-top:10px;
-  font-size: 16px;
-}
-
-.package-item .button-wrap a:nth-of-type(2){
-  background: #d91833;
-  color:#fff;
-
-}
-
-.package-item .button-wrap a:nth-of-type(1){
-  background: #fff;
-  color:#222222;
-}
 
 
 
 
 
-/* 소현  */
-/* footer */
-
-footer {
-  width: 100%;
-  padding: 50px 0;
-  box-sizing: border-box;
-  background: rgb(57, 58, 69);
-  /* display: none; */
-}
-
-.footer_wrap {
-  max-width: 1124px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 16px;
-  align-items: center;
-  gap: 40px;
-}
-
-.kovo_logo img {
-  max-width: 160px;
-  height: auto;
-}
-
-.term ul {
-  width: 100%;
-  display: inline-flex;
-  gap: 10px;
-}
-
-.term a {
-  color: #fff;
-  font-size: .9375rem;
-  font-weight: 500;
-}
-
-.footer_detail address, .footer_detail p {
-  color: #ffffff99;
-  font-size: .875rem;
-}
-
-
-address {
-  margin: 20px 0 0;
-}
-
-.term_p {
-  margin-top: 20px;
-}
-}
-
-
-
-
-
-
-@media (min-width:768px) and (max-width:1124px){
 
 
 /* tablet main area */
-.top-banner{
-  background: url(https://kovo.co.kr/assets/tablet_sub_banner_jeong.56840093.png) no-repeat;
-  
-}
+
 
 .top-banner h2{
   position: unset;
@@ -1301,182 +1193,11 @@ article{
 
 
 
-
-
-
-
-/* 소현 */
-body {
-  position: relative;
 }
-
-.wrap{
-padding-bottom: 80px;
-}
-
-/* 토글 변경 영역 12.21 */
-
-  .topmenu_bg {
-    display: none;
-}
-
-
-.toggle {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: -340px;
-  width: 340px;
-  height: 880px;
-  z-index: 500;
-  transition: all .4s ease-in-out;
-}
-
-
-
-/* 헤더 */
-
-.h_full_box {
-  height: 57px;
-}
-
-.header_wrap {
-  height: 57px;
-  background: #fff;
-}
-
-/* 헤더 로고 부분 */
-
-.logo_wrap {
-  width: auto;
-  height: 34px;
-  position: absolute;
-  top: 10px;
-  left: 15px;
-}
-
-.logo_wrap_img img {
-  width: auto;
-  height: 34px;
-  margin-right: 5px;
-}
-
-.logo_wrap span {
-  color: #222;
-  font-size: 1rem;
-}
-
-.logo_wrap_btn img {
-  top: 5px;
-  color: #222;
-}
-
-/* gnb */
-
-.gnb ul, .nav_bg {
-  display: none;
-}
-
-/* top menu */
-
-.top_menu ul {
-  display: none;
-}
-
-/* 검색창 */
-
-.search_wrap {
-  width: 100%;
-  height: 48px;
-  top: 57px;
-  left: 0;
-  padding: 24px 0;
-}
-
-.input_wrap {
-  width: 100%;
-  padding: 4px 16px;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-input {
-  font-size: 1rem;
-}
-
-/* logo_category */
-
-.logo_category {
-  height: auto;
-  top: 57px;
-}
-
-.logo_cont_wrap {
-  width: 100%;
-  padding: 24px 16px;
-}
-
-.hr {
-  width: 100%;
-  margin: 20px 0;
-}
-
-/*men*/
-
-.men_font {
-  font-size: 18px;
-}
-
-.men_emb_grop p {
-  display: none;
-}
-
-.m_emb img {
-  width: 56px;
-  height: 42px;
-}
-
-/*women*/
-
-.women_font {
-  font-size: 18px;
-}
-
-.women_emb_grop p {
-  display: none;
-}
-
-.women_emb_grop {
-  margin-bottom: 10px;
-}
-
-.w_emb img {
-  width: 56px;
-  height: 42px;
-}
-
-.term ul{
-  flex-wrap: wrap;
-}
-
-
-.kovo_logo img{
-  width:100px;
-}
-
-
-.mobile_menu {
-  display: block;
-}
-
-}
-
 
 
 @media  (max-width:768px){
-  .mobile_menu {
-    display: block;
-  }
+
 
   /* tablet main area */
 .top-banner h2{
@@ -1528,6 +1249,120 @@ article{
 
 }
 
+
+
+/* schedule  table area  */
+
+
+.body .data{
+  font-size : 16px;
+}
+
+.body .place{
+  font-size: 15px;
+}
+
+.body .versus{
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 600;
+  color:#2223;
+  margin:0 25px;
+}
+
+.body .ticket-buy{
+  background-position: 0 0;
+}
+
+.body .ticket-buy a{
+  padding: 1rem 1.6rem;
+}
+
+
+/* TOP area */
+.table .table-header{
+  display: none;
+}
+
+
+.table .body{
+display: grid;
+grid-template-columns: 1fr;
+/* grid-template-rows: 6% 18% 45% 15% 16%; */
+grid-template-rows: 50px 40px 100px 60px 40px;
+align-items: center;
+text-align: center;
+
+font-size:14px;
+margin: 30px 0;
+padding-bottom: 10px;
+}
+
+.body .home, .body .away{
+font-size: 16px;
+}
+
+.body .home{
+background: #6c6c6c;
+}
+
+.body .battle{
+margin : 1rem 0;
+}
+
+.body .battle-left img,
+.body .battle-right img{
+width:80px;
+height:100%;
+object-fit: cover;
+margin-bottom:10px;
+}
+
+.body .battle::before,
+.body .battle::after{
+display: none;
+} 
+
+.body .ticket-buy::before{
+display: none;
+}
+
+.body .ticket-buy{
+width:100%;
+height:100%;
+}
+
+.body .ticket-buy a{
+display: flex;
+justify-content: center;
+align-items: center;
+width:90%;
+height: 100%;
+color : #fff;
+padding: 0
+
+}
+
+
+.body .ticket-buy > .home {
+width:100%;
+padding: 0.7rem 8rem;
+}
+
+
+
+.body .ticket-buy > .away {
+width:100%;
+padding: 0.7rem 8rem;
+}
+
+
+
+
+
+
+
+
 .package-item p{
   text-align: center;
 }
@@ -1578,127 +1413,5 @@ article{
 
 }
 
-
-.wrap{
-  padding-bottom: 0px;
-}
-
-body {
-  position: relative;
-}
-
-/* 토글 변경 12.21 */
-
-.toggle {
-  display: none;
-}
-
-.toggle_main li a {
-  width: 100%;
-}
-
-.toggle_main li p {
-  width: 100%;
-}
-
-
-
-/* 헤더 */
-
-.h_full_box {
-  height: 57px;
-}
-
-.header_wrap {
-  height: 57px;
-  background: #fff;
-}
-
-/* 헤더 로고 부분 */
-
-.logo_wrap {
-  width: auto;
-  height: 34px;
-  position: absolute;
-  top: 10px;
-  left: 15px;
-
-
-/* top menu */
-
-.top_menu ul {
-  display: none;
-}
-
-/* 검색창 */
-
-.search_wrap {
-  height: 48px;
-  top: 57px;
-  left: 0;
-  padding: 24px 0;
-}
-
-.input_wrap {
-  width: 100%;
-  padding: 4px 16px;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-input {
-  font-size: 14px;
-}
-
-/
-
-footer{
-margin-top: 44px;;
-}
-
-.kovo_logo img{
-  width:100px;
-}
-
-.footer_wrap{
-  flex-direction: column;
-  align-items: start;
-}
-
-.term ul{
-  flex-wrap: wrap;
-}
-
-.top-banner{
-  display: block;
-  height: 109px;
-  background: #D91833;
-}
-
-.top-banner h2{
-  font-size: 30px;
-  height: auto;
-  padding:0;
-  line-height: 109px;
-  position : unset;
-  transform: none;
-  text-align: center;
-
-  }
-
-  .tab{
-    border-bottom: 1px solid #eee;
-    overflow-x: scroll;
-  }
-  
-  .tab::-webkit-scrollbar{
-    height:10px;
-    background: #fff;
-  }
-  
-  .tab::-webkit-scrollbar-thumb{
-    background:#e5e5e5;
-    border-radius: 10px;
-  }
 
 }
