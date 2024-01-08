@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ticket buy</title>
-  <link rel="stylesheet" href="/VolleryBall/css/reset.css">
-  <link rel="stylesheet" href="/VolleryBall/css/ticket.css">
-  <!-- <link rel="stylesheet" href="/VolleryBall/css/redspakles_header.css"> -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/ticket.css">
+  <link rel="stylesheet" href="/css/header.css">
 
   <link rel="icon" href="/images/rs_logo.png">
 
@@ -18,8 +18,8 @@
     <div class="header-wrap">
       <div class="logo-wrap">
         <img src="https://kovostoragedev.blob.core.windows.net/kovo-dev/emblem/name8.png" alt="정관장레드부스터스">
-        <h1>정관장</h1>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" class="ant-tooltip-open css-10i3oi9">
+        <h1 class="mobile-block">정관장</h1>
+        <svg class="mobile-block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000" class="ant-tooltip-open css-10i3oi9">
           <g clip-path="url(#clip0_2327_5794)">
             <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 11L12 14L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </g>
@@ -75,7 +75,7 @@
         <div class="singup">SIGNUP</div>
         <div class="language">
           <select name="" id="">
-            <option value="ko" chcked>KO</option>
+            <option value="ko" checked>KO</option>
             <option value="En">EN</option>
           </select>
         </div>
@@ -142,6 +142,8 @@
             <svg width="14" height="14" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" color="#cccccc"><g id="ic/32px/right" clip-path="url(#clip0_2773_91867)"><path id="Vector" d="M12 6.5L22 16.5L12 26.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_2773_91867"><rect width="32" height="32" fill="white" transform="translate(0 0.5)"></rect></clipPath></defs></svg>
             <span>Single</span>
           </div>
+
+
           <div class="notice">
             <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="50" fill="#999999"></rect><path d="M51.3571 31.4255C59.7165 32.1539 66.2857 39.55 66.2857 48.5667V62.9H69V65.7667H31V62.9H33.7143V48.5667C33.7143 39.55 40.2835 32.1539 48.6429 31.4255V28.5H51.3571V31.4255ZM63.5714 62.9V48.5667C63.5714 40.6506 57.4953 34.2333 50 34.2333C42.5047 34.2333 36.4286 40.6506 36.4286 48.5667V62.9H63.5714ZM44.5714 68.6333H55.4286V71.5H44.5714V68.6333Z" fill="white"></path></svg>
             <dl>
@@ -179,10 +181,24 @@
 
           <!-- table area -->
           <div class="table">
+            <div class="table-header">
+              <div class="type"></div>
+              <div class="data">경기일시</div>
+              <div class="battle">경기팀</div>
+              <div class="place">경기장</div>
+              <div class="ticket-buy">티켓예매</div>
+            </div>
             <h2>아직은 경기 일정이 없습니다. </h2>
           </div>
 
           <div class="table">
+            <div class="table-header">
+              <div class="type"></div>
+              <div class="data">경기일시</div>
+              <div class="battle">경기팀</div>
+              <div class="place">경기장</div>
+              <div class="ticket-buy">티켓예매</div>
+            </div>
             <h2>아직은 경기 일정이 없습니다. </h2>
           </div>
 
@@ -311,7 +327,14 @@
           </div>
 
           <div class="table">
-            <div class="body" hidden>
+            <div class="table-header">
+              <div class="type"></div>
+              <div class="data">경기일시</div>
+              <div class="battle">경기팀</div>
+              <div class="place">경기장</div>
+              <div class="ticket-buy">티켓예매</div>
+            </div>
+            <div class="body" >
               <div class="away"><span>AWAY</span></div>
               <div class="data"><span>01.01 (월) 16:00</span></div>
               <div class="battle">
@@ -330,7 +353,7 @@
                 <a class="away" href="#=">예매하기</a>
               </div>
             </div>
-            <div class="body" hidden>
+            <div class="body" >
               <div class="home"><span>HOME</span></div>
               <div class="data"><span>01.06 (토) 16:00</span></div>
               <div class="battle">
@@ -352,10 +375,24 @@
           </div>
 
           <div class="table">
+            <div class="table-header">
+              <div class="type"></div>
+              <div class="data">경기일시</div>
+              <div class="battle">경기팀</div>
+              <div class="place">경기장</div>
+              <div class="ticket-buy">티켓예매</div>
+            </div>
             <h2>아직은 경기 일정이 없습니다. </h2>
           </div>
 
           <div class="table">
+            <div class="table-header">
+              <div class="type"></div>
+              <div class="data">경기일시</div>
+              <div class="battle">경기팀</div>
+              <div class="place">경기장</div>
+              <div class="ticket-buy">티켓예매</div>
+            </div>
             <h2>아직은 경기 일정이 없습니다. </h2>
           </div>
 
@@ -433,49 +470,6 @@
             <div class="wheretobuy content-box">
               <h4>입장권 예매처</h4>
               <p>KOVO 및 13개 구단 (*GS칼텍스 제외) 입장권 예매는 KOVO 통합 홈페이지에서만 가능하며, <span class="red">*GS칼텍스의 입장권 예매 관련 정보는 해당 구단 홈페이지를 참고하시기 바랍니다.</span></p>
-              <div class="table">
-                <div class="item">
-                  <div class="col-1">구분</div>
-                  <div class="col-2">인터넷</div>
-                  <div class="col-1">예매처</div>
-                  <div class="col-2">www.kovo.co.kr</div>
-                  <div class="col-1">수수료</div>
-                  <div class="col-2">1,000원</div>
-                  <div class="col-1">운영시간</div>
-                  <div class="col-2">20시간 운영</div>
-                </div>
-                <div class="item">
-                  <div class="col-1">구분</div>
-                  <div class="col-2">모바일</div>
-                  <div class="col-1">예매처</div>
-                  <div class="col-2">KOVO 통합 어플리케이션</div>
-                  <div class="col-1">수수료</div>
-                  <div class="col-2">1,000원</div>
-                  <div class="col-1">운영시간</div>
-                  <div class="col-2">20시간 운영</div>
-                </div>
-                <div class="item">
-                  <div class="col-1">구분</div>
-                  <div class="col-2">콜센터</div>
-                  <div class="col-1">예매처</div>
-                  <div class="col-2">예매/문의 1544-1555</div>
-                  <div class="col-1">수수료</div>
-                  <div class="col-2">3,000원</div>
-                  <div class="col-1">운영시간</div>
-                  <div class="col-2">매일 09:00 ~ 18:00</div>
-                </div>
-                <div class="item">
-                  <div class="col-1">구분</div>
-                  <div class="col-2">콜센터</div>
-                  <div class="col-1">예매처</div>
-                  <div class="col-2">예매/문의 1544-1555</div>
-                  <div class="col-1">수수료</div>
-                  <div class="col-2">-</div>
-                  <div class="col-1">운영시간</div>
-                  <div class="col-2">경기 시작 시작 2시간 전부터 운영<br>
-                    (단, 구단 사정에 따라 변경될 수 있음)</div>
-                </div>
-              </div>
               
               <table>
                 <caption class="hide">티켓구매별 예매처, 수수료, 운영시간 안내</caption>
